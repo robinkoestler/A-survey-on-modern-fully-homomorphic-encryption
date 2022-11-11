@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/robinkoestler/A-survey-on-modern-bootstrapping-for-fully-homomorphic-encryption/master?urlpath=tree/docs/Thesis.ipynb"
+        <a href="https://mybinder.org/v2/gh/robinkoestler/A-survey-on-fully-homomorphic-encryption/master?urlpath=tree/docs/Thesis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -166,7 +166,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/robinkoestler/A-survey-on-modern-bootstrapping-for-fully-homomorphic-encryption"
+        <a href="https://github.com/robinkoestler/A-survey-on-fully-homomorphic-encryption"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -183,7 +183,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/robinkoestler/A-survey-on-modern-bootstrapping-for-fully-homomorphic-encryption/issues/new?title=Issue%20on%20page%20%2FThesis.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/robinkoestler/A-survey-on-fully-homomorphic-encryption/issues/new?title=Issue%20on%20page%20%2FThesis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -1636,9 +1636,6 @@ Because <span class="math notranslate nohighlight">\(a_k\)</span> is alternating
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With sigma = 0.3, the bound of 1/12 is instead approximately 1/179.13363773215124
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Putting everything together, we end up with:</p>
@@ -1680,7 +1677,7 @@ Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4992 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9984)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4993 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9986)
 Probability approximation given in theorem = 0.9960522481430965
 </pre></div>
 </div>
@@ -1762,7 +1759,7 @@ For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 out of 1000 satisfied bound (ratio 1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>998 out of 1000 satisfied bound (ratio 0.998)
 Probability in theorem 0.9981059300560312
 </pre></div>
 </div>
@@ -1815,7 +1812,7 @@ To not get caught up in precision errors regarding <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>967 out of 1000 satisfied bound (ratio 0.967)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>968 out of 1000 satisfied bound (ratio 0.968)
 Probability in theorem 0.9838201795058529
 </pre></div>
 </div>
@@ -2002,9 +1999,9 @@ Plaintext modulus T = 4
 Ciphertext modulus Q = 1048576
 Standard deviation STD = 1
 
-Message: M = 3x^3 + 2x^2 + 1
-Encryption components are 660271x^3 + 197854x^2 + 208358x + 416052 
-and 966379x^3 + 958958x^2 + 451915x + 43944
+Message: M = 2x^3 + 2x
+Encryption components are 555136x^3 + 123698x^2 + 776990x + 428034 
+and 651392x^3 + 678839x^2 + 376402x + 156446
 </pre></div>
 </div>
 </div>
@@ -2042,7 +2039,7 @@ In total, we may estimate the error after BFV-encryption as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 5.75
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 5.5
 </pre></div>
 </div>
 </div>
@@ -2082,9 +2079,9 @@ At last we reduce the result by <span class="math notranslate nohighlight">\(T\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 3x^3 + 2x^2 + 1
-Message 3x^3 + 2x^2 + 1 decrypted correctly? True
-Error size inside ciphertext: 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2x^3 + 2x
+Message 2x^3 + 2x decrypted correctly? True
+Error size inside ciphertext: 5
 </pre></div>
 </div>
 </div>
@@ -2488,8 +2485,8 @@ Together with <span class="math notranslate nohighlight">\(e_{\text{rel}}\)</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 10000 iterations: ratio of correct bound 0.9992
-Maximum C was 3.15625
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 10000 iterations: ratio of correct bound 0.9999
+Maximum C was 2.7916666666666665
 </pre></div>
 </div>
 </div>
@@ -2855,10 +2852,10 @@ We highlight the precomputational part by storing <span class="math notranslate 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = 2x^3 + 3x^2 + 3x + 1
-Message after eval-auto: x --&gt; x^3: 3x^3 + x^2 + 2x + 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = x^3 + 3x^2 + 3x + 1
+Message after eval-auto: x --&gt; x^3: 3x^3 + x^2 + x + 1
 Note that x^(2^2) = -1 and coefficients are mod 2^2.
-Error size after key switching: 17
+Error size after key switching: 27
 Factor from error bound: (B/2) * log_B(Q) * sqrt(N) = 53.333333333333336
 </pre></div>
 </div>
@@ -3390,22 +3387,22 @@ Furthermore a multiplication in <span class="math notranslate nohighlight">\(R_Q
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.061805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.058837
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.067461
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.062229
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.069100
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.068750
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.095701
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.095678
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.164979
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.169242
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.463403
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.449652
 </pre></div>
 </div>
 </div>
@@ -3504,15 +3501,15 @@ For that instance, we print the error after bootstrapping, which should ideally 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding an error of size: 2^94 within the ciphertext modulus: 2^100...
-...to the encryption of the message: x^13 + x^8 + x^7 + x^6 + x^2 + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
-Time taken for the precomputation: 0:00:00.029460
+...to the encryption of the message: x^15 + x^14 + x^13 + x^12 + x^9 + x^8 + x^7 + x^6 + x^4 + x^3 + x^2 + x + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
+Time taken for the precomputation: 0:00:00.027753
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.708091
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.706001
 Bootstrapping parameters: Modulus = 2^223, B = 2^100, N = 2^4
-Decryption of refreshed ciphertext after bootstrapping: x^13 + x^8 + x^7 + x^6 + x^2 + 1
+Decryption of refreshed ciphertext after bootstrapping: x^15 + x^14 + x^13 + x^12 + x^9 + x^8 + x^7 + x^6 + x^4 + x^3 + x^2 + x + 1
 Still correct? True
-Error size after bootstrapping: 4
+Error size after bootstrapping: 3
 </pre></div>
 </div>
 </div>
@@ -3547,10 +3544,10 @@ Error size after bootstrapping: 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.0095771375 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008437780000000004 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007310887499999978 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007981314580000003 seconds.
 </pre></div>
 </div>
 </div>
@@ -3568,16 +3565,16 @@ Error size after bootstrapping: 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.008001833333332561 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.00814369433333321 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.057352597333333456 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.057354208333332934 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6589784303333334 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6657847083333337 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.819978458000001 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.7898635830000025 seconds.
 </pre></div>
 </div>
 </div>
@@ -3595,16 +3592,16 @@ Error size after bootstrapping: 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007109240829999983 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007817630420000015 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007964444999999997 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007884895420000006 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.015667661640000007 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.018568193320000148 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.046330340000000095 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.0456637416800001 seconds.
 </pre></div>
 </div>
 </div>
