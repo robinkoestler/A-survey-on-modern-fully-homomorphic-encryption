@@ -39,4 +39,4 @@ sphinx:
     - sphinx_proof
 
 launch_buttons:
-  These: true
+  thebe: true
