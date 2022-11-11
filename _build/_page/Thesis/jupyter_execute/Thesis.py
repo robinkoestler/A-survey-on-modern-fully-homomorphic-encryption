@@ -93,13 +93,13 @@
 # In[1]:
 
 
-import polynomial_arithmetic, random, scipy.stats
+import polynomial_arithmetic, random
 from polynomial_arithmetic import *
 import numpy as np
 import matplotlib.pyplot as plt
 from timeit import default_timer as timer
 from datetime import timedelta
-from math import log, floor, ceil, sqrt, gcd, exp, pi
+from math import log, floor, ceil, sqrt, gcd, exp, pi, erf
 Poly = polynomial_arithmetic.Polynomial # the class of handling polynomial arithmetic in R
 speed = 1 # precision factor for computations: Scales the running time.
 
@@ -258,7 +258,7 @@ speed = 1 # precision factor for computations: Scales the running time.
 
 N = 10**4
 for k in range(3,9):
-    p = 2*scipy.stats.norm(0,1).cdf((k + 0.5)) - 1
+    p = erf((k+0.5)/sqrt(2))
     print(f"k = {k} leads to 1-{N}*(1-p) = {1-N*(1-p)}")
 
 
@@ -301,8 +301,10 @@ for k in range(3,9):
 # In[3]:
 
 
+def cdf(x, sigma): # cumulative density function for N(0, sigma^2)
+    return (erf(x/sqrt(2*(sigma**2)))+1)/2
 sigma = 0.3 # test with 0.1, 0.3, 1
-var_values = [(i**2)*(scipy.stats.norm(0,sigma).cdf(i+0.5) - scipy.stats.norm(0,sigma).cdf(i-0.5)) for i in range(-1000,1000+1)]
+var_values = [(i**2)* (cdf(i+0.5,sigma) - cdf(i-0.5,sigma)) for i in range(-1000,1000+1)]
 print(f"With sigma = {sigma}, the bound of 1/12 is instead approximately 1/{1/(sum(var_values) - sigma**2)}")
 
 
@@ -340,7 +342,7 @@ print(f"With sigma = {sigma}, the bound of 1/12 is instead approximately 1/{1/(s
 
 m, sigma, iterations, k, counter = 3, 1, 5000*speed, 3, 0
 # below: without "+1/12" the approximation sometimes exceeds the ratio
-p = 2*scipy.stats.norm(0,sqrt(sigma**2+1/12)).cdf(k*sigma) - 1
+p = erf((k*sigma) / sqrt(2 * (sigma**2+1/12)))
 for _ in range(iterations):
     y = sum([generate_gaussian_distribution(1,0,sigma).evaluate(1) for _ in range(m)])
     if abs(y) <= k * sqrt(m) * sigma:
@@ -434,7 +436,7 @@ for i in range(iterations):
         counter += 1
 print(f"{counter} out of {iterations} satisfied bound (ratio {counter/iterations})")
 norm_average = sum([generate_uniform_distribution(N, -Q/2, Q/2).norm() for _ in range(iterations)]) // iterations
-print(f"Probability in theorem {scipy.special.erf(norm_average*C*3/Q)**N}")
+print(f"Probability in theorem {erf(norm_average*C*3/Q)**N}")
 
 
 # #### The case "Gaussian" times "ternary"
@@ -483,7 +485,7 @@ for i in range(iterations):
     if y.multiply(z).norm() <= C*sqrt(N)*y.norm():
         counter += 1
 print(f"{counter} out of {iterations} satisfied bound (ratio {counter/iterations})")
-probability = scipy.special.erf( (C*y_norm) / sqrt((4/3) * (sigma**2 + (1/12))) )**N
+probability = erf( (C*y_norm) / sqrt((4/3) * (sigma**2 + (1/12))) )**N
 print(f"Probability in theorem {probability}")
 
 

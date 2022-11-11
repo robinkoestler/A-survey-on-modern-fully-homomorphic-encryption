@@ -1442,13 +1442,13 @@ Apart from handling polynomials in the ring as a class object, we also import au
 The variable <span class="math notranslate nohighlight">\(\texttt{speed}\)</span> linearly controls the running time and it may be augmented to obtain more precise computational results in the case of e.g. probabilistic bounds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">polynomial_arithmetic</span><span class="o">,</span> <span class="nn">random</span><span class="o">,</span> <span class="nn">scipy.stats</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">polynomial_arithmetic</span><span class="o">,</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">polynomial_arithmetic</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">erf</span>
 <span class="n">Poly</span> <span class="o">=</span> <span class="n">polynomial_arithmetic</span><span class="o">.</span><span class="n">Polynomial</span> <span class="c1"># the class of handling polynomial arithmetic in R</span>
 <span class="n">speed</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># precision factor for computations: Scales the running time.</span>
 </pre></div>
@@ -1596,7 +1596,7 @@ For simplicity, we also set <span class="math notranslate nohighlight">\(\sigma 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">((</span><span class="n">k</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">erf</span><span class="p">((</span><span class="n">k</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> leads to 1-</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">*(1-p) = </span><span class="si">{</span><span class="mi">1</span><span class="o">-</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1606,7 +1606,7 @@ For simplicity, we also set <span class="math notranslate nohighlight">\(\sigma 
 k = 4 leads to 1-10000*(1-p) = 0.9320465375052258
 k = 5 leads to 1-10000*(1-p) = 0.9996202087504393
 k = 6 leads to 1-10000*(1-p) = 0.999999196800271
-k = 7 leads to 1-10000*(1-p) = 0.999999999362732
+k = 7 leads to 1-10000*(1-p) = 0.9999999993616218
 k = 8 leads to 1-10000*(1-p) = 1.0
 </pre></div>
 </div>
@@ -1644,14 +1644,16 @@ Because <span class="math notranslate nohighlight">\(a_k\)</span> is alternating
 <p>In practice, the above result  could even hold for <span class="math notranslate nohighlight">\(\sigma \ge 0.3\)</span>, which the computation below points out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># test with 0.1, 0.3, 1</span>
-<span class="n">var_values</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">-</span> <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mf">0.5</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span> <span class="c1"># cumulative density function for N(0, sigma^2)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">erf</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># test with 0.1, 0.3, 1</span>
+<span class="n">var_values</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span> <span class="o">-</span> <span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">sigma</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;With sigma = </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s2">, the bound of 1/12 is instead approximately 1/</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">var_values</span><span class="p">)</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With sigma = 0.3, the bound of 1/12 is instead approximately 1/179.13363773215124
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With sigma = 0.3, the bound of 1/12 is instead approximately 1/179.13363773216952
 </pre></div>
 </div>
 </div>
@@ -1684,7 +1686,7 @@ Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5000</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span>
 <span class="c1"># below: without &quot;+1/12&quot; the approximation sometimes exceeds the ratio</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">))</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">erf</span><span class="p">((</span><span class="n">k</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">generate_gaussian_distribution</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)])</span>
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">:</span>
@@ -1695,8 +1697,8 @@ Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4993 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9986)
-Probability approximation given in theorem = 0.9960522481430965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4991 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9982)
+Probability approximation given in theorem = 0.9960522481430966
 </pre></div>
 </div>
 </div>
@@ -1772,13 +1774,13 @@ For example:</p>
         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="n">iterations</span><span class="si">}</span><span class="s2"> satisfied bound (ratio </span><span class="si">{</span><span class="n">counter</span><span class="o">/</span><span class="n">iterations</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 <span class="n">norm_average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">generate_uniform_distribution</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="n">Q</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">Q</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">)])</span> <span class="o">//</span> <span class="n">iterations</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability in theorem </span><span class="si">{</span><span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span><span class="n">norm_average</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="n">Q</span><span class="p">)</span><span class="o">**</span><span class="n">N</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability in theorem </span><span class="si">{</span><span class="n">erf</span><span class="p">(</span><span class="n">norm_average</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="mi">3</span><span class="o">/</span><span class="n">Q</span><span class="p">)</span><span class="o">**</span><span class="n">N</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>998 out of 1000 satisfied bound (ratio 0.998)
-Probability in theorem 0.9981059300560312
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 out of 1000 satisfied bound (ratio 1.0)
+Probability in theorem 0.9981736525590379
 </pre></div>
 </div>
 </div>
@@ -1824,13 +1826,13 @@ To not get caught up in precision errors regarding <span class="math notranslate
     <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="n">C</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="o">.</span><span class="n">norm</span><span class="p">():</span>
         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="n">iterations</span><span class="si">}</span><span class="s2"> satisfied bound (ratio </span><span class="si">{</span><span class="n">counter</span><span class="o">/</span><span class="n">iterations</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-<span class="n">probability</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">erf</span><span class="p">(</span> <span class="p">(</span><span class="n">C</span><span class="o">*</span><span class="n">y_norm</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">((</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)))</span> <span class="p">)</span><span class="o">**</span><span class="n">N</span>
+<span class="n">probability</span> <span class="o">=</span> <span class="n">erf</span><span class="p">(</span> <span class="p">(</span><span class="n">C</span><span class="o">*</span><span class="n">y_norm</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">((</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)))</span> <span class="p">)</span><span class="o">**</span><span class="n">N</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability in theorem </span><span class="si">{</span><span class="n">probability</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>968 out of 1000 satisfied bound (ratio 0.968)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>928 out of 1000 satisfied bound (ratio 0.928)
 Probability in theorem 0.9838201795058529
 </pre></div>
 </div>
@@ -2017,9 +2019,9 @@ Plaintext modulus T = 4
 Ciphertext modulus Q = 1048576
 Standard deviation STD = 1
 
-Message: M = 2x^3 + 2x
-Encryption components are 555136x^3 + 123698x^2 + 776990x + 428034 
-and 651392x^3 + 678839x^2 + 376402x + 156446
+Message: M = 3x^2 + 3x
+Encryption components are 689567x^3 + 736077x^2 + 89765x + 500677 
+and 817146x^3 + 239250x^2 + 25160x + 325163
 </pre></div>
 </div>
 </div>
@@ -2057,7 +2059,7 @@ In total, we may estimate the error after BFV-encryption as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 5.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 6.5
 </pre></div>
 </div>
 </div>
@@ -2097,8 +2099,8 @@ At last we reduce the result by <span class="math notranslate nohighlight">\(T\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2x^3 + 2x
-Message 2x^3 + 2x decrypted correctly? True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 3x^2 + 3x
+Message 3x^2 + 3x decrypted correctly? True
 Error size inside ciphertext: 5
 </pre></div>
 </div>
@@ -2503,8 +2505,8 @@ Together with <span class="math notranslate nohighlight">\(e_{\text{rel}}\)</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 10000 iterations: ratio of correct bound 0.9999
-Maximum C was 2.7916666666666665
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 10000 iterations: ratio of correct bound 0.9995
+Maximum C was 2.625
 </pre></div>
 </div>
 </div>
@@ -2870,10 +2872,10 @@ We highlight the precomputational part by storing <span class="math notranslate 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = x^3 + 3x^2 + 3x + 1
-Message after eval-auto: x --&gt; x^3: 3x^3 + x^2 + x + 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = 3x^3 + x^2
+Message after eval-auto: x --&gt; x^3: 3x^2 + 3x
 Note that x^(2^2) = -1 and coefficients are mod 2^2.
-Error size after key switching: 27
+Error size after key switching: 31
 Factor from error bound: (B/2) * log_B(Q) * sqrt(N) = 53.333333333333336
 </pre></div>
 </div>
@@ -3405,22 +3407,22 @@ Furthermore a multiplication in <span class="math notranslate nohighlight">\(R_Q
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.058837
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.059481
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.062229
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.061840
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.068750
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.069281
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.095678
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.096899
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.169242
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.171198
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.449652
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.457073
 </pre></div>
 </div>
 </div>
@@ -3519,15 +3521,15 @@ For that instance, we print the error after bootstrapping, which should ideally 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding an error of size: 2^94 within the ciphertext modulus: 2^100...
-...to the encryption of the message: x^15 + x^14 + x^13 + x^12 + x^9 + x^8 + x^7 + x^6 + x^4 + x^3 + x^2 + x + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
-Time taken for the precomputation: 0:00:00.027753
+...to the encryption of the message: x^13 + x^12 + x^11 + x^10 + x^9 + x^7 + x^3 and refreshing the obtained noisy ciphertext by bootstrapping...
+Time taken for the precomputation: 0:00:00.027759
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.706001
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.712729
 Bootstrapping parameters: Modulus = 2^223, B = 2^100, N = 2^4
-Decryption of refreshed ciphertext after bootstrapping: x^15 + x^14 + x^13 + x^12 + x^9 + x^8 + x^7 + x^6 + x^4 + x^3 + x^2 + x + 1
+Decryption of refreshed ciphertext after bootstrapping: x^13 + x^12 + x^11 + x^10 + x^9 + x^7 + x^3
 Still correct? True
-Error size after bootstrapping: 3
+Error size after bootstrapping: 4
 </pre></div>
 </div>
 </div>
@@ -3562,10 +3564,10 @@ Error size after bootstrapping: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008437780000000004 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008652132080000001 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007981314580000003 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.0075275574999999866 seconds.
 </pre></div>
 </div>
 </div>
@@ -3583,16 +3585,16 @@ Error size after bootstrapping: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.00814369433333321 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.0076627916666656875 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.057354208333332934 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.0570190833333335 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6657847083333337 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6678999999999995 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.7898635830000025 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.850026665999998 seconds.
 </pre></div>
 </div>
 </div>
@@ -3610,16 +3612,16 @@ Error size after bootstrapping: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007817630420000015 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007762812500000002 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007884895420000006 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007963205420000001 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.018568193320000148 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.012550140000000027 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.0456637416800001 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.04581533000000007 seconds.
 </pre></div>
 </div>
 </div>
