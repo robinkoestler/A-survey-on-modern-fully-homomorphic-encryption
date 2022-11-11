@@ -37,3 +37,6 @@ sphinx:
     bibtex_reference_style: author_year
   extra_extensions:
     - sphinx_proof
+
+launch_buttons:
+  These: true
