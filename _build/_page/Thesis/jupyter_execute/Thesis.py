@@ -20,14 +20,14 @@
 # ## Fully homomorphic encryption
 # 
 # Fully homomorphic encryption (FHE) has been a major field of research in the area of cryptography in recent years.
-# In a simple notion, its objective can be described as performing operations on data, which itself is securely hidden in an encryption (ciphertext).
+# Simply put, its objective can be described as performing operations on data that is securely hidden in an encryption (ciphertext).
 # For this reason, FHE features a broad range of applications, e.g. secure cloud computing.
 # 
-# The two homomorphic operations, which are mainly considered, are additions and multiplications.
+# The two homomorphic operations considered are additions and multiplications.
 # This is sufficient since technically every deterministic algorithm can be expressed by NAND gates.
 # A NAND gate for two bits $b_1,b_2 \in \{0,1\}$ is defined as $\mathrm{NAND}(b_1,b_2) = 1 - b_1b_2 \in \{0,1\}$ and thus only requires one addition and one multiplication modulo 2.
 # 
-# In general, the modern FHE approach relies on encryptions, which are based upon errors.
+# In general, the modern FHE approach relies on encryptions, which are based on errors.
 # These errors gradually increase during homomorphic operations and there is a bound in error size to which extent a correct decryption is still possible.
 # Therefore we require a procedure of reducing an accumulated error to its initial size (comparable to a "fresh" encryption error), and in doing so, arbitrarily many homomorphic operations (FHE) become achievable.
 # Gentry, who published the first FHE scheme in {cite}`gentry-fhe`, named this procedure bootstrapping.
@@ -47,7 +47,7 @@
 # Lastly, we give a decent overview of security terms and definitions connected to modern ring learning with errors cryptosystems.
 # 
 # - In Chapter 3, {ref}`the-BFV-scheme`, we examine the underlying encoding scheme (published in {cite}`BFV`), which provides algorithms for (secret/public) key-generation, encryption, decryption, addition and multiplication of ciphertexts.
-# We especially focus on the error growth during the homomorphic operations, since these results heavily influence the overall running time, if one thinks of bootstrapping as an expensive intermission between performing additions/multiplications.
+# Special focus is laid on the error growth during the homomorphic operations, since these results heavily influence the overall running time, if one thinks of bootstrapping as an expensive intermission between performing additions/multiplications.
 # For that matter, we derive a bound for correct decryption and analyse the performance (depending on the choice of parameters) computationally.
 # 
 # - In Chapter 4, {ref}`preparations-for-bootstrapping`, we establish methods to limit the error growth during multiplication, which is mandatory for our bootstrapping algorithm to be functional.
@@ -74,15 +74,15 @@
 # 
 # The implementation of the bootstrapping scheme relies on the separate Python file "polynomial\_arithmetic.py", which performs polynomial arithmetic and other useful operations on polynomials in {ref}`the-ring-R`. 
 # The framework of the Python file originates in {cite}`sarojaerabelli`, which has been partly modified and extended.
-# The main motivation using it has been the lack of a (simple) Python package, which handles the arithmetic of arbitrary long integers as coefficients of polynomials in the above ring.
+# The main motivation using this framework, has been the lack of a (simple) Python package, which handles the arithmetic of arbitrarily long integers as coefficients of polynomials in the above ring.
 # The Python file includes extensive descriptions of its algorithms.
 # 
-# The main contribution was the implementation of a faster multiplication algorithm, namely the Karatsuba algorithm, which contrary to the state-of-the-art multiplication techniques is simpler to implement from scratch and most importantly directly applicable to any ciphertext modulus $Q$ and ring degree $N$ (these parameters will be examined in {ref}`the-modular-variant-of-the-ring-R`).
+# The main contribution was the implementation of a faster multiplication algorithm, namely the Karatsuba algorithm, which, contrary to the state-of-the-art multiplication techniques, is simpler to implement from scratch and most importantly directly applicable to any ciphertext modulus $Q$ and ring degree $N$ (these parameters will be examined in {ref}`the-modular-variant-of-the-ring-R`).
 # In the original file, i.e. in {cite}`sarojaerabelli`, the modern Fast Fourier Transform (FFT) multiplication algorithm is included, which is considerably faster compared to Karatsuba, but not applicable to powers of two as bootstrapping parameters (e.g. $Q$).
 # Since powers of two greatly simplify the mathematical analysis of the scheme and furthermore implementing techniques and algorithm speed are not the main concerns of this thesis, we have chosen to omit FFT implementation.
 # 
-# In general, multiplying efficiently is extremely important, since the bootstrapping procedure bases upon multiplications of polynomials.
-# Apart from handling polynomials in the ring as a class object, we also import auxiliary functions, which generate polynomials, whose coefficients have certain properties, e.g. being drawn from a specific distribution (see {ref}`background-on-probability-theory`).
+# In general, multiplying efficiently is extremely important, since the bootstrapping procedure bases on multiplications of polynomials.
+# Apart from handling polynomials in the ring as a class object, we also import auxiliary functions generating polynomials, whose coefficients have certain properties, e.g. being drawn from a specific distribution (see {ref}`background-on-probability-theory`).
 # 
 # Further inspiration for implementing the somewhat homomorphic BFV scheme in Python (see {ref}`the-BFV-scheme`) has been drawn from {cite}`bfv-implementation`.
 # The full implementation, including an online jupyter book version of the thesis featuring executable code cells, can be found at [https://github.com/robinkoestler/A-survey-on-modern-fully-homomorphic-encryption](https://github.com/robinkoestler/A-survey-on-modern-fully-homomorphic-encryption). 
@@ -90,7 +90,7 @@
 # The bootstrapping implementation, which is split up among many auxiliary procedures throughout the document, will be analyzed in a step-by-step fashion.
 # 
 # Below we import all necessary external Python packages and the class to handle polynomial arithmetic as $\texttt{Poly}$.
-# The variable $\texttt{speed}$ linearly controls the running time and it may be augmented to obtain more precise computational results in the case of e.g. probabilistic bounds.
+# The variable $\texttt{speed}$ linearly controls the running time and it may be augmented to obtain more precise computational results in the case of probabilistic bounds for example.
 
 # In[1]:
 
@@ -102,7 +102,7 @@ import matplotlib.pyplot as plt
 from timeit import default_timer as timer
 from datetime import timedelta
 from math import log, floor, ceil, sqrt, gcd, exp, pi, erf
-Poly = polynomial_arithmetic.Polynomial # the class of handling polynomial arithmetic in R
+Poly = polynomial_arithmetic.Polynomial # the class of handling polynomial arithmetic in R.
 speed = 1 # precision factor for computations: Scales the running time.
 
 
@@ -115,8 +115,8 @@ speed = 1 # precision factor for computations: Scales the running time.
 # 
 # There are many reasons for the choice of $R$:
 # - First and foremost, in the described scheme we are working within discrete structures (messages, ciphertexts, etc. built on elements of $\Z$).
-# Thus we have the advantage of the simplicity of representing everything via integers, whereas in approximate cryptographic schemes (like CKKS, where $\R$ or $\mathbb C$ are used, see {cite}`CKKS`) one has to worry about rounding errors during computations, which affect the message precision and so on.
-# - We are generally using polynomial rings to assure that the basic ring operations (addition and multiplication) can be efficiently calculated by computers without too much effort concerning implementing techniques of the latter. 
+# Thus we have the advantage of the simplicity of representing everything via integers, whereas in approximate cryptographic schemes (like CKKS, where $\R$ or $\mathbb C$ are used, see {cite}`CKKS`) one has to worry about rounding errors during computations, which e.g. affect the message precision.
+# - We are generally using polynomial rings to ensure that the basic ring operations (addition and multiplication) can be efficiently calculated by computers without too much effort concerning implementing techniques of the latter. 
 # - After multiplying two ring elements, we are left to reduce the result modulo $x^N + 1$, which is as simple as a sign change and adding two polynomials in $R$, because $x^N = -1$ in $R$.
 # Compared to the regular polynomial division for arbitrary polynomial quotient rings, this is computationally close to optimal.
 # - At last, we have the property of having no nonzero zero divisors in $R$, which avoids possible degeneration by performing ring operations:
@@ -138,16 +138,16 @@ speed = 1 # precision factor for computations: Scales the running time.
 # 
 # The above ring $R$ cannot possibly degenerate nonzero elements to zero during ring operations, but nevertheless, it contains infinitely many elements - a property we want to avoid while using a similar structure for message/ciphertext spaces.
 # The introduction of a power of two modulus $M > 1$ to define the finite quotient ring $R_M := R/MR$ resolves this issue and has the following impacts:
-# - Because of the finiteness, we are now able to choose elements of $R_M$ e.g. uniformly at random.
-# This will later be necessary to define the "Decision RLWE" problem, upon which the security of our scheme is based.
+# - Because of the finiteness, we are now able to choose elements of $R_M$ uniformly at random.
+# This will later be necessary to define the Decision-RLWE (see {prf:ref}`decision-RLWE`) problem, upon which the security of our scheme is based.
 # - To uniquely represent the coefficients of a polynomial in $R_M$, we will use the set of integers inside $(-M/2,M/2]$.
 # Naturally, this is advantageous for two reasons.
-#     - Firstly, it allows a coefficient to be sampled e.g. from a discrete normal distribution around zero.
+#     - Firstly, it allows a coefficient to be sampled from zero-centered distributions.
 #     - Secondly, compared to e.g. $[0,M-1]$ it halves the maximum absolute value a polynomial coefficient can reach and therefore is an optimal choice regarding the complexity of algorithms operating on integers.
 # - By using different power of two moduli as $M$, we can adjust our plaintext/ciphertext/bootstrapping space size to our necessities.
 # Switching between these will be easily done by just embedding (from small to large modulus) respectively by a modular reduction of the coefficients (and vice versa).
 # 
-# To illustrate the use of modular variants of $R$, let us consider a small message space, e.g. $R_8$, and a larger (ciphertext) space, e.g. $R_{32}$, without a further specified $N$.
+# To illustrate the benefit of modular variants of $R$, let us consider a small message space, e.g. $R_8$, and a larger (ciphertext) space, e.g. $R_{32}$, without a further specified $N$.
 # Technically, we could just trivially embed an example message $2x+1 \in R_8$ into the larger ring as $2x+1 \in R_{32}$.
 # But since we furthermore need to introduce additive errors, which make our scheme secure and also alter ring elements slightly, we can use a different, more sophisticated embedding into $R_{32}$ than just enlarging the space in general.
 # For this example consider the ring-dependent expansion factor $\kappa := 32/8 = 4$ and the switching of rings procedure:
@@ -162,8 +162,8 @@ speed = 1 # precision factor for computations: Scales the running time.
 # The above procedure also highlights that power of two moduli $M$ generally result in integer $\kappa$'s, which keeps the upscaling by $\kappa$ clean from rounding errors.
 # 
 # To sum it up, we gain security and sizing control by adding modular arithmetic to $R$.
-# However, it should be remarked that $R_M$ for powers of two $M>2$ and $N$ is no longer an integer domain.
-# Hence it is important to keep track of where and when we can reduce a $R$-element modulo $M$, after performing operations favorably in $R$ itself.
+# However, it is worth mentioning that $R_M$ for powers of two $M>2$ and $N$ is no longer an integer domain.
+# Hence, it is important to keep track of where and when we can reduce a $R$-element modulo $M$, after performing operations favorably in $R$ itself.
 
 # ## Size and norm of ring elements
 # The above example of switching (modular) rings points out that it is indeed important to distinguish between "small" and "large" ring elements, referring to the "size" of the coefficients.
@@ -188,18 +188,18 @@ speed = 1 # precision factor for computations: Scales the running time.
 # We will use the following distributions for $y \in \Z$:
 # - Discrete uniform distribution $\mathcal U(a,b)$: For integers $a \le b$ and $i \in \Z \cap [a,b]$ fixed, we have $\mathbb P(y=i) := 1/(b-a+1)$.
 # Most of the time, we will use $\mathcal U(R_M) := \mathcal U(-M/2,M/2)$.
-# Notice that technically $-M/2$ is not in the (representative) set $\Z_{M}$, but for sampling we will use it anyway since otherwise $\mathcal U(R_M)$ would have mean one instead of zero.
+# Notice that technically $-M/2$ is not in the (representative) set $\Z_{M}$, but for sampling we will use it anyway, since otherwise $\mathcal U(R_M)$ would have mean one instead of zero.
 # The overall effect of this on the uniformity of the distribution is quite negligible while using a (typically) large $M$.
 # - Discrete centered normal distribution $\mathcal {N}_d(0,\sigma^2)$:
 # For a (real) standard deviation parameter $\sigma \ge 0$ and $i \in \Z$ fixed, we assign $\mathbb P(y = i) := \int_{i-1/2}^{i+1/2} f_{\mathcal N(0,\sigma^2)}(z) dz$, where $f_{\mathcal N(0,\sigma^2)}$ is the probability density function of the (continuous) normal distribution $\mathcal N(0,\sigma^2)$.
-# In other words,  while sampling discretely we simply round the values obtained from the continuous distribution to the nearest integer. 
+# In other words, while sampling discretely we simply round the values obtained from the continuous distribution to the nearest integer. 
 # Notice furthermore that $\mathcal N_d(0,\sigma^2)$, although we denote it in the same way, only has mean zero, but it does not have variance $\sigma^2$ (see {prf:ref}`discrete-variance`).
 # - Ternary distribution $\mathrm{Ter}_\rho$: For a parameter $\rho \in (0,1)$ define the ternary distribution by $\mathbb P(y = -1) = \mathbb P(y = 1) = (1-\rho)/2$ and $\mathbb P(y = 0) = \rho$.
 # In our implementation, we set $\rho$ to $1/3$, thus $\mathrm{Ter}_{1/3} = \mathcal U(-1,1)$.
 # Another notable choice: A large $\rho$ leads to samples of sparse ring elements, which have computational advantages.
 # 
 # Efficient bootstrapping relies on a detailed error analysis, whose errors are typically generated from the discrete normal distribution.
-# Hence we will need to apply theorems from probability theory to estimate the size of an error (with high probability).
+# Hence, we will need to apply theorems from probability theory to estimate the size of an error (with high probability).
 # Since errors will also be added and multiplied throughout the bootstrapping scheme, we will proceed to analyse the error growth depending on different operations and distributions.
 
 # ### The error function $\mathrm{erf}$
@@ -207,7 +207,7 @@ speed = 1 # precision factor for computations: Scales the running time.
 # :label: error-function
 # For $x \in \R$, the error function $\mathrm{erf}(x)$ is given by:
 # ```{math}
-# \mathrm{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt
+# \mathrm{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt.
 # ```
 # ````
 # 
@@ -217,7 +217,7 @@ speed = 1 # precision factor for computations: Scales the running time.
 # :label: property-error-function
 # Let $F(x)$ be the cumulative distribution function of the normal distribution $\mathcal N(0, \sigma^2)$. Then for a corresponding random variable $X$ we have:
 # ```{math}
-# \P(\abs X \le x) \overset{\text{if } x > 0}{=} \mathrm{erf}(x/\sqrt{2\sigma^2}) = 2F(x) -1 = F(x) - F(-x)
+# \P(\abs X \le x) \overset{\text{if } x > 0}{=} \mathrm{erf}(x/\sqrt{2\sigma^2}) = 2F(x) -1 = F(x) - F(-x).
 # ```
 # ````
 # 
@@ -225,19 +225,19 @@ speed = 1 # precision factor for computations: Scales the running time.
 # ### Bounds for the normal distribution
 # Suppose we sample $y \in R$ from $\mathcal N_d(0,\sigma^2)$ and want to derive a bound on $\norm y$ for further computations.
 # Naturally, only a probabilistic bound can be achieved here.
-# Thus we consider the scenario: Determine the small probability $p_{norm}(k)$ for which $\norm y \le k\cdot \sigma$ holds for various $k \in \mathbb N$.
+# Thus we consider the scenario: Determine the small probability $p_{\text{norm}}(k)$ for which $\norm y \le k\cdot \sigma$ holds for various $k \in \mathbb N$.
 # 
 # For a single coefficient $y_i \in \Z$ of $y$, we have by definition:
 # 
-# $$
-# p := \P(\abs{y_i} \le k \cdot \sigma) = \mathrm{erf}\left( \frac{\lfloor k\sigma \rfloor + 1/2}{\sqrt{2}\sigma}\right)
-# $$
+# ```{math}
+# p := \P(\abs{y_i} \le k \cdot \sigma) = \mathrm{erf}\left( \frac{\lfloor k\sigma \rfloor + 1/2}{\sqrt{2}\sigma}\right).
+# ```
 # 
 # Because the $y_i$ are i.i.d. samples, we have that
 # 
 # ```{math}
 # :label: bernoulli-estimation
-#     p_{norm}(k) = \P(\norm y \le k \cdot \sigma) = p^N \ge 1 - N (1-p)
+#     p_{\text{norm}}(k) = \P(\norm y \le k \cdot \sigma) = p^N \ge 1 - N (1-p).
 # ```
 # 
 # using the maximum inside $\norm \cdot$ and Bernoulli's inequality.
@@ -252,7 +252,7 @@ speed = 1 # precision factor for computations: Scales the running time.
 # Following the above discussion, all left to show is the bound of $\mathrm{erf}$. This follows because $\mathrm{erf}$ is strictly increasing and thus estimating $(\lfloor k \sigma \rfloor + 1/2)/\sigma \ge (k-1)$ with $\sigma \ge 1$ yields the result.
 # ````
 
-# We now want to determine pairs $(k,p_{norm}(k))$ computationally by using the Bernoulli estimation given in {eq}`bernoulli-estimation`, because of precision issues during exponentiation.
+# We now want to determine pairs $(k,p_{\text{norm}}(k))$ computationally by using the Bernoulli estimation given in {eq}`bernoulli-estimation`, because of precision issues during exponentiation.
 # For simplicity, we also set $\sigma = 1$, since it has a negligible effect on the result anyway.
 
 # In[2]:
@@ -264,16 +264,17 @@ for k in range(3,9):
     print(f"k = {k} leads to 1-{N}*(1-p) = {1-N*(1-p)}")
 
 
-# Computational conclusion: Later we will set the parameter $N$ to around $10^4$.
-# Hence, with e.g. using $k=10$, our computations let us surmise that $\norm{y} > 10\sigma$ only happens with probability $\approx 10^{-18}$.
+# Computational conclusion: In a secure implementation, the parameter $N$ is set to around $10^4$.
+# Hence, by using $k=10$ for example, our computations let us surmise that $\norm{y} > 10\sigma$ only happens with probability $\approx 10^{-18}$.
 # Other authors regularly assume a lower $k$, e.g. $k=6$, implying a probability of bound-exceeding around $10^{-6}$ per sample.
 # This is also reasonable, since the norm-wise equilibrating effects of adding/multiplying elements of $R$ respectively $R_M$, which we will soon discuss in detail, will take care of the outliers anyway.
 
 # ### Bound for adding two $R$-elements
 # Let $x_1,\dots,x_m \in \R$ be independently sampled from $\mathcal N(0,\sigma^2)$.
 # It is widely known that $\sum_{i=1}^m x_i$ has then the distribution $\mathcal N(0,m\sigma^2)$.
-# That is, because the sum of variants equals the variance of the sum, in the case of independently random variables (Bienaymé's identity).
-# To bound $\norm{y+z}$ for $y,z \in R$ and $y,z \sim \mathcal N_d(0,\sigma^2)$, we therefore have to determine the variance of the distribution $\mathcal N_d(0,\sigma^2)$.
+# We observe that in this case, the sum of variants equals the variance of the sum (Bienaymé's identity for i.i.d. random variables).
+# To bound $\norm{y+z}$ for independent $y,z \in R$ and $y,z \sim \mathcal N_d(0,\sigma^2)$, we therefore have to determine the variance of the distribution $\mathcal N_d(0,\sigma^2)$.
+# 
 # ````{prf:lemma} Variance of rounded centered normal distributions
 # :label: discrete-variance
 # For $\sigma \ge 1$ and a random variable $X\sim \mathcal N_d(0,\sigma^2)$, we have:
@@ -305,7 +306,7 @@ def cdf(x, sigma): # cumulative density function for N(0, sigma^2)
     return (erf(x/sqrt(2*(sigma**2)))+1)/2
 sigma = 0.3 # test with 0.1, 0.3, 1
 var_values = [(i**2)* (cdf(i+0.5,sigma) - cdf(i-0.5,sigma)) for i in range(-1000,1000+1)]
-print(f"With sigma = {sigma}, the bound of 1/12 is instead approximately 1/{1/(sum(var_values) - sigma**2)}")
+print(f"With sigma = {sigma}, the bound of 1/12 is approximately 1/{1/(sum(var_values) - sigma**2)} instead")
 
 
 # Putting everything together, we end up with:
@@ -330,8 +331,8 @@ print(f"With sigma = {sigma}, the bound of 1/12 is instead approximately 1/{1/(s
 # \P(\abs c > k\sqrt{m}\sigma) \approx \mathrm{erf}\left( \frac{k\sigma\sqrt{m}}{\sqrt{2\cdot(m\sigma^2+m/12)}} \right).
 # ```
 # where $\sqrt{m}$ cancels out.
-# Furthermore, the term "$+1/12$" coming from {prf:ref}`discrete-variance` is more of theoretical interest, since it only has a marginal influence on the probability bound.
-# If we choose to omit it, also $\sigma$ cancels out, which leaves us with the second approximation.
+# Furthermore, the term "$+1/12$" coming from {prf:ref}`discrete-variance` has been considered more for a theoretical interest, since it only has a marginal influence on the probability bound.
+# If we choose to omit it, $\sigma$ also cancels out, thus leaving us with the second approximation.
 # ````
 
 # Let us give a quick demonstration of the bound given in the theorem.
@@ -353,16 +354,18 @@ print(f"Probability approximation given in theorem = {1-1*(1-p)}")
 
 # (bound_for_multiplying_two_ring_elements)=
 # ### Bound for multiplying two $R$-elements
-# Similarly to adding $R$-elements $y,z$, we want now to derive a bound on $\norm{y \cdot z}$ depending on $\norm y$ and $\norm z$.
+# Similarly to adding $R$-elements $y,z$, we now want to derive a bound on $\norm{y \cdot z}$ depending on $\norm y$ and $\norm z$.
 # The worst-case can be estimated as $\norm{y \cdot z} \le N \cdot \norm{y} \norm{z}$ and this bound is tight (e.g. for $y = z := \sum_{i=0}^{N-1} x^i$).
+# The latter expansion factor $N$ can be shown to be only $\approx \sqrt{N}$ with high probability if $y$ and $z$ satisfy certain properties.
+# Before deducing this as a general result, which is applicable to the usual cryptographic variables, we investigate two special cases.
 # 
 # #### The case "uniform" times "ternary"
-# The objective of this section is now to improve this bound for the average case of multiplying an $R$-element $y \sim \mathcal U(R_Q)$ times an $R$-element $z \sim \mathrm{Ter}_\rho$.
+# The objective of this section now is to improve the worst-case bound $N$ for the average case of multiplying an $R$-element $y \sim \mathcal U(R_Q)$ times an $R$-element $z \sim \mathrm{Ter}_\rho$.
 # Recall the formula for calculating the coefficients of the product $yz$ in the ring $R$:
 # 
-# $$
-# (yz)_i := \sum_{j=0}^i y_iz_{i-j} + \sum_{j=i+1}^{N-1} -y_i z_{i+N-j}
-# $$
+# ```{math}
+# (yz)_i := \sum_{j=0}^i y_iz_{i-j} + \sum_{j=i+1}^{N-1} -y_i z_{i+N-j}.
+# ```
 # 
 # ````{prf:lemma}
 # :label: uniform-times-ternary
@@ -374,12 +377,12 @@ print(f"Probability approximation given in theorem = {1-1*(1-p)}")
 # Since also $Z \sim -Z$ holds, the claim follows.
 # ````
 
-# We can now again use the Central Limit Theorem to approximate the distribution of our multiplied coefficient $(yz)_i$.
+# We now can again use the Central Limit Theorem to approximate the distribution of our multiplied coefficient $(yz)_i$.
 # So we have:
 # 
 # ```{math}
 # :label: central-limit-approx
-# \P\left( \abs{(yz)_i} \le \sqrt{N \cdot \mathrm{Var}(y_iz_i)} \cdot v \right) \approx \Phi(v) - \Phi(-v) = \mathrm{erf}(v/\sqrt{2})
+# \P\left( \abs{(yz)_i} \le \sqrt{N \cdot \mathrm{Var}(y_iz_i)} \cdot v \right) \approx \Phi(v) - \Phi(-v) = \mathrm{erf}(v/\sqrt{2}),
 # ```
 # 
 # where $\Phi$ is the cumulative density function of $\mathcal N(0,1)$.
@@ -403,7 +406,7 @@ print(f"Probability approximation given in theorem = {1-1*(1-p)}")
 # \P(\abs{(yz)_i} \le C\sqrt{N}\norm y) \approx \mathrm{erf} \left( \frac{C\norm y}{\sqrt{2\cdot \mathrm{Var}(y_iz_i)}}\right) = \mathrm{erf} \left( \frac{C\norm y}{\sqrt{2(1-\rho)\mathrm{Var}(y_i)}}\right).
 # ```
 # For the uniform distribution we have $\mathrm{Var}(y_i) = ((Q+1)^2-1)/12$.
-# Now $\sqrt{\mathrm{Var}(y_i)} \approx Q/\sqrt{12}$ is very accurate for large $Q$.
+# Now $\sqrt{\mathrm{Var}(y_i)} \approx Q/\sqrt{12}$ is very accurate for a large $Q$.
 # 
 # Finally, we estimate $\P(\norm{yz} \le C\sqrt{N}\norm y) \approx \P(\abs{(yz)_i} \le C\sqrt N \norm y)^N$ and the claim follows.
 # Only an approximation is accurate in this case since $(yz)_i$ and $(yz)_j$ for $i\neq j$ are not statistically independent anymore.
@@ -444,9 +447,9 @@ print(f"Probability in theorem {erf(norm_average*C*3/Q)**N}")
 # So, let $R$-elements $y,z$ be sampled as $y \sim \mathcal N_d(0,\sigma^2)$, $z \sim \mathrm{Ter}_\rho$ for $\sigma \ge 1$.
 # Now, using the argument in {prf:ref}`uniform-times-ternary` and the value of {prf:ref}`discrete-variance`, we have for integer random variables $Y \sim \mathcal N_d(0,\sigma^2)$ and $Z \sim \mathrm{Ter}_\rho$:
 # 
-# $$
-# \mathrm{Var}(YZ) = (\sigma^2 + 1/12)(1-\rho)
-# $$
+# ```{math}
+# \mathrm{Var}(YZ) = (\sigma^2 + 1/12)(1-\rho).
+# ```
 # 
 # ````{prf:theorem} Norm bound for multiplying Gaussian times ternary in $R$
 # :label: multiplication-bound-gaussian-ternary
@@ -471,7 +474,7 @@ print(f"Probability in theorem {erf(norm_average*C*3/Q)**N}")
 # In this case, the factor inside $\mathrm{erf}(\cdot)$ is already close to the one in {prf:ref}`multiplication-bound-uniform-ternary`.
 # 
 # Once more we want to illustrate our result by checking computationally if the bound in the theorem is indeed satisfied.
-# To not get caught up in precision errors regarding $\norm y$, we only will check on samples with a given norm, e.g. $3\sigma$.
+# To not get caught up in precision errors regarding $\norm y$, we will only check on samples with a given norm, e.g. $3\sigma$.
 
 # In[6]:
 
@@ -507,7 +510,7 @@ print(f"Probability in theorem {probability}")
 # (security)=
 # ## Security
 # ### The Decision-RLWE problem
-# In this section, we provide the details regarding the security of encryption schemes, whose ciphertexts are based upon $R$ and its "Learning with errors" problem ($R$-LWE).
+# In this section, we provide the details regarding the security of encryption schemes, whose ciphertexts are based on $R$ and its "Learning with errors" problem ($R$-LWE).
 # An extensive overview of the whole topic is given in {cite}`a-decade-of-lattice-cryptography`, especially Section 4.4, to which we refer as a source for the following definitions.
 # 
 # As a first step, we define the RLWE distribution according to Definition 4.4.1. in {cite}`a-decade-of-lattice-cryptography`, which already contains the necessary structure for later defining RLWE ciphertexts.
@@ -554,9 +557,9 @@ print(f"Probability in theorem {probability}")
 # ```
 # It is clear from the description that $\mathcal L(I) \subset \Z^N$ is isomorphic to $I \subset R$ as an additive group.
 # This fact illustrates the close relationship between the ring $R$ and ideal lattices and puts the above security reduction from RLWE to lattice problems into context.
-# Nevertheless, there is a lot more to state about more sophisticated embeddings (see Section 4.3.3. of {cite}`a-decade-of-lattice-cryptography`), which feature more favorable qualities and play a crucial role in the proof of the security reduction of RLWE.
+# Nevertheless, there is a lot more to state about more sophisticated embeddings (see Section 4.3.3. of {cite}`a-decade-of-lattice-cryptography`), which feature favorable qualities and play a crucial role in the proof of the security reduction of RLWE.
 # 
-# The following definition refers directly to Definition 2.2.2 in {cite}`a-decade-of-lattice-cryptography`.
+# The following definition directly refers to Definition 2.2.2 in {cite}`a-decade-of-lattice-cryptography`.
 # 
 # ```{prf:definition} Approximate Shortest Vector Problem $\mathrm{SVP}_\gamma$
 # :label: approximate-shortest-vector-problem
@@ -577,7 +580,7 @@ print(f"Probability in theorem {probability}")
 # 1. The error distribution (in our case this will be $\mathcal N_d(0,\sigma^2)$) must be chosen carefully.
 # Informally speaking, a larger standard deviation $\sigma$ corresponds to a smaller $\gamma$, which then makes $\mathrm{SVP}_\gamma$ harder.
 # In contrast to that, we are also interested in keeping the error size (thus $\sigma$) very small, to perform more homomorphic operations in a row without needing to perform a costly bootstrapping operation in between.
-# 2. It is important to note, that in {cite}`hardness-for-any-modulus` it has been proven that the security of Decision-RLWE does not rely on specific number of theoretical properties of the modulus $Q$ and hence we conveniently can set $Q$ to be a large power of two.
+# 2. It is important to note, that in {cite}`hardness-for-any-modulus` it has been proven that the security of Decision-RLWE does not rely on a specific number theoretical properties of the modulus $Q$ and hence we can conveniently set $Q$ to a large power of two.
 # 3. Additionally, it is obstructive for our bootstrapping method to use a secret key $s$ sampled from $\mathcal U(R_Q)$.
 # It can be shown that we even may assume $s \sim \chi$ without changing the above theorem (see Section 4.4.1 in {cite}`a-decade-of-lattice-cryptography`).
 # Still, for practical purposes, where we need to realize a distinction of cases (the cases being the values a $s$-coefficient can take), the ternary distribution comes into play.
@@ -589,30 +592,31 @@ print(f"Probability in theorem {probability}")
 # (the-BFV-scheme)=
 # # The BFV scheme
 # Before working on a bootstrapping algorithm for achieving fully homomorphic encryption, we need to set the framework of our scheme.
-# This will be done by considering a somewhat homomorphic encryption scheme, which enables us to encrypt, decrypt, and already perform a limited amount of additions and multiplications on a ciphertext.
+# This will be done by considering a "somewhat homomorphic" encryption scheme, which enables us to encrypt, decrypt, and already perform a limited amount of additions and multiplications on a ciphertext.
 # Notice that for a ciphertext structure as in {prf:ref}`RLWE-distribution` we outlined a proof of security earlier.
 # Taking that as a foundation, all is left to specify where and how to hide a message within a ciphertext, which will be the salient feature of BFV ciphertexts.
 # The BFV (abbreviation of the names of the authors) scheme was initially published in {cite}`BFV`, which will be our main reference throughout this chapter.
 
 # ## Asymmetric key generation
-# To start defining our scheme, we solely could contemplate ciphertexts, which only make use of a secret key for encrypting messages.
+# To start defining our scheme, we could solely contemplate ciphertexts, which only make use of a secret key for encrypting messages.
 # However, extending the idea to an asymmetric encrypting scheme by introducing a public key can be achieved in a straightforward way.
 # That is due to the fact that a public key, which is in fact generated from the secret key, simply has a structure identical to any other ciphertext, i.e. a structure as in {prf:ref}`RLWE-distribution`.
 # It follows that the security reductions for any ciphertext ({prf:ref}`RLWE-security`) also apply to the public key, whose exposure to any party is therefore unproblematic and of great avail.
 
-# ### Description of the key generation
 # BFV's $\texttt{keygen}$ algorithm takes as an input a ring degree $N$, a ciphertext modulus $Q$, and a standard deviation $\sigma \ge 0$.
 # It outputs a public key $\mathrm{pk} \in R_Q^2$ and a secret key $\mathrm{sk} \in R_Q$. It sets:
+# 
 # ```{math}
 # \mathrm{sk} := s \sim \mathrm{Ter}_{1/3}, \qquad
 # \mathrm{pk} := (\mathrm{pk}_0, \mathrm{pk}_1) := (\mathrm{pk}_0,-\mathrm{pk}_0\cdot s-e)
 # ```
+# 
 # with $\mathrm{pk}_0 \sim \mathcal U(R_Q)$ and an error $e \sim \mathcal N_d(0,\sigma^2)$.
 # 
 # Notice that we can control our error distribution with the parameter standard deviation $\sigma \ge 0$.
 # As pointed out in {ref}`remarks-on-security`, it is very important to choose the parameters carefully for preserving security hardness results.
-# Nevertheless, as we will later see, $\sigma$ does not affect the number of possible homomorphic operations greatly.
-# Hence we conveniently set $\sigma = 1$ while testing our implementations.
+# Nevertheless, as we will later see, $\sigma$ does affect the number of possible homomorphic operations greatly (see {ref}`parameter-impact`).
+# Hence, we conveniently set $\sigma = 1$ while testing our implementations.
 
 # In[7]:
 
@@ -628,26 +632,28 @@ def keygen(key_size, ciphertext_modulus, standard_deviation):
 
 # ## Encryption
 # ### Notion of BFV ciphertexts
-# For encryption we take a previously into the polynomial $M \in R_T$ encoded message, with the coefficients lying in $\mathbb{Z}_T$, where $T$ is the plaintext modulus.
+# For encryption, we take a message that has been previously encoded into the polynomial $M \in R_T$, where $T$ is the plaintext modulus.
 # Encryption now essentially uses the public key to transform $M$ into a ciphertext $\mathrm{ct} \in R_Q^2$ defined as:
 # 
-# $$\begin{split}
+# ```{math}
+# \begin{split}
 # \mathrm{ct} := (\mathrm{ct}_0, \mathrm{ct}_1) := (z\cdot \mathrm{pk}_0+e_0,z\cdot \mathrm{pk}_1 + e_1 + \lfloor Q/T \rceil M) \in R_Q^2
-# \end{split}$$
+# \end{split}
+# ```
 # 
 # where $e_0, e_1, z \sim \mathcal N_d(0, \sigma^2)$.
-# To highlight the technique of encryption, we commonly will denote $\mathrm{ct}$ as $\mathrm{BFV}_{Q,s}(M)$.
+# To highlight the technique of encryption, we will commonly denote $\mathrm{ct}$ as $\mathrm{BFV}_{Q,s}(M)$.
 # 
 # Notice that the BFV ciphertext as well fits the structure of a RLWE ciphertext as in {prf:ref}`RLWE-distribution`.
 # That is because $\mathrm{ct}_0$ still looks uniformly at random, since multiplying with $z$ and adding $e_0$ does not change this in a meaningful way.
-# Furthermore, the second component containing the hidden secret key as $- \mathrm{pk}_0 \cdot s$ and the error term $-z \cdot e + e_1 - e_0\cdot s$ (which is slightly altered compared to an error generated from $\mathcal N_d(0,\sigma^2)$) can be shown to greatly resemble the structure of a RLWE ciphertext.
+# Furthermore, the second component containing the hidden secret key as $- \mathrm{pk}_0 \cdot \mathrm{sk}$ and the error term $-z \cdot e + e_1 - e_0\cdot \mathrm{sk}$ (which is slightly altered compared to an error generated from $\mathcal N_d(0,\sigma^2)$) can be shown to greatly resemble the structure of a RLWE ciphertext.
 # More details on the security of $\mathrm{ct}$ are given in Section 8.2 of {cite}`A-Toolkit-for-RLWE`.
 # 
 # The scaling of the message $M$ by the large factor $\round{Q/T}$ is also crucial since we need to distinguish it from the error during decrypting.
 # 
 # Remarks:
-# - For constructing something "cryptographically secure", we want to blow up a (rather small) plaintext space $R_T$ to a large ciphertext space $R_Q$, hence we ought to choose $Q$ much larger than $T$.
-# This is also indispensable for realizing even the simplest operations on ciphertexts, not to mention decrypting.
+# - For constructing something cryptographically secure, we want to blow up a (rather small) plaintext space $R_T$ to a large ciphertext space $R_Q$, hence we ought to choose $Q$ much larger than $T$.
+# This is also indispensable for realizing even the simplest operations on ciphertexts, not to mention decrypting (see {prf:ref}`correct-BFV-decryption`).
 # - For our purposes, we will only use powers of two for $T$ and $Q$, such that the rounding of $Q/T$ is technically obsolete, but nevertheless it should be mentioned as the scheme can be varied to arbitrary $T, Q$ and the above is the usual BFV encryption formula.
 
 # In[8]:
@@ -685,7 +691,7 @@ print("Encryption components are", encryption[0], "\nand", encryption[1])
 # The error size within a BFV-ciphertext after BFV-encryption using $\sigma = 1$ can be estimated as $C\sqrt{N}$. It holds that $C \approx 100$ with high probability.
 # ````
 # ````{prf:proof}
-# The error after BFV encryption is precisely $-z \cdot e + e_1 + e_0 \cdot s$ with $z,e,e_0,e_1 \sim \mathcal N_d(0,1)$ and $s \sim \mathrm{Ter}_{1/3}$.
+# The error after BFV encryption is precisely $-z \cdot e + e_1 + e_0 \cdot s$ with $z,e,e_0,e_1 \sim \mathcal N_d(0,1)$ and $\mathrm{sk} \sim \mathrm{Ter}_{1/3}$.
 # Now, many details for determining the norm of multiplied ring elements generated from certain distributions can be examined.
 # But as the theoretical and computational conclusions in {ref}`conclusion-on-delta_R` suggest, we may use the reasonable estimation:
 # 
@@ -718,14 +724,14 @@ print(f"Maximum C after {iterations} iterations was {max_norm/sqrt(N)}")
 # The decryption algorithm takes a BFV ciphertext $\mathrm{BFV}_{Q,\mathrm{sk}}(M) = \mathrm{ct} \in R_Q$ and the secret key $\mathrm{sk}$ as an input and it outputs the hidden message polynomial $M \in R_T$.
 # To begin with, it eliminates the random component inside a ciphertext by computing:
 # 
-# $$
-# T\cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)
-# $$
+# ```{math}
+# T\cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1).
+# ```
 # 
-# It is crucial to perform this computation entirely in $R$, that means without modular arithmetic:
-# If we instead use the ring $R_Q$, we would wind up with the term $T \lfloor Q/T \rceil M \in R_Q$ within $\mathrm{ct}_1$, which then would degenerate any message.
+# It is crucial to perform this computation entirely in $R$, that means without modular reductions:
+# If we instead use the ring $R_Q$, we would wind up with the term $T \lfloor Q/T \rceil M \in R_Q$ within $\mathrm{ct}_1$, which would then degenerate any message.
 # 
-# To proceed, we integer-divide the coefficients of $T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)$ by $Q$ (done by rounding the result-coefficients).
+# To proceed, we integer-divide the coefficients of $T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)$ by $Q$ (done by rounding the coefficients of the result).
 # At last, we reduce the result by $T$ to regain $M \in R_T$.
 
 # In[11]:
@@ -749,16 +755,20 @@ print(f"Error size inside ciphertext: {decryption_error.mod_small(Q).norm()}")
 
 
 # ### A criterion for correct decryption
-# It is of uttermost importance for a cryptographic scheme to be serviceable to formulate a criterion, which answers the question, of under which circumstances we still can decrypt correctly.
+# It is of uttermost importance for a FHE scheme to be serviceable to formulate a criterion, which answers the question, of under which circumstances we still can decrypt correctly.
 # Moreover, this criterion will be our main limitation in terms of how frequently we need to interpose a (costly) bootstrapping procedure later (to reduce the error size).
 # 
 # Recall that a BFV-encrypted ciphertext unfolded looks like the following:
 # 
-# $$ \mathrm{ct} = (z\cdot \mathrm{pk}_0 +e_0, -z \cdot \mathrm{pk}_0 \cdot \mathrm{sk} - z\cdot e +e_1 + \lfloor Q/T \rfloor M)$$
+# ```{math}
+# \mathrm{ct} = (z\cdot \mathrm{pk}_0 +e_0, -z \cdot \mathrm{pk}_0 \cdot \mathrm{sk} - z\cdot e +e_1 + \lfloor Q/T \rfloor M).
+# ```
 # 
 # If we compute $T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)$, we will be left with:
 # 
-# $$ T (e_0\cdot \mathrm{sk}+e_1-z\cdot e) + T\cdot \lfloor Q/T \rceil M$$
+# ```{math}
+# T (e_0\cdot \mathrm{sk}+e_1-z\cdot e) + T\cdot \lfloor Q/T \rceil M
+# ```
 # 
 # This already properly illustrates, what we have to keep track of, if we still correctly want to decrypt any ciphertext that may have been manipulated.
 # The first term within brackets is called the decryption error.
@@ -772,7 +782,7 @@ print(f"Error size inside ciphertext: {decryption_error.mod_small(Q).norm()}")
 # 
 # ````{prf:lemma} Correct BFV decryption
 # :label: correct-BFV-decryption
-# A $\mathrm{BFV}_{Q,s}(M)$ ciphertext with an intrinsic error $e$ decrypts correctly, if $\norm e < Q/(2T)$.
+# A $\mathrm{BFV}_{Q,\mathrm{sk}}(M)$ ciphertext with an intrinsic error $e$ decrypts correctly, if $\norm e < Q/(2T)$.
 # ````
 # ````{prf:proof}
 # We follow the proof of Lemma 1 in {cite}`BFV`.
@@ -784,7 +794,9 @@ print(f"Error size inside ciphertext: {decryption_error.mod_small(Q).norm()}")
 # In the rest of the notebook, we want to implement homomorphic operations (addition and multiplication) on the BFV scheme and furthermore derive a bootstrapping algorithm to replace a big error with a small and fresh one.
 # For this process it is not particularly necessary to deal with the lengthy public-key ciphertexts, thus we introduce a simpler notion of a BFV ciphertext by:
 # 
-# $$ \mathrm{BFV}_{Q,s}(M) := (a, -a\cdot\mathrm{sk}+e+\lfloor Q/T\rceil M)$$
+# ```{math}
+# \mathrm{BFV}_{Q,\mathrm{sk}}(M) := (a, -a\cdot\mathrm{sk}+e+\lfloor Q/T\rceil M),
+# ```
 # 
 # where neither $a \in R_Q$ is further specified nor the (initial) error $e \in R_Q$.
 
@@ -793,15 +805,15 @@ print(f"Error size inside ciphertext: {decryption_error.mod_small(Q).norm()}")
 # It plainly can be done by adding the ciphertext components together (subtraction is done analogously).
 # Starting with two BFV ciphertexts:
 # ```{math}
-# \mathrm{ct}_0 := (a_0,b_0) := (a_0, -a_0\cdot \mathrm{sk} + e_0 + \lfloor Q/T\rceil M_0)\\
-# \mathrm{ct}_1 := (a_1,b_1) := (a_1, -a_1\cdot \mathrm{sk} + e_1 + \lfloor Q/T\rceil M_1)
+# \mathrm{ct}_0 := (a_0,b_0) := (a_0, -a_0\cdot \mathrm{sk} + e_0 + \lfloor Q/T\rceil M_0),\\
+# \mathrm{ct}_1 := (a_1,b_1) := (a_1, -a_1\cdot \mathrm{sk} + e_1 + \lfloor Q/T\rceil M_1),
 # ```
 # we define the sum of them as $\mathrm{sum} := (a_0+a_1,b_0+b_1)$.
 # The linearity of adding and the structure of BFV ciphertexts make sure that $\mathrm{sum}$ gets decrypted correctly to $M_0+M_1$ as follows:
 # ```{math}
-# \mathrm{sum}_0 \cdot \mathrm{sk} + \mathrm{sum}_1 = \frac{Q}{T}(M_0+M_1) + (e_0 + e_1) \in R_Q
+# \mathrm{sum}_0 \cdot \mathrm{sk} + \mathrm{sum}_1 = \frac{Q}{T}(M_0+M_1) + (e_0 + e_1) \in R_Q.
 # ```
-# Note that the above actually only holds for powers of two $T < Q$, since we would otherwise have to deal with another summand building upon the (nonzero) remainder of $Q$ divided by $T$ (see chapter 4 in {cite}`BFV`).
+# Note that the above equation actually only holds for powers of two $T < Q$, since we would otherwise have to deal with another summand building upon the (nonzero) remainder of $Q$ divided by $T$ (see chapter 4 in {cite}`BFV`).
 # 
 # We may now still decrypt correctly, given the new error $e_{\mathrm{sum}} = e_0+e_1$ still satisfies the bound given in {prf:ref}`correct-BFV-decryption`.
 
@@ -834,7 +846,7 @@ print(f"Added 1+1 correctly? {Two_Decryption.is_equal_to(generate_constant_poly(
 # Using the triangle inequality and the error bound in {prf:ref}`error-after-BFV-encryption` for a certain $C$, we have to ensure that:
 # ```{math}
 # :label: number-of-additions
-# k < \frac{Q}{2T\cdot C \sqrt{N}}
+# k < \frac{Q}{2T\cdot C \sqrt{N}}.
 # ```
 # The procedure $\texttt{how-many-additions}$ below enables us to run various experiments on adding ciphertexts.
 # It simulates the process of adding (freshly encrypted) ciphertexts and it outputs the maximum of possible (correct) additions, minimized over a number of iterations.
@@ -874,6 +886,7 @@ def how_many_additions(key_size, plaintext_modulus, ciphertext_modulus, standard
 how_many_additions(16, 2, 2**8, 1, 500*speed)
 
 
+# (parameter-impact)=
 # ### Parameter impact
 # Finally, we want to affirm {eq}`number-of-additions` computationally by depicting a diagram, which illustrates the change of the scheme's parameters and their impact on the (minimum) number of possible additions.
 # Because we generally work with powers of two for $N, T$, and $Q$, we will observe the behaviour of $\texttt{how-many-additions}$ under doubling each of the parameters and present everything on an exponential/logarithmic scale.
@@ -881,7 +894,7 @@ how_many_additions(16, 2, 2**8, 1, 500*speed)
 # In[17]:
 
 
-N, T, Q, STD, runs, doublings = 2**2, 2, 2**9, 1, 5*speed, 3
+N, T, Q, STD, runs, doublings = 2**2, 2, 2**9, 1, 5*speed, 4
 doubling_N = [how_many_additions((2**i)*N, T, Q, STD, runs) for i in range(doublings)]
 doubling_T = [how_many_additions(N, (2**i)*T, Q, STD, runs) for i in range(doublings)]
 doubling_Q = [how_many_additions(N, T, (2**i)*Q, STD, runs) for i in range(doublings)]
@@ -920,7 +933,7 @@ plt.show()
 
 # ### Motivation
 # 
-# Although we will use multiplication for the more general notion of RLWE ciphertexts later as well, we will first stick to the BFV case.
+# Although we will use multiplication for the more general notion of RLWE ciphertexts later as well (see e.g. {ref}`operations-on-RLWE-ciphertexts`), we will first stick to the BFV case.
 # For simplicity, and according to our implementation with powers of two $T<Q$, we will drop the rounding of $\round{Q/T}$ from now on. 
 # Taking two BFV ciphertexts of their form $(a_i,-a_i\cdot s + e_i + (Q/T) M_i)$ for messages $M_0,M_1$, we immediately observe that it is mandatory for a BFV multiplication algorithm to multiply the second components $-a_i\cdot s + e_i + (Q/T) M_i$, yielding a term including $M_0M_1$.
 # Because the additive structure is not compatible with multiplication in a linear way, we can already presume that we will obtain several summands, which are dispensable and, in the error case, even obstructive for further operations on ciphertexts.
@@ -940,21 +953,21 @@ plt.show()
 
 # ### Relinearization Keys
 # We start with the problem of eliminating $a_0a_1\mathrm{sk}^2$.
-# For that we need an outsourced precomputation, i.e. an encryption of $\mathrm{sk}^2$, which clearly needs to be done by a party with knowledge of $\mathrm{sk}$.
+# For that, we need an outsourced precomputation, i.e. an encryption of $\mathrm{sk}^2$, which clearly needs to be done by a party with knowledge of $\mathrm{sk}$.
 # Since encrypting always comes together with an (additive) error (see {prf:ref}`error-after-BFV-encryption`) and we need to multiply the encryption of $\mathrm{sk}^2$ afterwards with $a_0a_1$, we cannot let this error grow too much.
 # To clarify the latter, recall that multiplying with $a_0a_1$ (or any other public ring element) works via multiplying both components of a BFV/RLWE ciphertext by $a_0a_1$, which also multiplies the intrinsic error with $a_0a_1$.
 # 
 # This sparks the idea of encrypting $\mathrm{sk}^2$ via a larger auxiliary modulus $P\cdot Q$ (for a large $P$), in order to scale down the error afterwards by dividing by $P$ again.
-# Later, we will investigate this key concept further by introducing a general "rescaling" procedure.
-# Needless to say, we then need to encrypt $P\cdot \mathrm{sk}^2$ instead of $\mathrm{sk}^2$, since the message, $P\cdot \mathrm{sk}^2$, will get divided by $P$, too.
+# Later, we will investigate this key concept further by introducing a general rescaling procedure (see {ref}`rescaling`).
+# Needless to say, we then need to encrypt $P\cdot \mathrm{sk}^2$ instead of $\mathrm{sk}^2$, since the message, $P\cdot \mathrm{sk}^2$, will get divided by $P$ too.
 # 
 # The following algorithm computes the "relinearization keys", named by the principle of making the multiplied ciphertext $b_0b_1$ linear in $\mathrm{sk}$ again.
 # 
 # The relinearization keys are set to:
 # 
-# $$
+# ```{math}
 # \mathrm{rlk} := (\mathrm{rlk}_0, \mathrm{rlk}_1) := (\mathrm{rlk}_0, - \mathrm{rlk}_0 \cdot \mathrm{sk} + e_{\text{rlk}} + P\cdot\mathrm{sk}^2 ) \in R_{PQ}^2 
-# $$
+# ```
 # 
 # where $\mathrm{rlk}_0 \sim \mathcal U(R_{PQ})$ and $e_{\text{rlk}} \sim \mathcal N_d(0, \sigma^2)$.
 
@@ -970,7 +983,7 @@ def relinearization_key(ciphertext_modulus, auxiliary_modulus, standard_deviatio
     return [rlk_0, rlk_1]
 
 
-# It is important to note, that the parameter $\sigma$ for the error distribution of $e_{\text{rlk}}$ should greatly differ from the analogous parameter used during (regular) encryption.
+# It is important to note that the parameter $\sigma$ for the error distribution of $e_{\text{rlk}}$ should greatly differ from the analogous parameter used during (regular) encryption.
 # In {cite}`BFV`, Section 6.1, a precise analysis of this subject is given.
 # Again, because security issues are not the main concern of our implementations and large variances are obstructive to performances of homomorphic operations, we will overlook this fact by continuing to use $\sigma = 1$ in both cases.
 # 
@@ -1005,19 +1018,19 @@ def relinearization_key(ciphertext_modulus, auxiliary_modulus, standard_deviatio
 # As shown in the proof, the summand $(N+1)/2$ is an estimator for a very unlikely worst case.
 # Equilibrating effects of summing rounded integers and $\mathrm{sk} \sim \mathrm{Ter}_{1/3}$ lead to a way smaller error in the average case.
 
-# ### Core of multiplying
+# ### The core of multiplying
 # 
 # After subtracting $a_0a_1\mathrm{sk}^2$ from $b_0b_1$ in {eq}`b-0b-1`, we proceed with eliminating the dispensable single $Q/T$ inside $(Q/T)^2 M_0M_1$.
-# Hence we need to scale the latter via integer-dividing (i.e. dividing and rounding) by $T/Q$, which can naturally only be done implicitly by operating on $b_0b_1$.
+# Hence, we need to scale the latter via integer-dividing (i.e. dividing and rounding) by $T/Q$, which can naturally only be done implicitly by operating on $b_0b_1$.
 # We will employ this technique as well for other terms consisting of $a_i$ and $b_i$, see below.
 # 
 # Apart from the inevitable error term of multiplying in {eq}`b-0b-1`, we are now left with setting up the first component of the product ciphertext, which consists of a $R_Q$-element, which gets multiplied by $\mathrm{sk}$ during decryption.
-# Hence this $R_Q$-element should correspond to the term linear in $\mathrm{sk}$ in {eq}`b-0b-1`.
+# Hence, this $R_Q$-element should correspond to the term linear in $\mathrm{sk}$ in {eq}`b-0b-1`.
 # For defining the first component we consider the cross-combination of $a_i$ and $b_i$:
 # 
-# $$
+# ```{math}
 # a_0b_1 + a_1b_0 = -2a_1a_0\mathrm{sk} + (a_0e_1+a_1e_0) + (a_0M_1+a_1M_0) (Q/T)
-# $$
+# ```
 # 
 # Notice that multiplying the left-hand side by $\mathrm{sk}$ (occurs during decryption) yields similar, yet not entirely identical summands compared to the second line in {eq}`b-0b-1` (bar the scaling by $T/Q$).
 # 
@@ -1204,8 +1217,9 @@ def rlwe_encryption(message, ciphertext_modulus, standard_deviation, secret_key)
 # Interestingly, bootstrapping can be deconstructed into the core procedure $\texttt{scaled-mod}$ and the surrounding adaption to the BFV scheme.
 # Informally speaking, $\texttt{scaled-mod}$ only consists of the operation of scaling a $\mathrm{RLWE}(m)$ to $\mathrm{RLWE}(\Delta \cdot m)$ for a large $\Delta$ (different delta from BFV-multiplication).
 # Since just computing $\mathrm{RLWE}(m) \cdot \Delta$ would also scale the intrinsic error $e$ by $\Delta$, which itself would imply an impossible decryption, the development of techniques to limit error growth during multiplication with ciphertexts is unavoidable.
-# In this chapter, which is based upon {cite}`boot`, Section 2, we will explain some of these techniques and analyse the resulting effect on the error growth.
+# In this chapter, which is based on {cite}`boot`, Section 2, we will explain some of these techniques and analyse the resulting effect on the error growth.
 
+# (operations-on-RLWE-ciphertexts)=
 # ### Operations on RLWE ciphertexts
 # 
 # To start, we have to define two auxiliary functions, which allow us to effectively deal with RLWE ciphertexts.
@@ -1246,6 +1260,7 @@ def rlwe_multiply_with_poly(rlwe, poly, modulus):
 # Following these observations, we will later outsource a polynomial multiplication to many individual monomial multiplications and in particular, our next objective will be the reduction of $\norm{p}$ to smaller values by base-decomposing polynomials/ciphertexts.
 
 # ## RLWE' ciphertexts
+# ### Motivation
 # Essentially, a RLWE' ciphertext is a blow-up of a RLWE ciphertext used to better handle error growth during $\texttt{rlwe-multiply-with-poly}$.
 # Constructing a RLWE' ciphertext will be done by RLWE-encrypting the corresponding message scalar multiplied by powers of a certain base $B > 1$.
 # 
@@ -1289,7 +1304,7 @@ def rlwe_x_encryption(message, ciphertext_modulus, B, standard_deviation, secret
 # ```
 # 
 # The above uses the homomorphic procedures for RLWE ciphertexts, i.e. $\texttt{rlwe-add}$ and $\texttt{rlwe-multiply-with-poly}$, to compute the right-hand side.
-# Hence we have:
+# Hence, we have:
 # 
 # ```{math}
 # \sum_{i=0}^l r_i \cdot \mathrm{RLWE}_{Q,s}(B^i \cdot m) = \mathrm{RLWE}_{Q,s} \left( \sum_{i=0}^l r_i \cdot B^i \cdot m \right) = \mathrm{RLWE}_{Q,s}(r\cdot m)
@@ -1445,7 +1460,6 @@ def star_multiplication(rlwe, rgsw, ciphertext_modulus, B):
 # Notice that $\norm{e_1m_2} \le N \norm{e_1}\norm{m_2}$ in the worst case, since $m_2$ could be arbitrary.
 # However, we will only use monomials as $m_2$ in our algorithm, such that $\norm{e_1m_2} = \norm{e_1}$ holds.
 
-# ### The extended star multiplication
 # We can extend the star multiplication from RLWE to RLWE' ciphertexts by again applying it component-wise.
 # Using the same notation out of comfort, the map is:
 # 
@@ -1641,7 +1655,7 @@ def rescale(rlwe, old_modulus, new_modulus):
 # 
 # Naturally, the LWE ciphertext security has been thoroughly analysed, as the concept was already existent prior to RLWE.
 # An extensive survey on this topic can be found in Section 4.2 of {cite}`a-decade-of-lattice-cryptography`.
-# Moreover, since RLWE is based upon LWE, if we generate LWE ciphertexts from RLWE ciphertexts, all the security measures (as described in {ref}`security`) apply as well.
+# Moreover, since RLWE is based on LWE, if we generate LWE ciphertexts from RLWE ciphertexts, all the security measures (as described in {ref}`security`) apply as well.
 # To preserve these, we write $\vec s := (s_0,\dots,s_{N-1})$ as the coefficient vector of $s$ and since the RLWE distributions for $a,s$ and $e$ are employed coefficient-wise, their properties still hold up in the context of the related LWE security.
 # 
 # The goal of the extraction essentially is properly representing the calculation of the linear combinations of the coefficients during a polynomial multiplication in $R$:
@@ -1693,7 +1707,7 @@ def extraction(rlwe):
 # ```{math}
 # f := \sum_{j=-c}^c -\Delta\cdot j \cdot x^j \in R, \qquad \text{ where } \abs u \le c < N/2.
 # ```
-# We will provide the details of $c$ later on.
+# We will provide the details of $c$ later on (see {eq}`norm-u`).
 
 # In[39]:
 
@@ -2039,7 +2053,7 @@ def scaled_mod(rlwe, Delta, c_boundary, ciphertext_modulus, auxiliary_modulus, b
 # 
 # Finally, we want to clarify, how the upscaling of a message ($u$ to $\Delta \cdot u$ during $\texttt{scaled-mod}$) allows us to regain a small error for a BFV ciphertext in particular.
 # We also provide the missing details, e.g. how to select $c$ in $\texttt{scaled-mod}$ or why we could assume an errorless encryption at the start of it, along the way.
-# This section bases upon Section 4.3.1. in {cite}`boot`.
+# This section bases on Section 4.3.1. in {cite}`boot`.
 # 
 # ### Removing the big error
 # The issue of replacing a big error can be best described by treating RLWE ciphertexts in $R$ (i.e. without a modulus).

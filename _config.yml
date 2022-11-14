@@ -40,3 +40,6 @@ sphinx:
 
 launch_buttons:
   thebe: true
+
+execute:
+  timeout: -1

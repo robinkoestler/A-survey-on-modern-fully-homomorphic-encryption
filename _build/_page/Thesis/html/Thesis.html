@@ -439,13 +439,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#asymmetric-key-generation">
      Asymmetric key generation
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#description-of-the-key-generation">
-       Description of the key generation
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#encryption">
@@ -514,8 +507,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#core-of-multiplying">
-       Core of multiplying
+      <a class="reference internal nav-link" href="#the-core-of-multiplying">
+       The core of multiplying
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -538,7 +531,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id38">
+      <a class="reference internal nav-link" href="#id39">
        Motivation
       </a>
      </li>
@@ -550,12 +543,17 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id41">
+    <a class="reference internal nav-link" href="#id43">
      RLWE’ ciphertexts
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id42">
+      <a class="reference internal nav-link" href="#id44">
+       Motivation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id45">
        Operations on RLWE’ ciphertexts
       </a>
      </li>
@@ -574,11 +572,6 @@ title="Print to PDF"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-star-multiplication">
        The star multiplication
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-extended-star-multiplication">
-       The extended star multiplication
       </a>
      </li>
     </ul>
@@ -687,7 +680,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id50">
+      <a class="reference internal nav-link" href="#id53">
        Error analysis
       </a>
      </li>
@@ -980,13 +973,6 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#asymmetric-key-generation">
      Asymmetric key generation
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#description-of-the-key-generation">
-       Description of the key generation
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#encryption">
@@ -1055,8 +1041,8 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#core-of-multiplying">
-       Core of multiplying
+      <a class="reference internal nav-link" href="#the-core-of-multiplying">
+       The core of multiplying
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -1079,7 +1065,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id38">
+      <a class="reference internal nav-link" href="#id39">
        Motivation
       </a>
      </li>
@@ -1091,12 +1077,17 @@ title="Print to PDF"
     </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id41">
+    <a class="reference internal nav-link" href="#id43">
      RLWE’ ciphertexts
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id42">
+      <a class="reference internal nav-link" href="#id44">
+       Motivation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id45">
        Operations on RLWE’ ciphertexts
       </a>
      </li>
@@ -1115,11 +1106,6 @@ title="Print to PDF"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-star-multiplication">
        The star multiplication
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-extended-star-multiplication">
-       The extended star multiplication
       </a>
      </li>
     </ul>
@@ -1228,7 +1214,7 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id50">
+      <a class="reference internal nav-link" href="#id53">
        Error analysis
       </a>
      </li>
@@ -1380,16 +1366,16 @@ title="Print to PDF"
 <section id="fully-homomorphic-encryption">
 <h2>Fully homomorphic encryption<a class="headerlink" href="#fully-homomorphic-encryption" title="Permalink to this headline">#</a></h2>
 <p>Fully homomorphic encryption (FHE) has been a major field of research in the area of cryptography in recent years.
-In a simple notion, its objective can be described as performing operations on data, which itself is securely hidden in an encryption (ciphertext).
+Simply put, its objective can be described as performing operations on data that is securely hidden in an encryption (ciphertext).
 For this reason, FHE features a broad range of applications, e.g. secure cloud computing.</p>
-<p>The two homomorphic operations, which are mainly considered, are additions and multiplications.
+<p>The two homomorphic operations considered are additions and multiplications.
 This is sufficient since technically every deterministic algorithm can be expressed by NAND gates.
 A NAND gate for two bits <span class="math notranslate nohighlight">\(b_1,b_2 \in \{0,1\}\)</span> is defined as <span class="math notranslate nohighlight">\(\mathrm{NAND}(b_1,b_2) = 1 - b_1b_2 \in \{0,1\}\)</span> and thus only requires one addition and one multiplication modulo 2.</p>
-<p>In general, the modern FHE approach relies on encryptions, which are based upon errors.
+<p>In general, the modern FHE approach relies on encryptions, which are based on errors.
 These errors gradually increase during homomorphic operations and there is a bound in error size to which extent a correct decryption is still possible.
 Therefore we require a procedure of reducing an accumulated error to its initial size (comparable to a “fresh” encryption error), and in doing so, arbitrarily many homomorphic operations (FHE) become achievable.
-Gentry, who published the first FHE scheme in <span id="id2">[<a class="reference internal" href="#id74" title="Craig Gentry. A fully homomorphic encryption scheme. PhD thesis, Stanford University, 2009. crypto.stanford.edu/craig.">Gentry, 2009</a>]</span>, named this procedure bootstrapping.</p>
-<p>For more (historical) information about FHE see e.g. Section 6.1. in <span id="id3">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.</p>
+Gentry, who published the first FHE scheme in <span id="id2">[<a class="reference internal" href="#id77" title="Craig Gentry. A fully homomorphic encryption scheme. PhD thesis, Stanford University, 2009. crypto.stanford.edu/craig.">Gentry, 2009</a>]</span>, named this procedure bootstrapping.</p>
+<p>For more (historical) information about FHE see e.g. Section 6.1. in <span id="id3">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.</p>
 </section>
 <section id="summary-of-the-thesis">
 <h2>Summary of the thesis<a class="headerlink" href="#summary-of-the-thesis" title="Permalink to this headline">#</a></h2>
@@ -1401,13 +1387,13 @@ In doing so, we first investigate the properties of the ring <span class="math n
 We proceed to define a measure, i.e. <span class="math notranslate nohighlight">\(\norm \cdot\)</span>, to keep track of the “size” of ring elements, e.g. the errors required for encryptions.
 We also thoroughly analyse the probabilistic nature of <span class="math notranslate nohighlight">\(\norm \cdot\)</span>-bounds during adding/multiplying ring elements, as this later helps us to properly understand error growth in various contexts.
 Lastly, we give a decent overview of security terms and definitions connected to modern ring learning with errors cryptosystems.</p></li>
-<li><p>In Chapter 3, <a class="reference internal" href="#the-bfv-scheme"><span class="std std-ref">The BFV scheme</span></a>, we examine the underlying encoding scheme (published in <span id="id4">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>), which provides algorithms for (secret/public) key-generation, encryption, decryption, addition and multiplication of ciphertexts.
-We especially focus on the error growth during the homomorphic operations, since these results heavily influence the overall running time, if one thinks of bootstrapping as an expensive intermission between performing additions/multiplications.
+<li><p>In Chapter 3, <a class="reference internal" href="#the-bfv-scheme"><span class="std std-ref">The BFV scheme</span></a>, we examine the underlying encoding scheme (published in <span id="id4">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>), which provides algorithms for (secret/public) key-generation, encryption, decryption, addition and multiplication of ciphertexts.
+Special focus is laid on the error growth during the homomorphic operations, since these results heavily influence the overall running time, if one thinks of bootstrapping as an expensive intermission between performing additions/multiplications.
 For that matter, we derive a bound for correct decryption and analyse the performance (depending on the choice of parameters) computationally.</p></li>
 <li><p>In Chapter 4, <a class="reference internal" href="#preparations-for-bootstrapping"><span class="std std-ref">Preparations for bootstrapping</span></a>, we establish methods to limit the error growth during multiplication, which is mandatory for our bootstrapping algorithm to be functional.
 To achieve this, we introduce alterations/extensions of the fundamental RLWE ciphertexts and analyse the corresponding algorithms.
 Furthermore, we investigate the two common auxiliary operations automorphism evaluation and rescaling.</p></li>
-<li><p>In Chapter 5, <a class="reference internal" href="#bootstrapping"><span class="std std-ref">Bootstrapping</span></a>, we finally present the core algorithm (published in <span id="id5">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>), which itself primarily contains the auxiliary part <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span>, whose target is the realization of a non-trivial multiplication with a large constant.
+<li><p>In Chapter 5, <a class="reference internal" href="#bootstrapping"><span class="std std-ref">Bootstrapping</span></a>, we finally present the core algorithm (published in <span id="id5">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>), which itself primarily contains the auxiliary part <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span>, whose target is the realization of a non-trivial multiplication with a large constant.
 Splitting up the latter algorithm into three parts and also splitting up the problem into a large magnitude of subproblems will reveal, why bootstrapping is a computationally costly procedure after all.
 We conclude the description of the bootstrapping procedure by adapting it to the employed scheme of encoding, i.e. BFV.
 During the entire chapter, we will particularly emphasize a detailed error discussion, the (optimal) parameter selection, and the runtime analysis.
@@ -1429,19 +1415,19 @@ The symbol ‘ will correspond to a <span class="math notranslate nohighlight">\
 <section id="implementation-details">
 <h2>Implementation details<a class="headerlink" href="#implementation-details" title="Permalink to this headline">#</a></h2>
 <p>The implementation of the bootstrapping scheme relies on the separate Python file “polynomial_arithmetic.py”, which performs polynomial arithmetic and other useful operations on polynomials in <a class="reference internal" href="#the-ring-r"><span class="std std-ref">The ring R</span></a>.
-The framework of the Python file originates in <span id="id6">[<a class="reference internal" href="#id72" title="Saroja Erabelli. A python library for fully homomorphic encryption. https://github.com/sarojaerabelli/py-fhe, 2020.">Erabelli, 2020</a>]</span>, which has been partly modified and extended.
-The main motivation using it has been the lack of a (simple) Python package, which handles the arithmetic of arbitrary long integers as coefficients of polynomials in the above ring.
+The framework of the Python file originates in <span id="id6">[<a class="reference internal" href="#id75" title="Saroja Erabelli. A python library for fully homomorphic encryption. https://github.com/sarojaerabelli/py-fhe, 2020.">Erabelli, 2020</a>]</span>, which has been partly modified and extended.
+The main motivation using this framework, has been the lack of a (simple) Python package, which handles the arithmetic of arbitrarily long integers as coefficients of polynomials in the above ring.
 The Python file includes extensive descriptions of its algorithms.</p>
-<p>The main contribution was the implementation of a faster multiplication algorithm, namely the Karatsuba algorithm, which contrary to the state-of-the-art multiplication techniques is simpler to implement from scratch and most importantly directly applicable to any ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span> and ring degree <span class="math notranslate nohighlight">\(N\)</span> (these parameters will be examined in <a class="reference internal" href="#the-modular-variant-of-the-ring-r"><span class="std std-ref">The modular variant of the ring R</span></a>).
-In the original file, i.e. in <span id="id7">[<a class="reference internal" href="#id72" title="Saroja Erabelli. A python library for fully homomorphic encryption. https://github.com/sarojaerabelli/py-fhe, 2020.">Erabelli, 2020</a>]</span>, the modern Fast Fourier Transform (FFT) multiplication algorithm is included, which is considerably faster compared to Karatsuba, but not applicable to powers of two as bootstrapping parameters (e.g. <span class="math notranslate nohighlight">\(Q\)</span>).
+<p>The main contribution was the implementation of a faster multiplication algorithm, namely the Karatsuba algorithm, which, contrary to the state-of-the-art multiplication techniques, is simpler to implement from scratch and most importantly directly applicable to any ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span> and ring degree <span class="math notranslate nohighlight">\(N\)</span> (these parameters will be examined in <a class="reference internal" href="#the-modular-variant-of-the-ring-r"><span class="std std-ref">The modular variant of the ring R</span></a>).
+In the original file, i.e. in <span id="id7">[<a class="reference internal" href="#id75" title="Saroja Erabelli. A python library for fully homomorphic encryption. https://github.com/sarojaerabelli/py-fhe, 2020.">Erabelli, 2020</a>]</span>, the modern Fast Fourier Transform (FFT) multiplication algorithm is included, which is considerably faster compared to Karatsuba, but not applicable to powers of two as bootstrapping parameters (e.g. <span class="math notranslate nohighlight">\(Q\)</span>).
 Since powers of two greatly simplify the mathematical analysis of the scheme and furthermore implementing techniques and algorithm speed are not the main concerns of this thesis, we have chosen to omit FFT implementation.</p>
-<p>In general, multiplying efficiently is extremely important, since the bootstrapping procedure bases upon multiplications of polynomials.
-Apart from handling polynomials in the ring as a class object, we also import auxiliary functions, which generate polynomials, whose coefficients have certain properties, e.g. being drawn from a specific distribution (see <a class="reference internal" href="#background-on-probability-theory"><span class="std std-ref">Background on probability theory</span></a>).</p>
-<p>Further inspiration for implementing the somewhat homomorphic BFV scheme in Python (see <a class="reference internal" href="#the-bfv-scheme"><span class="std std-ref">The BFV scheme</span></a>) has been drawn from <span id="id8">[<a class="reference internal" href="#id73" title="Mădălina Bolboceanu, Miruna Roșca, and Radu Țițiu. Homomorphic encryption: a toy implementation in python. https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/, 2020.">Bolboceanu <em>et al.</em>, 2020</a>]</span>.
+<p>In general, multiplying efficiently is extremely important, since the bootstrapping procedure bases on multiplications of polynomials.
+Apart from handling polynomials in the ring as a class object, we also import auxiliary functions generating polynomials, whose coefficients have certain properties, e.g. being drawn from a specific distribution (see <a class="reference internal" href="#background-on-probability-theory"><span class="std std-ref">Background on probability theory</span></a>).</p>
+<p>Further inspiration for implementing the somewhat homomorphic BFV scheme in Python (see <a class="reference internal" href="#the-bfv-scheme"><span class="std std-ref">The BFV scheme</span></a>) has been drawn from <span id="id8">[<a class="reference internal" href="#id76" title="Mădălina Bolboceanu, Miruna Roșca, and Radu Țițiu. Homomorphic encryption: a toy implementation in python. https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/, 2020.">Bolboceanu <em>et al.</em>, 2020</a>]</span>.
 The full implementation, including an online jupyter book version of the thesis featuring executable code cells, can be found at <a class="reference external" href="https://github.com/robinkoestler/A-survey-on-modern-fully-homomorphic-encryption">https://github.com/robinkoestler/A-survey-on-modern-fully-homomorphic-encryption</a>.</p>
 <p>The bootstrapping implementation, which is split up among many auxiliary procedures throughout the document, will be analyzed in a step-by-step fashion.</p>
 <p>Below we import all necessary external Python packages and the class to handle polynomial arithmetic as <span class="math notranslate nohighlight">\(\texttt{Poly}\)</span>.
-The variable <span class="math notranslate nohighlight">\(\texttt{speed}\)</span> linearly controls the running time and it may be augmented to obtain more precise computational results in the case of e.g. probabilistic bounds.</p>
+The variable <span class="math notranslate nohighlight">\(\texttt{speed}\)</span> linearly controls the running time and it may be augmented to obtain more precise computational results in the case of probabilistic bounds for example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">polynomial_arithmetic</span><span class="o">,</span> <span class="nn">random</span>
@@ -1451,7 +1437,7 @@ The variable <span class="math notranslate nohighlight">\(\texttt{speed}\)</span
 <span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">erf</span>
-<span class="n">Poly</span> <span class="o">=</span> <span class="n">polynomial_arithmetic</span><span class="o">.</span><span class="n">Polynomial</span> <span class="c1"># the class of handling polynomial arithmetic in R</span>
+<span class="n">Poly</span> <span class="o">=</span> <span class="n">polynomial_arithmetic</span><span class="o">.</span><span class="n">Polynomial</span> <span class="c1"># the class of handling polynomial arithmetic in R.</span>
 <span class="n">speed</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># precision factor for computations: Scales the running time.</span>
 </pre></div>
 </div>
@@ -1468,8 +1454,8 @@ We will often refer to the coefficients <span class="math notranslate nohighligh
 <p>There are many reasons for the choice of <span class="math notranslate nohighlight">\(R\)</span>:</p>
 <ul class="simple">
 <li><p>First and foremost, in the described scheme we are working within discrete structures (messages, ciphertexts, etc. built on elements of <span class="math notranslate nohighlight">\(\Z\)</span>).
-Thus we have the advantage of the simplicity of representing everything via integers, whereas in approximate cryptographic schemes (like CKKS, where <span class="math notranslate nohighlight">\(\R\)</span> or <span class="math notranslate nohighlight">\(\mathbb C\)</span> are used, see <span id="id10">[<a class="reference internal" href="#id66" title="Jung Hee Cheon, Andrey Kim, Miran Kim, and Yongsoo Song. Homomorphic encryption for arithmetic of approximate numbers. In Tsuyoshi Takagi and Thomas Peyrin, editors, Advances in Cryptology – ASIACRYPT 2017, 409–437. Cham, 2017. Springer International Publishing.">Cheon <em>et al.</em>, 2017</a>]</span>) one has to worry about rounding errors during computations, which affect the message precision and so on.</p></li>
-<li><p>We are generally using polynomial rings to assure that the basic ring operations (addition and multiplication) can be efficiently calculated by computers without too much effort concerning implementing techniques of the latter.</p></li>
+Thus we have the advantage of the simplicity of representing everything via integers, whereas in approximate cryptographic schemes (like CKKS, where <span class="math notranslate nohighlight">\(\R\)</span> or <span class="math notranslate nohighlight">\(\mathbb C\)</span> are used, see <span id="id10">[<a class="reference internal" href="#id69" title="Jung Hee Cheon, Andrey Kim, Miran Kim, and Yongsoo Song. Homomorphic encryption for arithmetic of approximate numbers. In Tsuyoshi Takagi and Thomas Peyrin, editors, Advances in Cryptology – ASIACRYPT 2017, 409–437. Cham, 2017. Springer International Publishing.">Cheon <em>et al.</em>, 2017</a>]</span>) one has to worry about rounding errors during computations, which e.g. affect the message precision.</p></li>
+<li><p>We are generally using polynomial rings to ensure that the basic ring operations (addition and multiplication) can be efficiently calculated by computers without too much effort concerning implementing techniques of the latter.</p></li>
 <li><p>After multiplying two ring elements, we are left to reduce the result modulo <span class="math notranslate nohighlight">\(x^N + 1\)</span>, which is as simple as a sign change and adding two polynomials in <span class="math notranslate nohighlight">\(R\)</span>, because <span class="math notranslate nohighlight">\(x^N = -1\)</span> in <span class="math notranslate nohighlight">\(R\)</span>.
 Compared to the regular polynomial division for arbitrary polynomial quotient rings, this is computationally close to optimal.</p></li>
 <li><p>At last, we have the property of having no nonzero zero divisors in <span class="math notranslate nohighlight">\(R\)</span>, which avoids possible degeneration by performing ring operations:</p></li>
@@ -1491,19 +1477,19 @@ It follows that the ideal <span class="math notranslate nohighlight">\(I = \lang
 <p>The above ring <span class="math notranslate nohighlight">\(R\)</span> cannot possibly degenerate nonzero elements to zero during ring operations, but nevertheless, it contains infinitely many elements - a property we want to avoid while using a similar structure for message/ciphertext spaces.
 The introduction of a power of two modulus <span class="math notranslate nohighlight">\(M &gt; 1\)</span> to define the finite quotient ring <span class="math notranslate nohighlight">\(R_M := R/MR\)</span> resolves this issue and has the following impacts:</p>
 <ul class="simple">
-<li><p>Because of the finiteness, we are now able to choose elements of <span class="math notranslate nohighlight">\(R_M\)</span> e.g. uniformly at random.
-This will later be necessary to define the “Decision RLWE” problem, upon which the security of our scheme is based.</p></li>
+<li><p>Because of the finiteness, we are now able to choose elements of <span class="math notranslate nohighlight">\(R_M\)</span> uniformly at random.
+This will later be necessary to define the Decision-RLWE (see <a class="reference internal" href="#decision-RLWE">Definition 3</a>) problem, upon which the security of our scheme is based.</p></li>
 <li><p>To uniquely represent the coefficients of a polynomial in <span class="math notranslate nohighlight">\(R_M\)</span>, we will use the set of integers inside <span class="math notranslate nohighlight">\((-M/2,M/2]\)</span>.
 Naturally, this is advantageous for two reasons.</p>
 <ul>
-<li><p>Firstly, it allows a coefficient to be sampled e.g. from a discrete normal distribution around zero.</p></li>
+<li><p>Firstly, it allows a coefficient to be sampled from zero-centered distributions.</p></li>
 <li><p>Secondly, compared to e.g. <span class="math notranslate nohighlight">\([0,M-1]\)</span> it halves the maximum absolute value a polynomial coefficient can reach and therefore is an optimal choice regarding the complexity of algorithms operating on integers.</p></li>
 </ul>
 </li>
 <li><p>By using different power of two moduli as <span class="math notranslate nohighlight">\(M\)</span>, we can adjust our plaintext/ciphertext/bootstrapping space size to our necessities.
 Switching between these will be easily done by just embedding (from small to large modulus) respectively by a modular reduction of the coefficients (and vice versa).</p></li>
 </ul>
-<p>To illustrate the use of modular variants of <span class="math notranslate nohighlight">\(R\)</span>, let us consider a small message space, e.g. <span class="math notranslate nohighlight">\(R_8\)</span>, and a larger (ciphertext) space, e.g. <span class="math notranslate nohighlight">\(R_{32}\)</span>, without a further specified <span class="math notranslate nohighlight">\(N\)</span>.
+<p>To illustrate the benefit of modular variants of <span class="math notranslate nohighlight">\(R\)</span>, let us consider a small message space, e.g. <span class="math notranslate nohighlight">\(R_8\)</span>, and a larger (ciphertext) space, e.g. <span class="math notranslate nohighlight">\(R_{32}\)</span>, without a further specified <span class="math notranslate nohighlight">\(N\)</span>.
 Technically, we could just trivially embed an example message <span class="math notranslate nohighlight">\(2x+1 \in R_8\)</span> into the larger ring as <span class="math notranslate nohighlight">\(2x+1 \in R_{32}\)</span>.
 But since we furthermore need to introduce additive errors, which make our scheme secure and also alter ring elements slightly, we can use a different, more sophisticated embedding into <span class="math notranslate nohighlight">\(R_{32}\)</span> than just enlarging the space in general.
 For this example consider the ring-dependent expansion factor <span class="math notranslate nohighlight">\(\kappa := 32/8 = 4\)</span> and the switching of rings procedure:</p>
@@ -1514,8 +1500,8 @@ We observe that instead of irrevokably changing the message by adding <span clas
 This later becomes a crucial idea in the bootstrapping procedure, where errors are “large”.
 The above procedure also highlights that power of two moduli <span class="math notranslate nohighlight">\(M\)</span> generally result in integer <span class="math notranslate nohighlight">\(\kappa\)</span>’s, which keeps the upscaling by <span class="math notranslate nohighlight">\(\kappa\)</span> clean from rounding errors.</p>
 <p>To sum it up, we gain security and sizing control by adding modular arithmetic to <span class="math notranslate nohighlight">\(R\)</span>.
-However, it should be remarked that <span class="math notranslate nohighlight">\(R_M\)</span> for powers of two <span class="math notranslate nohighlight">\(M&gt;2\)</span> and <span class="math notranslate nohighlight">\(N\)</span> is no longer an integer domain.
-Hence it is important to keep track of where and when we can reduce a <span class="math notranslate nohighlight">\(R\)</span>-element modulo <span class="math notranslate nohighlight">\(M\)</span>, after performing operations favorably in <span class="math notranslate nohighlight">\(R\)</span> itself.</p>
+However, it is worth mentioning that <span class="math notranslate nohighlight">\(R_M\)</span> for powers of two <span class="math notranslate nohighlight">\(M&gt;2\)</span> and <span class="math notranslate nohighlight">\(N\)</span> is no longer an integer domain.
+Hence, it is important to keep track of where and when we can reduce a <span class="math notranslate nohighlight">\(R\)</span>-element modulo <span class="math notranslate nohighlight">\(M\)</span>, after performing operations favorably in <span class="math notranslate nohighlight">\(R\)</span> itself.</p>
 </section>
 <section id="size-and-norm-of-ring-elements">
 <h2>Size and norm of ring elements<a class="headerlink" href="#size-and-norm-of-ring-elements" title="Permalink to this headline">#</a></h2>
@@ -1538,18 +1524,18 @@ In the same fashion, we say we sample a ring element <span class="math notransla
 <ul class="simple">
 <li><p>Discrete uniform distribution <span class="math notranslate nohighlight">\(\mathcal U(a,b)\)</span>: For integers <span class="math notranslate nohighlight">\(a \le b\)</span> and <span class="math notranslate nohighlight">\(i \in \Z \cap [a,b]\)</span> fixed, we have <span class="math notranslate nohighlight">\(\mathbb P(y=i) := 1/(b-a+1)\)</span>.
 Most of the time, we will use <span class="math notranslate nohighlight">\(\mathcal U(R_M) := \mathcal U(-M/2,M/2)\)</span>.
-Notice that technically <span class="math notranslate nohighlight">\(-M/2\)</span> is not in the (representative) set <span class="math notranslate nohighlight">\(\Z_{M}\)</span>, but for sampling we will use it anyway since otherwise <span class="math notranslate nohighlight">\(\mathcal U(R_M)\)</span> would have mean one instead of zero.
+Notice that technically <span class="math notranslate nohighlight">\(-M/2\)</span> is not in the (representative) set <span class="math notranslate nohighlight">\(\Z_{M}\)</span>, but for sampling we will use it anyway, since otherwise <span class="math notranslate nohighlight">\(\mathcal U(R_M)\)</span> would have mean one instead of zero.
 The overall effect of this on the uniformity of the distribution is quite negligible while using a (typically) large <span class="math notranslate nohighlight">\(M\)</span>.</p></li>
 <li><p>Discrete centered normal distribution <span class="math notranslate nohighlight">\(\mathcal {N}_d(0,\sigma^2)\)</span>:
 For a (real) standard deviation parameter <span class="math notranslate nohighlight">\(\sigma \ge 0\)</span> and <span class="math notranslate nohighlight">\(i \in \Z\)</span> fixed, we assign <span class="math notranslate nohighlight">\(\mathbb P(y = i) := \int_{i-1/2}^{i+1/2} f_{\mathcal N(0,\sigma^2)}(z) dz\)</span>, where <span class="math notranslate nohighlight">\(f_{\mathcal N(0,\sigma^2)}\)</span> is the probability density function of the (continuous) normal distribution <span class="math notranslate nohighlight">\(\mathcal N(0,\sigma^2)\)</span>.
-In other words,  while sampling discretely we simply round the values obtained from the continuous distribution to the nearest integer.
+In other words, while sampling discretely we simply round the values obtained from the continuous distribution to the nearest integer.
 Notice furthermore that <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>, although we denote it in the same way, only has mean zero, but it does not have variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> (see <a class="reference internal" href="#discrete-variance">Lemma 1</a>).</p></li>
 <li><p>Ternary distribution <span class="math notranslate nohighlight">\(\mathrm{Ter}_\rho\)</span>: For a parameter <span class="math notranslate nohighlight">\(\rho \in (0,1)\)</span> define the ternary distribution by <span class="math notranslate nohighlight">\(\mathbb P(y = -1) = \mathbb P(y = 1) = (1-\rho)/2\)</span> and <span class="math notranslate nohighlight">\(\mathbb P(y = 0) = \rho\)</span>.
 In our implementation, we set <span class="math notranslate nohighlight">\(\rho\)</span> to <span class="math notranslate nohighlight">\(1/3\)</span>, thus <span class="math notranslate nohighlight">\(\mathrm{Ter}_{1/3} = \mathcal U(-1,1)\)</span>.
 Another notable choice: A large <span class="math notranslate nohighlight">\(\rho\)</span> leads to samples of sparse ring elements, which have computational advantages.</p></li>
 </ul>
 <p>Efficient bootstrapping relies on a detailed error analysis, whose errors are typically generated from the discrete normal distribution.
-Hence we will need to apply theorems from probability theory to estimate the size of an error (with high probability).
+Hence, we will need to apply theorems from probability theory to estimate the size of an error (with high probability).
 Since errors will also be added and multiplied throughout the bootstrapping scheme, we will proceed to analyse the error growth depending on different operations and distributions.</p>
 </section>
 <section id="the-error-function-mathrm-erf">
@@ -1559,7 +1545,7 @@ Since errors will also be added and multiplied throughout the bootstrapping sche
 <section class="definition-content" id="proof-content">
 <p>For <span class="math notranslate nohighlight">\(x \in \R\)</span>, the error function <span class="math notranslate nohighlight">\(\mathrm{erf}(x)\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt\]</div>
+\[\mathrm{erf}(x) := \frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2}dt.\]</div>
 </section>
 </div><p>The error function will be useful to calculate the probability that <span class="math notranslate nohighlight">\(\norm y\)</span> for <span class="math notranslate nohighlight">\(y\in R\)</span> has a certain bound.</p>
 <div class="proof property admonition" id="property-error-function">
@@ -1567,22 +1553,20 @@ Since errors will also be added and multiplied throughout the bootstrapping sche
 <section class="property-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(F(x)\)</span> be the cumulative distribution function of the normal distribution <span class="math notranslate nohighlight">\(\mathcal N(0, \sigma^2)\)</span>. Then for a corresponding random variable <span class="math notranslate nohighlight">\(X\)</span> we have:</p>
 <div class="math notranslate nohighlight">
-\[\P(\abs X \le x) \overset{\text{if } x &gt; 0}{=} \mathrm{erf}(x/\sqrt{2\sigma^2}) = 2F(x) -1 = F(x) - F(-x)\]</div>
+\[\P(\abs X \le x) \overset{\text{if } x &gt; 0}{=} \mathrm{erf}(x/\sqrt{2\sigma^2}) = 2F(x) -1 = F(x) - F(-x).\]</div>
 </section>
 </div></section>
 <section id="bounds-for-the-normal-distribution">
 <h3>Bounds for the normal distribution<a class="headerlink" href="#bounds-for-the-normal-distribution" title="Permalink to this headline">#</a></h3>
 <p>Suppose we sample <span class="math notranslate nohighlight">\(y \in R\)</span> from <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span> and want to derive a bound on <span class="math notranslate nohighlight">\(\norm y\)</span> for further computations.
 Naturally, only a probabilistic bound can be achieved here.
-Thus we consider the scenario: Determine the small probability <span class="math notranslate nohighlight">\(p_{norm}(k)\)</span> for which <span class="math notranslate nohighlight">\(\norm y \le k\cdot \sigma\)</span> holds for various <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>.</p>
+Thus we consider the scenario: Determine the small probability <span class="math notranslate nohighlight">\(p_{\text{norm}}(k)\)</span> for which <span class="math notranslate nohighlight">\(\norm y \le k\cdot \sigma\)</span> holds for various <span class="math notranslate nohighlight">\(k \in \mathbb N\)</span>.</p>
 <p>For a single coefficient <span class="math notranslate nohighlight">\(y_i \in \Z\)</span> of <span class="math notranslate nohighlight">\(y\)</span>, we have by definition:</p>
 <div class="math notranslate nohighlight">
-\[
-p := \P(\abs{y_i} \le k \cdot \sigma) = \mathrm{erf}\left( \frac{\lfloor k\sigma \rfloor + 1/2}{\sqrt{2}\sigma}\right)
-\]</div>
+\[p := \P(\abs{y_i} \le k \cdot \sigma) = \mathrm{erf}\left( \frac{\lfloor k\sigma \rfloor + 1/2}{\sqrt{2}\sigma}\right).\]</div>
 <p>Because the <span class="math notranslate nohighlight">\(y_i\)</span> are i.i.d. samples, we have that</p>
 <div class="math notranslate nohighlight" id="equation-bernoulli-estimation">
-<span class="eqno">(1)<a class="headerlink" href="#equation-bernoulli-estimation" title="Permalink to this equation">#</a></span>\[    p_{norm}(k) = \P(\norm y \le k \cdot \sigma) = p^N \ge 1 - N (1-p)\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-bernoulli-estimation" title="Permalink to this equation">#</a></span>\[    p_{\text{norm}}(k) = \P(\norm y \le k \cdot \sigma) = p^N \ge 1 - N (1-p).\]</div>
 <p>using the maximum inside <span class="math notranslate nohighlight">\(\norm \cdot\)</span> and Bernoulli’s inequality.</p>
 <div class="proof theorem admonition" id="sampling-bound">
 <p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Norm bounds for standard Gaussian sampling in <span class="math notranslate nohighlight">\(R\)</span>)</p>
@@ -1592,7 +1576,7 @@ p := \P(\abs{y_i} \le k \cdot \sigma) = \mathrm{erf}\left( \frac{\lfloor k\sigma
 </div><div class="proof admonition" id="proof">
 <p>Proof. Following the above discussion, all left to show is the bound of <span class="math notranslate nohighlight">\(\mathrm{erf}\)</span>. This follows because <span class="math notranslate nohighlight">\(\mathrm{erf}\)</span> is strictly increasing and thus estimating <span class="math notranslate nohighlight">\((\lfloor k \sigma \rfloor + 1/2)/\sigma \ge (k-1)\)</span> with <span class="math notranslate nohighlight">\(\sigma \ge 1\)</span> yields the result.</p>
 </div>
-<p>We now want to determine pairs <span class="math notranslate nohighlight">\((k,p_{norm}(k))\)</span> computationally by using the Bernoulli estimation given in <a class="reference internal" href="#equation-bernoulli-estimation">(1)</a>, because of precision issues during exponentiation.
+<p>We now want to determine pairs <span class="math notranslate nohighlight">\((k,p_{\text{norm}}(k))\)</span> computationally by using the Bernoulli estimation given in <a class="reference internal" href="#equation-bernoulli-estimation">(1)</a>, because of precision issues during exponentiation.
 For simplicity, we also set <span class="math notranslate nohighlight">\(\sigma = 1\)</span>, since it has a negligible effect on the result anyway.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1614,8 +1598,8 @@ k = 8 leads to 1-10000*(1-p) = 1.0
 </div>
 </div>
 </div>
-<p>Computational conclusion: Later we will set the parameter <span class="math notranslate nohighlight">\(N\)</span> to around <span class="math notranslate nohighlight">\(10^4\)</span>.
-Hence, with e.g. using <span class="math notranslate nohighlight">\(k=10\)</span>, our computations let us surmise that <span class="math notranslate nohighlight">\(\norm{y} &gt; 10\sigma\)</span> only happens with probability <span class="math notranslate nohighlight">\(\approx 10^{-18}\)</span>.
+<p>Computational conclusion: In a secure implementation, the parameter <span class="math notranslate nohighlight">\(N\)</span> is set to around <span class="math notranslate nohighlight">\(10^4\)</span>.
+Hence, by using <span class="math notranslate nohighlight">\(k=10\)</span> for example, our computations let us surmise that <span class="math notranslate nohighlight">\(\norm{y} &gt; 10\sigma\)</span> only happens with probability <span class="math notranslate nohighlight">\(\approx 10^{-18}\)</span>.
 Other authors regularly assume a lower <span class="math notranslate nohighlight">\(k\)</span>, e.g. <span class="math notranslate nohighlight">\(k=6\)</span>, implying a probability of bound-exceeding around <span class="math notranslate nohighlight">\(10^{-6}\)</span> per sample.
 This is also reasonable, since the norm-wise equilibrating effects of adding/multiplying elements of <span class="math notranslate nohighlight">\(R\)</span> respectively <span class="math notranslate nohighlight">\(R_M\)</span>, which we will soon discuss in detail, will take care of the outliers anyway.</p>
 </section>
@@ -1623,8 +1607,8 @@ This is also reasonable, since the norm-wise equilibrating effects of adding/mul
 <h3>Bound for adding two <span class="math notranslate nohighlight">\(R\)</span>-elements<a class="headerlink" href="#bound-for-adding-two-r-elements" title="Permalink to this headline">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(x_1,\dots,x_m \in \R\)</span> be independently sampled from <span class="math notranslate nohighlight">\(\mathcal N(0,\sigma^2)\)</span>.
 It is widely known that <span class="math notranslate nohighlight">\(\sum_{i=1}^m x_i\)</span> has then the distribution <span class="math notranslate nohighlight">\(\mathcal N(0,m\sigma^2)\)</span>.
-That is, because the sum of variants equals the variance of the sum, in the case of independently random variables (Bienaymé’s identity).
-To bound <span class="math notranslate nohighlight">\(\norm{y+z}\)</span> for <span class="math notranslate nohighlight">\(y,z \in R\)</span> and <span class="math notranslate nohighlight">\(y,z \sim \mathcal N_d(0,\sigma^2)\)</span>, we therefore have to determine the variance of the distribution <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>.</p>
+We observe that in this case, the sum of variants equals the variance of the sum (Bienaymé’s identity for i.i.d. random variables).
+To bound <span class="math notranslate nohighlight">\(\norm{y+z}\)</span> for independent <span class="math notranslate nohighlight">\(y,z \in R\)</span> and <span class="math notranslate nohighlight">\(y,z \sim \mathcal N_d(0,\sigma^2)\)</span>, we therefore have to determine the variance of the distribution <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>.</p>
 <div class="proof lemma admonition" id="discrete-variance">
 <p class="admonition-title"><span class="caption-number">Lemma 1 </span> (Variance of rounded centered normal distributions)</p>
 <section class="lemma-content" id="proof-content">
@@ -1633,8 +1617,8 @@ To bound <span class="math notranslate nohighlight">\(\norm{y+z}\)</span> for <s
 \[\mathrm{Var}(X) \le \sigma^2 + \frac{1}{12}.\]</div>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We will use the result from Equation 3.2. in <span id="id13">[<a class="reference internal" href="#id59" title="A. R. Tricker. Effects of rounding on the moments of a probability distribution. Journal of the Royal Statistical Society. Series D (The Statistician), 33(4):381–390, 1984. URL: http://www.jstor.org/stable/2987741 (visited on 2022-09-21).">Tricker, 1984</a>]</span>, which treats our case for <span class="math notranslate nohighlight">\(a=0\)</span>.
-For a more detailed derivation of a proof of this equation, we refer to <span id="id14">[<a class="reference internal" href="#id60" title="J. An. Sample variance of rounded variables. 2021. URL: https://arxiv.org/abs/2102.08483, doi:10.48550/ARXIV.2102.08483.">An, 2021</a>]</span>.
+<p>Proof. We will use the result from Equation 3.2. in <span id="id13">[<a class="reference internal" href="#id62" title="A. R. Tricker. Effects of rounding on the moments of a probability distribution. Journal of the Royal Statistical Society. Series D (The Statistician), 33(4):381–390, 1984. URL: http://www.jstor.org/stable/2987741 (visited on 2022-09-21).">Tricker, 1984</a>]</span>, which treats our case for <span class="math notranslate nohighlight">\(a=0\)</span>.
+For a more detailed derivation of a proof of this equation, we refer to <span id="id14">[<a class="reference internal" href="#id63" title="J. An. Sample variance of rounded variables. 2021. URL: https://arxiv.org/abs/2102.08483, doi:10.48550/ARXIV.2102.08483.">An, 2021</a>]</span>.
 Following these papers, we have:</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{Var}(X) = \sigma^2 + \frac{1}{12} + 4 \sum_{k=1}^\infty (-1)^k e^{-2k^2\pi^2\sigma^2} \cdot (\sigma^2 + (2\pi k)^{-2}).\]</div>
@@ -1650,12 +1634,12 @@ Because <span class="math notranslate nohighlight">\(a_k\)</span> is alternating
     <span class="k">return</span> <span class="p">(</span><span class="n">erf</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># test with 0.1, 0.3, 1</span>
 <span class="n">var_values</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span> <span class="p">(</span><span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span> <span class="o">-</span> <span class="n">cdf</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">sigma</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;With sigma = </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s2">, the bound of 1/12 is instead approximately 1/</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">var_values</span><span class="p">)</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;With sigma = </span><span class="si">{</span><span class="n">sigma</span><span class="si">}</span><span class="s2">, the bound of 1/12 is approximately 1/</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">var_values</span><span class="p">)</span> <span class="o">-</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With sigma = 0.3, the bound of 1/12 is instead approximately 1/179.13363773216952
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>With sigma = 0.3, the bound of 1/12 is approximately 1/179.13363773216952 instead
 </pre></div>
 </div>
 </div>
@@ -1679,8 +1663,8 @@ This argument is supported by the central limit theorem, which yields the exact 
 <div class="math notranslate nohighlight">
 \[\P(\abs c &gt; k\sqrt{m}\sigma) \approx \mathrm{erf}\left( \frac{k\sigma\sqrt{m}}{\sqrt{2\cdot(m\sigma^2+m/12)}} \right).\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sqrt{m}\)</span> cancels out.
-Furthermore, the term “<span class="math notranslate nohighlight">\(+1/12\)</span>” coming from <a class="reference internal" href="#discrete-variance">Lemma 1</a> is more of theoretical interest, since it only has a marginal influence on the probability bound.
-If we choose to omit it, also <span class="math notranslate nohighlight">\(\sigma\)</span> cancels out, which leaves us with the second approximation.</p>
+Furthermore, the term “<span class="math notranslate nohighlight">\(+1/12\)</span>” coming from <a class="reference internal" href="#discrete-variance">Lemma 1</a> has been considered more for a theoretical interest, since it only has a marginal influence on the probability bound.
+If we choose to omit it, <span class="math notranslate nohighlight">\(\sigma\)</span> also cancels out, thus leaving us with the second approximation.</p>
 </div>
 <p>Let us give a quick demonstration of the bound given in the theorem.
 Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity, <span class="math notranslate nohighlight">\(m=3\)</span> for adding three <span class="math notranslate nohighlight">\(R\)</span>-elements, <span class="math notranslate nohighlight">\(\sigma = 1\)</span> to have a rounding effect and <span class="math notranslate nohighlight">\(k=3\)</span> for not having to do too many iterations:</p>
@@ -1699,7 +1683,7 @@ Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4992 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9984)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4994 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9988)
 Probability approximation given in theorem = 0.9960522481430966
 </pre></div>
 </div>
@@ -1708,16 +1692,16 @@ Probability approximation given in theorem = 0.9960522481430966
 </section>
 <section id="bound-for-multiplying-two-r-elements">
 <span id="bound-for-multiplying-two-ring-elements"></span><h3>Bound for multiplying two <span class="math notranslate nohighlight">\(R\)</span>-elements<a class="headerlink" href="#bound-for-multiplying-two-r-elements" title="Permalink to this headline">#</a></h3>
-<p>Similarly to adding <span class="math notranslate nohighlight">\(R\)</span>-elements <span class="math notranslate nohighlight">\(y,z\)</span>, we want now to derive a bound on <span class="math notranslate nohighlight">\(\norm{y \cdot z}\)</span> depending on <span class="math notranslate nohighlight">\(\norm y\)</span> and <span class="math notranslate nohighlight">\(\norm z\)</span>.
-The worst-case can be estimated as <span class="math notranslate nohighlight">\(\norm{y \cdot z} \le N \cdot \norm{y} \norm{z}\)</span> and this bound is tight (e.g. for <span class="math notranslate nohighlight">\(y = z := \sum_{i=0}^{N-1} x^i\)</span>).</p>
+<p>Similarly to adding <span class="math notranslate nohighlight">\(R\)</span>-elements <span class="math notranslate nohighlight">\(y,z\)</span>, we now want to derive a bound on <span class="math notranslate nohighlight">\(\norm{y \cdot z}\)</span> depending on <span class="math notranslate nohighlight">\(\norm y\)</span> and <span class="math notranslate nohighlight">\(\norm z\)</span>.
+The worst-case can be estimated as <span class="math notranslate nohighlight">\(\norm{y \cdot z} \le N \cdot \norm{y} \norm{z}\)</span> and this bound is tight (e.g. for <span class="math notranslate nohighlight">\(y = z := \sum_{i=0}^{N-1} x^i\)</span>).
+The latter expansion factor <span class="math notranslate nohighlight">\(N\)</span> can be shown to be only <span class="math notranslate nohighlight">\(\approx \sqrt{N}\)</span> with high probability if <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> satisfy certain properties.
+Before deducing this as a general result, which is applicable to the usual cryptographic variables, we investigate two special cases.</p>
 <section id="the-case-uniform-times-ternary">
 <h4>The case “uniform” times “ternary”<a class="headerlink" href="#the-case-uniform-times-ternary" title="Permalink to this headline">#</a></h4>
-<p>The objective of this section is now to improve this bound for the average case of multiplying an <span class="math notranslate nohighlight">\(R\)</span>-element <span class="math notranslate nohighlight">\(y \sim \mathcal U(R_Q)\)</span> times an <span class="math notranslate nohighlight">\(R\)</span>-element <span class="math notranslate nohighlight">\(z \sim \mathrm{Ter}_\rho\)</span>.
+<p>The objective of this section now is to improve the worst-case bound <span class="math notranslate nohighlight">\(N\)</span> for the average case of multiplying an <span class="math notranslate nohighlight">\(R\)</span>-element <span class="math notranslate nohighlight">\(y \sim \mathcal U(R_Q)\)</span> times an <span class="math notranslate nohighlight">\(R\)</span>-element <span class="math notranslate nohighlight">\(z \sim \mathrm{Ter}_\rho\)</span>.
 Recall the formula for calculating the coefficients of the product <span class="math notranslate nohighlight">\(yz\)</span> in the ring <span class="math notranslate nohighlight">\(R\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-(yz)_i := \sum_{j=0}^i y_iz_{i-j} + \sum_{j=i+1}^{N-1} -y_i z_{i+N-j}
-\]</div>
+\[(yz)_i := \sum_{j=0}^i y_iz_{i-j} + \sum_{j=i+1}^{N-1} -y_i z_{i+N-j}.\]</div>
 <div class="proof lemma admonition" id="uniform-times-ternary">
 <p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
 <section class="lemma-content" id="proof-content">
@@ -1728,14 +1712,14 @@ Recall the formula for calculating the coefficients of the product <span class="
 The variance of <span class="math notranslate nohighlight">\(Z\)</span> is <span class="math notranslate nohighlight">\(1-\rho\)</span>, and then again due to the independency <span class="math notranslate nohighlight">\(\mathrm{Var}(YZ) = (1-\rho)\mathrm{Var}(Y)\)</span>.
 Since also <span class="math notranslate nohighlight">\(Z \sim -Z\)</span> holds, the claim follows.</p>
 </div>
-<p>We can now again use the Central Limit Theorem to approximate the distribution of our multiplied coefficient <span class="math notranslate nohighlight">\((yz)_i\)</span>.
+<p>We now can again use the Central Limit Theorem to approximate the distribution of our multiplied coefficient <span class="math notranslate nohighlight">\((yz)_i\)</span>.
 So we have:</p>
 <div class="math notranslate nohighlight" id="equation-central-limit-approx">
-<span class="eqno">(2)<a class="headerlink" href="#equation-central-limit-approx" title="Permalink to this equation">#</a></span>\[\P\left( \abs{(yz)_i} \le \sqrt{N \cdot \mathrm{Var}(y_iz_i)} \cdot v \right) \approx \Phi(v) - \Phi(-v) = \mathrm{erf}(v/\sqrt{2})\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-central-limit-approx" title="Permalink to this equation">#</a></span>\[\P\left( \abs{(yz)_i} \le \sqrt{N \cdot \mathrm{Var}(y_iz_i)} \cdot v \right) \approx \Phi(v) - \Phi(-v) = \mathrm{erf}(v/\sqrt{2}),\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Phi\)</span> is the cumulative density function of <span class="math notranslate nohighlight">\(\mathcal N(0,1)\)</span>.</p>
 <p>In the literature, often the bound <span class="math notranslate nohighlight">\(\norm{yz} \le C \sqrt{N} \norm y \le C \sqrt{N} (Q/2)\)</span> is found for our case of <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span>.
 Heuristic experiments for choices of <span class="math notranslate nohighlight">\(C\)</span> underline that usually <span class="math notranslate nohighlight">\(C\)</span> ranges in <span class="math notranslate nohighlight">\([1,2]\)</span>.
-Such experiments have been conducted in e.g. Section 6.1. in <span id="id15">[<a class="reference internal" href="#id61" title="Shai Halevi, Yuriy Polyakov, and Victor Shoup. An improved rns variant of the bfv homomorphic encryption scheme. Cryptology ePrint Archive, Paper 2018/117, 2018. https://eprint.iacr.org/2018/117. URL: https://eprint.iacr.org/2018/117, doi:10.1007/978-3-030-12612-4_5.">Halevi <em>et al.</em>, 2018</a>]</span>.
+Such experiments have been conducted in e.g. Section 6.1. in <span id="id15">[<a class="reference internal" href="#id64" title="Shai Halevi, Yuriy Polyakov, and Victor Shoup. An improved rns variant of the bfv homomorphic encryption scheme. Cryptology ePrint Archive, Paper 2018/117, 2018. https://eprint.iacr.org/2018/117. URL: https://eprint.iacr.org/2018/117, doi:10.1007/978-3-030-12612-4_5.">Halevi <em>et al.</em>, 2018</a>]</span>.
 We may now formulate a theorem, where we estimate the probability that the bound is satisfied for <span class="math notranslate nohighlight">\(C\)</span> using the above.</p>
 <div class="proof theorem admonition" id="multiplication-bound-uniform-ternary">
 <p class="admonition-title"><span class="caption-number">Theorem 4 </span> (Norm bound for multiplying uniform times ternary in <span class="math notranslate nohighlight">\(R\)</span>)</p>
@@ -1749,7 +1733,7 @@ We may now formulate a theorem, where we estimate the probability that the bound
 <div class="math notranslate nohighlight">
 \[\P(\abs{(yz)_i} \le C\sqrt{N}\norm y) \approx \mathrm{erf} \left( \frac{C\norm y}{\sqrt{2\cdot \mathrm{Var}(y_iz_i)}}\right) = \mathrm{erf} \left( \frac{C\norm y}{\sqrt{2(1-\rho)\mathrm{Var}(y_i)}}\right).\]</div>
 <p>For the uniform distribution we have <span class="math notranslate nohighlight">\(\mathrm{Var}(y_i) = ((Q+1)^2-1)/12\)</span>.
-Now <span class="math notranslate nohighlight">\(\sqrt{\mathrm{Var}(y_i)} \approx Q/\sqrt{12}\)</span> is very accurate for large <span class="math notranslate nohighlight">\(Q\)</span>.</p>
+Now <span class="math notranslate nohighlight">\(\sqrt{\mathrm{Var}(y_i)} \approx Q/\sqrt{12}\)</span> is very accurate for a large <span class="math notranslate nohighlight">\(Q\)</span>.</p>
 <p>Finally, we estimate <span class="math notranslate nohighlight">\(\P(\norm{yz} \le C\sqrt{N}\norm y) \approx \P(\abs{(yz)_i} \le C\sqrt N \norm y)^N\)</span> and the claim follows.
 Only an approximation is accurate in this case since <span class="math notranslate nohighlight">\((yz)_i\)</span> and <span class="math notranslate nohighlight">\((yz)_j\)</span> for <span class="math notranslate nohighlight">\(i\neq j\)</span> are not statistically independent anymore.
 The reason is that:</p>
@@ -1781,7 +1765,7 @@ For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>998 out of 1000 satisfied bound (ratio 0.998)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 out of 1000 satisfied bound (ratio 1.0)
 Probability in theorem 0.9981059300560312
 </pre></div>
 </div>
@@ -1794,9 +1778,7 @@ Probability in theorem 0.9981059300560312
 So, let <span class="math notranslate nohighlight">\(R\)</span>-elements <span class="math notranslate nohighlight">\(y,z\)</span> be sampled as <span class="math notranslate nohighlight">\(y \sim \mathcal N_d(0,\sigma^2)\)</span>, <span class="math notranslate nohighlight">\(z \sim \mathrm{Ter}_\rho\)</span> for <span class="math notranslate nohighlight">\(\sigma \ge 1\)</span>.
 Now, using the argument in <a class="reference internal" href="#uniform-times-ternary">Lemma 2</a> and the value of <a class="reference internal" href="#discrete-variance">Lemma 1</a>, we have for integer random variables <span class="math notranslate nohighlight">\(Y \sim \mathcal N_d(0,\sigma^2)\)</span> and <span class="math notranslate nohighlight">\(Z \sim \mathrm{Ter}_\rho\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-\mathrm{Var}(YZ) = (\sigma^2 + 1/12)(1-\rho)
-\]</div>
+\[\mathrm{Var}(YZ) = (\sigma^2 + 1/12)(1-\rho).\]</div>
 <div class="proof theorem admonition" id="multiplication-bound-gaussian-ternary">
 <p class="admonition-title"><span class="caption-number">Theorem 5 </span> (Norm bound for multiplying Gaussian times ternary in <span class="math notranslate nohighlight">\(R\)</span>)</p>
 <section class="theorem-content" id="proof-content">
@@ -1816,7 +1798,7 @@ Furthermore, we have used <a class="reference internal" href="#discrete-variance
 <p>Remark: If <span class="math notranslate nohighlight">\(N \ge 2^{10}\)</span>, then <span class="math notranslate nohighlight">\(\norm y \ge 3\sigma\)</span> with high probability.
 In this case, the factor inside <span class="math notranslate nohighlight">\(\mathrm{erf}(\cdot)\)</span> is already close to the one in <a class="reference internal" href="#multiplication-bound-uniform-ternary">Theorem 4</a>.</p>
 <p>Once more we want to illustrate our result by checking computationally if the bound in the theorem is indeed satisfied.
-To not get caught up in precision errors regarding <span class="math notranslate nohighlight">\(\norm y\)</span>, we only will check on samples with a given norm, e.g. <span class="math notranslate nohighlight">\(3\sigma\)</span>.</p>
+To not get caught up in precision errors regarding <span class="math notranslate nohighlight">\(\norm y\)</span>, we will only check on samples with a given norm, e.g. <span class="math notranslate nohighlight">\(3\sigma\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="o">*</span><span class="n">speed</span>
@@ -1835,7 +1817,7 @@ To not get caught up in precision errors regarding <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4868 out of 5000 satisfied bound (ratio 0.9736)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4885 out of 5000 satisfied bound (ratio 0.977)
 Probability in theorem 0.9838201795058529
 </pre></div>
 </div>
@@ -1859,9 +1841,9 @@ Therefore we treat the rare case as <span class="math notranslate nohighlight">\
 <span id="id16"></span><h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">#</a></h2>
 <section id="the-decision-rlwe-problem">
 <h3>The Decision-RLWE problem<a class="headerlink" href="#the-decision-rlwe-problem" title="Permalink to this headline">#</a></h3>
-<p>In this section, we provide the details regarding the security of encryption schemes, whose ciphertexts are based upon <span class="math notranslate nohighlight">\(R\)</span> and its “Learning with errors” problem (<span class="math notranslate nohighlight">\(R\)</span>-LWE).
-An extensive overview of the whole topic is given in <span id="id17">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, especially Section 4.4, to which we refer as a source for the following definitions.</p>
-<p>As a first step, we define the RLWE distribution according to Definition 4.4.1. in <span id="id18">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, which already contains the necessary structure for later defining RLWE ciphertexts.</p>
+<p>In this section, we provide the details regarding the security of encryption schemes, whose ciphertexts are based on <span class="math notranslate nohighlight">\(R\)</span> and its “Learning with errors” problem (<span class="math notranslate nohighlight">\(R\)</span>-LWE).
+An extensive overview of the whole topic is given in <span id="id17">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, especially Section 4.4, to which we refer as a source for the following definitions.</p>
+<p>As a first step, we define the RLWE distribution according to Definition 4.4.1. in <span id="id18">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, which already contains the necessary structure for later defining RLWE ciphertexts.</p>
 <div class="proof definition admonition" id="RLWE-distribution">
 <p class="admonition-title"><span class="caption-number">Definition 2 </span> (RLWE distribution)</p>
 <section class="definition-content" id="proof-content">
@@ -1883,7 +1865,7 @@ But first, let us formulate the security reduction, which requires a quick <a cl
 <div class="proof property admonition" id="RLWE-security">
 <p class="admonition-title"><span class="caption-number">Property 2 </span> (Security reduction from Decision-RLWE to <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span>)</p>
 <section class="property-content" id="proof-content">
-<p>As mentioned in Theorem 4.4.3. of <span id="id19">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, the Decision-RLWE problem with proper parameters is at least as hard as quantumly solving the <span class="math notranslate nohighlight">\(\gamma\)</span>-Approximate Shortest Vector Problem (<span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span>) over ideal lattices.</p>
+<p>As mentioned in Theorem 4.4.3. of <span id="id19">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, the Decision-RLWE problem with proper parameters is at least as hard as quantumly solving the <span class="math notranslate nohighlight">\(\gamma\)</span>-Approximate Shortest Vector Problem (<span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span>) over ideal lattices.</p>
 </section>
 </div></section>
 <section id="background-on-lattices">
@@ -1899,8 +1881,8 @@ For example, one can choose the straightforward coefficient embedding and set</p
 \[\mathcal L(I) = \left\langle(g_0,\dots,g_{N-1}) \mid g = \sum_{i=0}^{N-1} g_i x^i \in I \right\rangle \subset \Z^N.\]</div>
 <p>It is clear from the description that <span class="math notranslate nohighlight">\(\mathcal L(I) \subset \Z^N\)</span> is isomorphic to <span class="math notranslate nohighlight">\(I \subset R\)</span> as an additive group.
 This fact illustrates the close relationship between the ring <span class="math notranslate nohighlight">\(R\)</span> and ideal lattices and puts the above security reduction from RLWE to lattice problems into context.
-Nevertheless, there is a lot more to state about more sophisticated embeddings (see Section 4.3.3. of <span id="id21">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>), which feature more favorable qualities and play a crucial role in the proof of the security reduction of RLWE.</p>
-<p>The following definition refers directly to Definition 2.2.2 in <span id="id22">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.</p>
+Nevertheless, there is a lot more to state about more sophisticated embeddings (see Section 4.3.3. of <span id="id21">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>), which feature favorable qualities and play a crucial role in the proof of the security reduction of RLWE.</p>
+<p>The following definition directly refers to Definition 2.2.2 in <span id="id22">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.</p>
 <div class="proof definition admonition" id="approximate-shortest-vector-problem">
 <p class="admonition-title"><span class="caption-number">Definition 4 </span> (Approximate Shortest Vector Problem <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span>)</p>
 <section class="definition-content" id="proof-content">
@@ -1910,7 +1892,7 @@ Nevertheless, there is a lot more to state about more sophisticated embeddings (
 <div class="admonition-conjectured-quantum-np-hardness-of-mathrm-svp-gamma admonition">
 <p class="admonition-title">Conjectured (quantum) NP-hardness of <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span></p>
 <p>In <a class="reference internal" href="#RLWE-security">Property 2</a>, <span class="math notranslate nohighlight">\(\gamma(n)\)</span> is a polynomial function in <span class="math notranslate nohighlight">\(n\)</span>.
-As pointed out in Section 4.3.4 of <span id="id23">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, such a <span class="math notranslate nohighlight">\(\gamma\)</span> still results in an exponential (in <span class="math notranslate nohighlight">\(n\)</span>) running time for the best known (quantum) algorithms to solve <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span> on ideal lattices.</p>
+As pointed out in Section 4.3.4 of <span id="id23">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>, such a <span class="math notranslate nohighlight">\(\gamma\)</span> still results in an exponential (in <span class="math notranslate nohighlight">\(n\)</span>) running time for the best known (quantum) algorithms to solve <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span> on ideal lattices.</p>
 </div>
 </section>
 <section id="remarks-on-the-security-framework-for-fhe">
@@ -1920,13 +1902,13 @@ As pointed out in Section 4.3.4 of <span id="id23">[<a class="reference internal
 <li><p>The error distribution (in our case this will be <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>) must be chosen carefully.
 Informally speaking, a larger standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> corresponds to a smaller <span class="math notranslate nohighlight">\(\gamma\)</span>, which then makes <span class="math notranslate nohighlight">\(\mathrm{SVP}_\gamma\)</span> harder.
 In contrast to that, we are also interested in keeping the error size (thus <span class="math notranslate nohighlight">\(\sigma\)</span>) very small, to perform more homomorphic operations in a row without needing to perform a costly bootstrapping operation in between.</p></li>
-<li><p>It is important to note, that in <span id="id24">[<a class="reference internal" href="#id63" title="Adeline Langlois and Damien Stehlé. Hardness of decision (r)lwe for any modulus. IACR Cryptol. ePrint Arch., 2012:91, 2012.">Langlois and Stehlé, 2012</a>]</span> it has been proven that the security of Decision-RLWE does not rely on specific number of theoretical properties of the modulus <span class="math notranslate nohighlight">\(Q\)</span> and hence we conveniently can set <span class="math notranslate nohighlight">\(Q\)</span> to be a large power of two.</p></li>
+<li><p>It is important to note, that in <span id="id24">[<a class="reference internal" href="#id66" title="Adeline Langlois and Damien Stehlé. Hardness of decision (r)lwe for any modulus. IACR Cryptol. ePrint Arch., 2012:91, 2012.">Langlois and Stehlé, 2012</a>]</span> it has been proven that the security of Decision-RLWE does not rely on a specific number theoretical properties of the modulus <span class="math notranslate nohighlight">\(Q\)</span> and hence we can conveniently set <span class="math notranslate nohighlight">\(Q\)</span> to a large power of two.</p></li>
 <li><p>Additionally, it is obstructive for our bootstrapping method to use a secret key <span class="math notranslate nohighlight">\(s\)</span> sampled from <span class="math notranslate nohighlight">\(\mathcal U(R_Q)\)</span>.
-It can be shown that we even may assume <span class="math notranslate nohighlight">\(s \sim \chi\)</span> without changing the above theorem (see Section 4.4.1 in <span id="id25">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>).
+It can be shown that we even may assume <span class="math notranslate nohighlight">\(s \sim \chi\)</span> without changing the above theorem (see Section 4.4.1 in <span id="id25">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>).
 Still, for practical purposes, where we need to realize a distinction of cases (the cases being the values a <span class="math notranslate nohighlight">\(s\)</span>-coefficient can take), the ternary distribution comes into play.
 This choice is a compromise since there is a lack of security proofs for a ternary secret key <span class="math notranslate nohighlight">\(s \sim \mathrm{Ter}_\rho\)</span> and moreover sparse ternary keys (with <span class="math notranslate nohighlight">\(\rho\)</span> close to <span class="math notranslate nohighlight">\(0\)</span>) are subject of security concerns.
-More information can be found in Chapter 1 of <span id="id26">[<a class="reference internal" href="#id64" title="Yongwoo Lee, Daniele Micciancio, Andrey Kim, Rakyong Choi, Maxim Deryabin, Jieun Eom, and Donghoon Yoo. Efficient fhew bootstrapping with small evaluation keys, and applications to threshold homomorphic encryption. Cryptology ePrint Archive, Paper 2022/198, 2022. https://eprint.iacr.org/2022/198. URL: https://eprint.iacr.org/2022/198.">Lee <em>et al.</em>, 2022</a>]</span>.
-To mention one last argument in favor of using them, ternary secret keys are part of the Homomorphic Encryption Standardization document <span id="id27">[<a class="reference internal" href="#id65" title="Martin Albrecht, Melissa Chase, Hao Chen, Jintai Ding, Shafi Goldwasser, Sergey Gorbunov, Shai Halevi, Jeffrey Hoffstein, Kim Laine, Kristin Lauter, Satya Lokam, Daniele Micciancio, Dustin Moody, Travis Morrison, Amit Sahai, and Vinod Vaikuntanathan. Homomorphic encryption security standard. Technical Report, HomomorphicEncryption.org, Toronto, Canada, November 2018.">Albrecht <em>et al.</em>, 2018</a>]</span>.</p></li>
+More information can be found in Chapter 1 of <span id="id26">[<a class="reference internal" href="#id67" title="Yongwoo Lee, Daniele Micciancio, Andrey Kim, Rakyong Choi, Maxim Deryabin, Jieun Eom, and Donghoon Yoo. Efficient fhew bootstrapping with small evaluation keys, and applications to threshold homomorphic encryption. Cryptology ePrint Archive, Paper 2022/198, 2022. https://eprint.iacr.org/2022/198. URL: https://eprint.iacr.org/2022/198.">Lee <em>et al.</em>, 2022</a>]</span>.
+To mention one last argument in favor of using them, ternary secret keys are part of the Homomorphic Encryption Standardization document <span id="id27">[<a class="reference internal" href="#id68" title="Martin Albrecht, Melissa Chase, Hao Chen, Jintai Ding, Shafi Goldwasser, Sergey Gorbunov, Shai Halevi, Jeffrey Hoffstein, Kim Laine, Kristin Lauter, Satya Lokam, Daniele Micciancio, Dustin Moody, Travis Morrison, Amit Sahai, and Vinod Vaikuntanathan. Homomorphic encryption security standard. Technical Report, HomomorphicEncryption.org, Toronto, Canada, November 2018.">Albrecht <em>et al.</em>, 2018</a>]</span>.</p></li>
 </ol>
 </section>
 </section>
@@ -1934,18 +1916,16 @@ To mention one last argument in favor of using them, ternary secret keys are par
 <section class="tex2jax_ignore mathjax_ignore" id="the-bfv-scheme">
 <span id="id28"></span><h1>The BFV scheme<a class="headerlink" href="#the-bfv-scheme" title="Permalink to this headline">#</a></h1>
 <p>Before working on a bootstrapping algorithm for achieving fully homomorphic encryption, we need to set the framework of our scheme.
-This will be done by considering a somewhat homomorphic encryption scheme, which enables us to encrypt, decrypt, and already perform a limited amount of additions and multiplications on a ciphertext.
+This will be done by considering a “somewhat homomorphic” encryption scheme, which enables us to encrypt, decrypt, and already perform a limited amount of additions and multiplications on a ciphertext.
 Notice that for a ciphertext structure as in <a class="reference internal" href="#RLWE-distribution">Definition 2</a> we outlined a proof of security earlier.
 Taking that as a foundation, all is left to specify where and how to hide a message within a ciphertext, which will be the salient feature of BFV ciphertexts.
-The BFV (abbreviation of the names of the authors) scheme was initially published in <span id="id29">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, which will be our main reference throughout this chapter.</p>
+The BFV (abbreviation of the names of the authors) scheme was initially published in <span id="id29">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, which will be our main reference throughout this chapter.</p>
 <section id="asymmetric-key-generation">
 <h2>Asymmetric key generation<a class="headerlink" href="#asymmetric-key-generation" title="Permalink to this headline">#</a></h2>
-<p>To start defining our scheme, we solely could contemplate ciphertexts, which only make use of a secret key for encrypting messages.
+<p>To start defining our scheme, we could solely contemplate ciphertexts, which only make use of a secret key for encrypting messages.
 However, extending the idea to an asymmetric encrypting scheme by introducing a public key can be achieved in a straightforward way.
 That is due to the fact that a public key, which is in fact generated from the secret key, simply has a structure identical to any other ciphertext, i.e. a structure as in <a class="reference internal" href="#RLWE-distribution">Definition 2</a>.
 It follows that the security reductions for any ciphertext (<a class="reference internal" href="#RLWE-security">Property 2</a>) also apply to the public key, whose exposure to any party is therefore unproblematic and of great avail.</p>
-<section id="description-of-the-key-generation">
-<h3>Description of the key generation<a class="headerlink" href="#description-of-the-key-generation" title="Permalink to this headline">#</a></h3>
 <p>BFV’s <span class="math notranslate nohighlight">\(\texttt{keygen}\)</span> algorithm takes as an input a ring degree <span class="math notranslate nohighlight">\(N\)</span>, a ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span>, and a standard deviation <span class="math notranslate nohighlight">\(\sigma \ge 0\)</span>.
 It outputs a public key <span class="math notranslate nohighlight">\(\mathrm{pk} \in R_Q^2\)</span> and a secret key <span class="math notranslate nohighlight">\(\mathrm{sk} \in R_Q\)</span>. It sets:</p>
 <div class="math notranslate nohighlight">
@@ -1954,8 +1934,8 @@ It outputs a public key <span class="math notranslate nohighlight">\(\mathrm{pk}
 <p>with <span class="math notranslate nohighlight">\(\mathrm{pk}_0 \sim \mathcal U(R_Q)\)</span> and an error <span class="math notranslate nohighlight">\(e \sim \mathcal N_d(0,\sigma^2)\)</span>.</p>
 <p>Notice that we can control our error distribution with the parameter standard deviation <span class="math notranslate nohighlight">\(\sigma \ge 0\)</span>.
 As pointed out in <a class="reference internal" href="#remarks-on-security"><span class="std std-ref">Remarks on the security framework for FHE</span></a>, it is very important to choose the parameters carefully for preserving security hardness results.
-Nevertheless, as we will later see, <span class="math notranslate nohighlight">\(\sigma\)</span> does not affect the number of possible homomorphic operations greatly.
-Hence we conveniently set <span class="math notranslate nohighlight">\(\sigma = 1\)</span> while testing our implementations.</p>
+Nevertheless, as we will later see, <span class="math notranslate nohighlight">\(\sigma\)</span> does affect the number of possible homomorphic operations greatly (see <a class="reference internal" href="#parameter-impact"><span class="std std-ref">Parameter impact</span></a>).
+Hence, we conveniently set <span class="math notranslate nohighlight">\(\sigma = 1\)</span> while testing our implementations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">keygen</span><span class="p">(</span><span class="n">key_size</span><span class="p">,</span> <span class="n">ciphertext_modulus</span><span class="p">,</span> <span class="n">standard_deviation</span><span class="p">):</span>
@@ -1970,28 +1950,27 @@ Hence we conveniently set <span class="math notranslate nohighlight">\(\sigma = 
 </div>
 </div>
 </section>
-</section>
 <section id="encryption">
 <h2>Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline">#</a></h2>
 <section id="notion-of-bfv-ciphertexts">
 <h3>Notion of BFV ciphertexts<a class="headerlink" href="#notion-of-bfv-ciphertexts" title="Permalink to this headline">#</a></h3>
-<p>For encryption we take a previously into the polynomial <span class="math notranslate nohighlight">\(M \in R_T\)</span> encoded message, with the coefficients lying in <span class="math notranslate nohighlight">\(\mathbb{Z}_T\)</span>, where <span class="math notranslate nohighlight">\(T\)</span> is the plaintext modulus.
+<p>For encryption, we take a message that has been previously encoded into the polynomial <span class="math notranslate nohighlight">\(M \in R_T\)</span>, where <span class="math notranslate nohighlight">\(T\)</span> is the plaintext modulus.
 Encryption now essentially uses the public key to transform <span class="math notranslate nohighlight">\(M\)</span> into a ciphertext <span class="math notranslate nohighlight">\(\mathrm{ct} \in R_Q^2\)</span> defined as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathrm{ct} := (\mathrm{ct}_0, \mathrm{ct}_1) := (z\cdot \mathrm{pk}_0+e_0,z\cdot \mathrm{pk}_1 + e_1 + \lfloor Q/T \rceil M) \in R_Q^2
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(e_0, e_1, z \sim \mathcal N_d(0, \sigma^2)\)</span>.
-To highlight the technique of encryption, we commonly will denote <span class="math notranslate nohighlight">\(\mathrm{ct}\)</span> as <span class="math notranslate nohighlight">\(\mathrm{BFV}_{Q,s}(M)\)</span>.</p>
+To highlight the technique of encryption, we will commonly denote <span class="math notranslate nohighlight">\(\mathrm{ct}\)</span> as <span class="math notranslate nohighlight">\(\mathrm{BFV}_{Q,s}(M)\)</span>.</p>
 <p>Notice that the BFV ciphertext as well fits the structure of a RLWE ciphertext as in <a class="reference internal" href="#RLWE-distribution">Definition 2</a>.
 That is because <span class="math notranslate nohighlight">\(\mathrm{ct}_0\)</span> still looks uniformly at random, since multiplying with <span class="math notranslate nohighlight">\(z\)</span> and adding <span class="math notranslate nohighlight">\(e_0\)</span> does not change this in a meaningful way.
-Furthermore, the second component containing the hidden secret key as <span class="math notranslate nohighlight">\(- \mathrm{pk}_0 \cdot s\)</span> and the error term <span class="math notranslate nohighlight">\(-z \cdot e + e_1 - e_0\cdot s\)</span> (which is slightly altered compared to an error generated from <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>) can be shown to greatly resemble the structure of a RLWE ciphertext.
-More details on the security of <span class="math notranslate nohighlight">\(\mathrm{ct}\)</span> are given in Section 8.2 of <span id="id30">[<a class="reference internal" href="#id68" title="Vadim Lyubashevsky, Chris Peikert, and Oded Regev. A toolkit for ring-lwe cryptography. Cryptology ePrint Archive, Paper 2013/293, 2013. https://eprint.iacr.org/2013/293. URL: https://eprint.iacr.org/2013/293.">Lyubashevsky <em>et al.</em>, 2013</a>]</span>.</p>
+Furthermore, the second component containing the hidden secret key as <span class="math notranslate nohighlight">\(- \mathrm{pk}_0 \cdot \mathrm{sk}\)</span> and the error term <span class="math notranslate nohighlight">\(-z \cdot e + e_1 - e_0\cdot \mathrm{sk}\)</span> (which is slightly altered compared to an error generated from <span class="math notranslate nohighlight">\(\mathcal N_d(0,\sigma^2)\)</span>) can be shown to greatly resemble the structure of a RLWE ciphertext.
+More details on the security of <span class="math notranslate nohighlight">\(\mathrm{ct}\)</span> are given in Section 8.2 of <span id="id30">[<a class="reference internal" href="#id71" title="Vadim Lyubashevsky, Chris Peikert, and Oded Regev. A toolkit for ring-lwe cryptography. Cryptology ePrint Archive, Paper 2013/293, 2013. https://eprint.iacr.org/2013/293. URL: https://eprint.iacr.org/2013/293.">Lyubashevsky <em>et al.</em>, 2013</a>]</span>.</p>
 <p>The scaling of the message <span class="math notranslate nohighlight">\(M\)</span> by the large factor <span class="math notranslate nohighlight">\(\round{Q/T}\)</span> is also crucial since we need to distinguish it from the error during decrypting.</p>
 <p>Remarks:</p>
 <ul class="simple">
-<li><p>For constructing something “cryptographically secure”, we want to blow up a (rather small) plaintext space <span class="math notranslate nohighlight">\(R_T\)</span> to a large ciphertext space <span class="math notranslate nohighlight">\(R_Q\)</span>, hence we ought to choose <span class="math notranslate nohighlight">\(Q\)</span> much larger than <span class="math notranslate nohighlight">\(T\)</span>.
-This is also indispensable for realizing even the simplest operations on ciphertexts, not to mention decrypting.</p></li>
+<li><p>For constructing something cryptographically secure, we want to blow up a (rather small) plaintext space <span class="math notranslate nohighlight">\(R_T\)</span> to a large ciphertext space <span class="math notranslate nohighlight">\(R_Q\)</span>, hence we ought to choose <span class="math notranslate nohighlight">\(Q\)</span> much larger than <span class="math notranslate nohighlight">\(T\)</span>.
+This is also indispensable for realizing even the simplest operations on ciphertexts, not to mention decrypting (see <a class="reference internal" href="#correct-BFV-decryption">Lemma 4</a>).</p></li>
 <li><p>For our purposes, we will only use powers of two for <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(Q\)</span>, such that the rounding of <span class="math notranslate nohighlight">\(Q/T\)</span> is technically obsolete, but nevertheless it should be mentioned as the scheme can be varied to arbitrary <span class="math notranslate nohighlight">\(T, Q\)</span> and the above is the usual BFV encryption formula.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -2029,9 +2008,9 @@ Plaintext modulus T = 4
 Ciphertext modulus Q = 1048576
 Standard deviation STD = 1
 
-Message: M = 2x^3 + 3x^2 + 2x + 1
-Encryption components are 198847x^3 + 355252x^2 + 263392x + 390421 
-and 64981x^3 + 942839x^2 + 432426x + 389173
+Message: M = 2x^3
+Encryption components are 722435x^3 + 96694x^2 + 204932x + 818462 
+and 632532x^3 + 613528x^2 + 556254x + 625737
 </pre></div>
 </div>
 </div>
@@ -2045,7 +2024,7 @@ and 64981x^3 + 942839x^2 + 432426x + 389173
 <p>The error size within a BFV-ciphertext after BFV-encryption using <span class="math notranslate nohighlight">\(\sigma = 1\)</span> can be estimated as <span class="math notranslate nohighlight">\(C\sqrt{N}\)</span>. It holds that <span class="math notranslate nohighlight">\(C \approx 100\)</span> with high probability.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. The error after BFV encryption is precisely <span class="math notranslate nohighlight">\(-z \cdot e + e_1 + e_0 \cdot s\)</span> with <span class="math notranslate nohighlight">\(z,e,e_0,e_1 \sim \mathcal N_d(0,1)\)</span> and <span class="math notranslate nohighlight">\(s \sim \mathrm{Ter}_{1/3}\)</span>.
+<p>Proof. The error after BFV encryption is precisely <span class="math notranslate nohighlight">\(-z \cdot e + e_1 + e_0 \cdot s\)</span> with <span class="math notranslate nohighlight">\(z,e,e_0,e_1 \sim \mathcal N_d(0,1)\)</span> and <span class="math notranslate nohighlight">\(\mathrm{sk} \sim \mathrm{Ter}_{1/3}\)</span>.
 Now, many details for determining the norm of multiplied ring elements generated from certain distributions can be examined.
 But as the theoretical and computational conclusions in <a class="reference internal" href="#conclusion-on-delta-r"><span class="std std-ref">Conclusion on the expansion factor</span></a> suggest, we may use the reasonable estimation:</p>
 <div class="math notranslate nohighlight">
@@ -2069,7 +2048,7 @@ In total, we may estimate the error after BFV encryption as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 7.75
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 6.0
 </pre></div>
 </div>
 </div>
@@ -2081,12 +2060,10 @@ In total, we may estimate the error after BFV encryption as:</p>
 <p>The decryption algorithm takes a BFV ciphertext <span class="math notranslate nohighlight">\(\mathrm{BFV}_{Q,\mathrm{sk}}(M) = \mathrm{ct} \in R_Q\)</span> and the secret key <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> as an input and it outputs the hidden message polynomial <span class="math notranslate nohighlight">\(M \in R_T\)</span>.
 To begin with, it eliminates the random component inside a ciphertext by computing:</p>
 <div class="math notranslate nohighlight">
-\[
-T\cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)
-\]</div>
-<p>It is crucial to perform this computation entirely in <span class="math notranslate nohighlight">\(R\)</span>, that means without modular arithmetic:
-If we instead use the ring <span class="math notranslate nohighlight">\(R_Q\)</span>, we would wind up with the term <span class="math notranslate nohighlight">\(T \lfloor Q/T \rceil M \in R_Q\)</span> within <span class="math notranslate nohighlight">\(\mathrm{ct}_1\)</span>, which then would degenerate any message.</p>
-<p>To proceed, we integer-divide the coefficients of <span class="math notranslate nohighlight">\(T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)\)</span> by <span class="math notranslate nohighlight">\(Q\)</span> (done by rounding the result-coefficients).
+\[T\cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1).\]</div>
+<p>It is crucial to perform this computation entirely in <span class="math notranslate nohighlight">\(R\)</span>, that means without modular reductions:
+If we instead use the ring <span class="math notranslate nohighlight">\(R_Q\)</span>, we would wind up with the term <span class="math notranslate nohighlight">\(T \lfloor Q/T \rceil M \in R_Q\)</span> within <span class="math notranslate nohighlight">\(\mathrm{ct}_1\)</span>, which would then degenerate any message.</p>
+<p>To proceed, we integer-divide the coefficients of <span class="math notranslate nohighlight">\(T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)\)</span> by <span class="math notranslate nohighlight">\(Q\)</span> (done by rounding the coefficients of the result).
 At last, we reduce the result by <span class="math notranslate nohighlight">\(T\)</span> to regain <span class="math notranslate nohighlight">\(M \in R_T\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2109,23 +2086,23 @@ At last, we reduce the result by <span class="math notranslate nohighlight">\(T\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2x^3 + 3x^2 + 2x + 1
-Message 2x^3 + 3x^2 + 2x + 1 decrypted correctly? True
-Error size inside ciphertext: 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2x^3
+Message 2x^3 decrypted correctly? True
+Error size inside ciphertext: 6
 </pre></div>
 </div>
 </div>
 </div>
 <section id="a-criterion-for-correct-decryption">
 <h3>A criterion for correct decryption<a class="headerlink" href="#a-criterion-for-correct-decryption" title="Permalink to this headline">#</a></h3>
-<p>It is of uttermost importance for a cryptographic scheme to be serviceable to formulate a criterion, which answers the question, of under which circumstances we still can decrypt correctly.
+<p>It is of uttermost importance for a FHE scheme to be serviceable to formulate a criterion, which answers the question, of under which circumstances we still can decrypt correctly.
 Moreover, this criterion will be our main limitation in terms of how frequently we need to interpose a (costly) bootstrapping procedure later (to reduce the error size).</p>
 <p>Recall that a BFV-encrypted ciphertext unfolded looks like the following:</p>
 <div class="math notranslate nohighlight">
-\[ \mathrm{ct} = (z\cdot \mathrm{pk}_0 +e_0, -z \cdot \mathrm{pk}_0 \cdot \mathrm{sk} - z\cdot e +e_1 + \lfloor Q/T \rfloor M)\]</div>
+\[\mathrm{ct} = (z\cdot \mathrm{pk}_0 +e_0, -z \cdot \mathrm{pk}_0 \cdot \mathrm{sk} - z\cdot e +e_1 + \lfloor Q/T \rfloor M).\]</div>
 <p>If we compute <span class="math notranslate nohighlight">\(T \cdot (\mathrm{ct}_0 \cdot \mathrm{sk} + \mathrm{ct}_1)\)</span>, we will be left with:</p>
 <div class="math notranslate nohighlight">
-\[ T (e_0\cdot \mathrm{sk}+e_1-z\cdot e) + T\cdot \lfloor Q/T \rceil M\]</div>
+\[T (e_0\cdot \mathrm{sk}+e_1-z\cdot e) + T\cdot \lfloor Q/T \rceil M\]</div>
 <p>This already properly illustrates, what we have to keep track of, if we still correctly want to decrypt any ciphertext that may have been manipulated.
 The first term within brackets is called the decryption error.
 Recall that at this point we still have to integer-divide by <span class="math notranslate nohighlight">\(Q\)</span>.
@@ -2137,10 +2114,10 @@ Nevertheless, if the decryption error is composed differently because of previou
 <div class="proof lemma admonition" id="correct-BFV-decryption">
 <p class="admonition-title"><span class="caption-number">Lemma 4 </span> (Correct BFV decryption)</p>
 <section class="lemma-content" id="proof-content">
-<p>A <span class="math notranslate nohighlight">\(\mathrm{BFV}_{Q,s}(M)\)</span> ciphertext with an intrinsic error <span class="math notranslate nohighlight">\(e\)</span> decrypts correctly, if <span class="math notranslate nohighlight">\(\norm e &lt; Q/(2T)\)</span>.</p>
+<p>A <span class="math notranslate nohighlight">\(\mathrm{BFV}_{Q,\mathrm{sk}}(M)\)</span> ciphertext with an intrinsic error <span class="math notranslate nohighlight">\(e\)</span> decrypts correctly, if <span class="math notranslate nohighlight">\(\norm e &lt; Q/(2T)\)</span>.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. We follow the proof of Lemma 1 in <span id="id31">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>.
+<p>Proof. We follow the proof of Lemma 1 in <span id="id31">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>.
 The decryption algorithm works correctly if and only if the rounding as its final step does.
 We enter the rounding step with <span class="math notranslate nohighlight">\(M + (T/Q)e\)</span>, which is treated as a polynomial with rational coefficients.
 For <span class="math notranslate nohighlight">\((T/Q)e\)</span> to vanish during rounding, it is required that <span class="math notranslate nohighlight">\(\norm{(T/Q)e} &lt; 1/2\)</span>, which directly translates into the claim.</p>
@@ -2148,7 +2125,7 @@ For <span class="math notranslate nohighlight">\((T/Q)e\)</span> to vanish durin
 <p>In the rest of the notebook, we want to implement homomorphic operations (addition and multiplication) on the BFV scheme and furthermore derive a bootstrapping algorithm to replace a big error with a small and fresh one.
 For this process it is not particularly necessary to deal with the lengthy public-key ciphertexts, thus we introduce a simpler notion of a BFV ciphertext by:</p>
 <div class="math notranslate nohighlight">
-\[ \mathrm{BFV}_{Q,s}(M) := (a, -a\cdot\mathrm{sk}+e+\lfloor Q/T\rceil M)\]</div>
+\[\mathrm{BFV}_{Q,\mathrm{sk}}(M) := (a, -a\cdot\mathrm{sk}+e+\lfloor Q/T\rceil M),\]</div>
 <p>where neither <span class="math notranslate nohighlight">\(a \in R_Q\)</span> is further specified nor the (initial) error <span class="math notranslate nohighlight">\(e \in R_Q\)</span>.</p>
 </section>
 </section>
@@ -2158,13 +2135,13 @@ For this process it is not particularly necessary to deal with the lengthy publi
 It plainly can be done by adding the ciphertext components together (subtraction is done analogously).
 Starting with two BFV ciphertexts:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\mathrm{ct}_0 := (a_0,b_0) := (a_0, -a_0\cdot \mathrm{sk} + e_0 + \lfloor Q/T\rceil M_0)\\
-\mathrm{ct}_1 := (a_1,b_1) := (a_1, -a_1\cdot \mathrm{sk} + e_1 + \lfloor Q/T\rceil M_1)\end{split}\]</div>
+\[\begin{split}\mathrm{ct}_0 := (a_0,b_0) := (a_0, -a_0\cdot \mathrm{sk} + e_0 + \lfloor Q/T\rceil M_0),\\
+\mathrm{ct}_1 := (a_1,b_1) := (a_1, -a_1\cdot \mathrm{sk} + e_1 + \lfloor Q/T\rceil M_1),\end{split}\]</div>
 <p>we define the sum of them as <span class="math notranslate nohighlight">\(\mathrm{sum} := (a_0+a_1,b_0+b_1)\)</span>.
 The linearity of adding and the structure of BFV ciphertexts make sure that <span class="math notranslate nohighlight">\(\mathrm{sum}\)</span> gets decrypted correctly to <span class="math notranslate nohighlight">\(M_0+M_1\)</span> as follows:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{sum}_0 \cdot \mathrm{sk} + \mathrm{sum}_1 = \frac{Q}{T}(M_0+M_1) + (e_0 + e_1) \in R_Q\]</div>
-<p>Note that the above actually only holds for powers of two <span class="math notranslate nohighlight">\(T &lt; Q\)</span>, since we would otherwise have to deal with another summand building upon the (nonzero) remainder of <span class="math notranslate nohighlight">\(Q\)</span> divided by <span class="math notranslate nohighlight">\(T\)</span> (see chapter 4 in <span id="id32">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>).</p>
+\[\mathrm{sum}_0 \cdot \mathrm{sk} + \mathrm{sum}_1 = \frac{Q}{T}(M_0+M_1) + (e_0 + e_1) \in R_Q.\]</div>
+<p>Note that the above equation actually only holds for powers of two <span class="math notranslate nohighlight">\(T &lt; Q\)</span>, since we would otherwise have to deal with another summand building upon the (nonzero) remainder of <span class="math notranslate nohighlight">\(Q\)</span> divided by <span class="math notranslate nohighlight">\(T\)</span> (see chapter 4 in <span id="id32">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>).</p>
 <p>We may now still decrypt correctly, given the new error <span class="math notranslate nohighlight">\(e_{\mathrm{sum}} = e_0+e_1\)</span> still satisfies the bound given in <a class="reference internal" href="#correct-BFV-decryption">Lemma 4</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2202,7 +2179,7 @@ Added 1+1 correctly? True
 To successfully perform <span class="math notranslate nohighlight">\(k\)</span> additions, the total error size afterwards must not exceed <span class="math notranslate nohighlight">\(Q/(2T)\)</span>.
 Using the triangle inequality and the error bound in <a class="reference internal" href="#error-after-BFV-encryption">Lemma 3</a> for a certain <span class="math notranslate nohighlight">\(C\)</span>, we have to ensure that:</p>
 <div class="math notranslate nohighlight" id="equation-number-of-additions">
-<span class="eqno">(3)<a class="headerlink" href="#equation-number-of-additions" title="Permalink to this equation">#</a></span>\[k &lt; \frac{Q}{2T\cdot C \sqrt{N}}\]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-number-of-additions" title="Permalink to this equation">#</a></span>\[k &lt; \frac{Q}{2T\cdot C \sqrt{N}}.\]</div>
 <p>The procedure <span class="math notranslate nohighlight">\(\texttt{how-many-additions}\)</span> below enables us to run various experiments on adding ciphertexts.
 It simulates the process of adding (freshly encrypted) ciphertexts and it outputs the maximum of possible (correct) additions, minimized over a number of iterations.
 In doing so and compared to averaging the number of possible additions, it reflects the worst-case scenario, which is pivotal to consider while constructing a FHE scheme.</p>
@@ -2241,19 +2218,19 @@ However, <span class="math notranslate nohighlight">\(C \approx 8\)</span> yield
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="parameter-impact">
-<h3>Parameter impact<a class="headerlink" href="#parameter-impact" title="Permalink to this headline">#</a></h3>
+<span id="id33"></span><h3>Parameter impact<a class="headerlink" href="#parameter-impact" title="Permalink to this headline">#</a></h3>
 <p>Finally, we want to affirm <a class="reference internal" href="#equation-number-of-additions">(3)</a> computationally by depicting a diagram, which illustrates the change of the scheme’s parameters and their impact on the (minimum) number of possible additions.
 Because we generally work with powers of two for <span class="math notranslate nohighlight">\(N, T\)</span>, and <span class="math notranslate nohighlight">\(Q\)</span>, we will observe the behaviour of <span class="math notranslate nohighlight">\(\texttt{how-many-additions}\)</span> under doubling each of the parameters and present everything on an exponential/logarithmic scale.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">,</span> <span class="n">doublings</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">,</span> <span class="n">doublings</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">4</span>
 <span class="n">doubling_N</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
 <span class="n">doubling_T</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
 <span class="n">doubling_Q</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
@@ -2299,7 +2276,7 @@ Although we will explain some approaches to diminishing the size of this factor 
 </section>
 <section id="motivation">
 <h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h3>
-<p>Although we will use multiplication for the more general notion of RLWE ciphertexts later as well, we will first stick to the BFV case.
+<p>Although we will use multiplication for the more general notion of RLWE ciphertexts later as well (see e.g. <a class="reference internal" href="#operations-on-rlwe-ciphertexts"><span class="std std-ref">Operations on RLWE ciphertexts</span></a>), we will first stick to the BFV case.
 For simplicity, and according to our implementation with powers of two <span class="math notranslate nohighlight">\(T&lt;Q\)</span>, we will drop the rounding of <span class="math notranslate nohighlight">\(\round{Q/T}\)</span> from now on.
 Taking two BFV ciphertexts of their form <span class="math notranslate nohighlight">\((a_i,-a_i\cdot s + e_i + (Q/T) M_i)\)</span> for messages <span class="math notranslate nohighlight">\(M_0,M_1\)</span>, we immediately observe that it is mandatory for a BFV multiplication algorithm to multiply the second components <span class="math notranslate nohighlight">\(-a_i\cdot s + e_i + (Q/T) M_i\)</span>, yielding a term including <span class="math notranslate nohighlight">\(M_0M_1\)</span>.
 Because the additive structure is not compatible with multiplication in a linear way, we can already presume that we will obtain several summands, which are dispensable and, in the error case, even obstructive for further operations on ciphertexts.</p>
@@ -2316,18 +2293,16 @@ b_0b_1 &amp;= \underbrace{a_0a_1 \mathrm{sk}^2}_{\text{Precomputation of }\mathr
 <section id="relinearization-keys">
 <h3>Relinearization Keys<a class="headerlink" href="#relinearization-keys" title="Permalink to this headline">#</a></h3>
 <p>We start with the problem of eliminating <span class="math notranslate nohighlight">\(a_0a_1\mathrm{sk}^2\)</span>.
-For that we need an outsourced precomputation, i.e. an encryption of <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span>, which clearly needs to be done by a party with knowledge of <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span>.
+For that, we need an outsourced precomputation, i.e. an encryption of <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span>, which clearly needs to be done by a party with knowledge of <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span>.
 Since encrypting always comes together with an (additive) error (see <a class="reference internal" href="#error-after-BFV-encryption">Lemma 3</a>) and we need to multiply the encryption of <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span> afterwards with <span class="math notranslate nohighlight">\(a_0a_1\)</span>, we cannot let this error grow too much.
 To clarify the latter, recall that multiplying with <span class="math notranslate nohighlight">\(a_0a_1\)</span> (or any other public ring element) works via multiplying both components of a BFV/RLWE ciphertext by <span class="math notranslate nohighlight">\(a_0a_1\)</span>, which also multiplies the intrinsic error with <span class="math notranslate nohighlight">\(a_0a_1\)</span>.</p>
 <p>This sparks the idea of encrypting <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span> via a larger auxiliary modulus <span class="math notranslate nohighlight">\(P\cdot Q\)</span> (for a large <span class="math notranslate nohighlight">\(P\)</span>), in order to scale down the error afterwards by dividing by <span class="math notranslate nohighlight">\(P\)</span> again.
-Later, we will investigate this key concept further by introducing a general “rescaling” procedure.
-Needless to say, we then need to encrypt <span class="math notranslate nohighlight">\(P\cdot \mathrm{sk}^2\)</span> instead of <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span>, since the message, <span class="math notranslate nohighlight">\(P\cdot \mathrm{sk}^2\)</span>, will get divided by <span class="math notranslate nohighlight">\(P\)</span>, too.</p>
+Later, we will investigate this key concept further by introducing a general rescaling procedure (see <a class="reference internal" href="#rescaling"><span class="std std-ref">Rescaling</span></a>).
+Needless to say, we then need to encrypt <span class="math notranslate nohighlight">\(P\cdot \mathrm{sk}^2\)</span> instead of <span class="math notranslate nohighlight">\(\mathrm{sk}^2\)</span>, since the message, <span class="math notranslate nohighlight">\(P\cdot \mathrm{sk}^2\)</span>, will get divided by <span class="math notranslate nohighlight">\(P\)</span> too.</p>
 <p>The following algorithm computes the “relinearization keys”, named by the principle of making the multiplied ciphertext <span class="math notranslate nohighlight">\(b_0b_1\)</span> linear in <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> again.</p>
 <p>The relinearization keys are set to:</p>
 <div class="math notranslate nohighlight">
-\[
-\mathrm{rlk} := (\mathrm{rlk}_0, \mathrm{rlk}_1) := (\mathrm{rlk}_0, - \mathrm{rlk}_0 \cdot \mathrm{sk} + e_{\text{rlk}} + P\cdot\mathrm{sk}^2 ) \in R_{PQ}^2 
-\]</div>
+\[\mathrm{rlk} := (\mathrm{rlk}_0, \mathrm{rlk}_1) := (\mathrm{rlk}_0, - \mathrm{rlk}_0 \cdot \mathrm{sk} + e_{\text{rlk}} + P\cdot\mathrm{sk}^2 ) \in R_{PQ}^2 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathrm{rlk}_0 \sim \mathcal U(R_{PQ})\)</span> and <span class="math notranslate nohighlight">\(e_{\text{rlk}} \sim \mathcal N_d(0, \sigma^2)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2342,10 +2317,10 @@ Needless to say, we then need to encrypt <span class="math notranslate nohighlig
 </div>
 </div>
 </div>
-<p>It is important to note, that the parameter <span class="math notranslate nohighlight">\(\sigma\)</span> for the error distribution of <span class="math notranslate nohighlight">\(e_{\text{rlk}}\)</span> should greatly differ from the analogous parameter used during (regular) encryption.
-In <span id="id33">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, Section 6.1, a precise analysis of this subject is given.
+<p>It is important to note that the parameter <span class="math notranslate nohighlight">\(\sigma\)</span> for the error distribution of <span class="math notranslate nohighlight">\(e_{\text{rlk}}\)</span> should greatly differ from the analogous parameter used during (regular) encryption.
+In <span id="id34">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, Section 6.1, a precise analysis of this subject is given.
 Again, because security issues are not the main concern of our implementations and large variances are obstructive to performances of homomorphic operations, we will overlook this fact by continuing to use <span class="math notranslate nohighlight">\(\sigma = 1\)</span> in both cases.</p>
-<p>The following lemma (see Section 4 of <span id="id34">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>) assesses the error after completing the relinerazation process, i.e. the error belonging to an encryption of <span class="math notranslate nohighlight">\(a_0a_1\mathrm{sk}^2\)</span>.</p>
+<p>The following lemma (see Section 4 of <span id="id35">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>) assesses the error after completing the relinerazation process, i.e. the error belonging to an encryption of <span class="math notranslate nohighlight">\(a_0a_1\mathrm{sk}^2\)</span>.</p>
 <div class="proof lemma admonition" id="relinearization-error">
 <p class="admonition-title"><span class="caption-number">Lemma 5 </span> (Relinearization error)</p>
 <section class="lemma-content" id="proof-content">
@@ -2370,18 +2345,16 @@ The claim follows.</p>
 As shown in the proof, the summand <span class="math notranslate nohighlight">\((N+1)/2\)</span> is an estimator for a very unlikely worst case.
 Equilibrating effects of summing rounded integers and <span class="math notranslate nohighlight">\(\mathrm{sk} \sim \mathrm{Ter}_{1/3}\)</span> lead to a way smaller error in the average case.</p>
 </section>
-<section id="core-of-multiplying">
-<h3>Core of multiplying<a class="headerlink" href="#core-of-multiplying" title="Permalink to this headline">#</a></h3>
+<section id="the-core-of-multiplying">
+<h3>The core of multiplying<a class="headerlink" href="#the-core-of-multiplying" title="Permalink to this headline">#</a></h3>
 <p>After subtracting <span class="math notranslate nohighlight">\(a_0a_1\mathrm{sk}^2\)</span> from <span class="math notranslate nohighlight">\(b_0b_1\)</span> in <a class="reference internal" href="#equation-b-0b-1">(4)</a>, we proceed with eliminating the dispensable single <span class="math notranslate nohighlight">\(Q/T\)</span> inside <span class="math notranslate nohighlight">\((Q/T)^2 M_0M_1\)</span>.
-Hence we need to scale the latter via integer-dividing (i.e. dividing and rounding) by <span class="math notranslate nohighlight">\(T/Q\)</span>, which can naturally only be done implicitly by operating on <span class="math notranslate nohighlight">\(b_0b_1\)</span>.
+Hence, we need to scale the latter via integer-dividing (i.e. dividing and rounding) by <span class="math notranslate nohighlight">\(T/Q\)</span>, which can naturally only be done implicitly by operating on <span class="math notranslate nohighlight">\(b_0b_1\)</span>.
 We will employ this technique as well for other terms consisting of <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span>, see below.</p>
 <p>Apart from the inevitable error term of multiplying in <a class="reference internal" href="#equation-b-0b-1">(4)</a>, we are now left with setting up the first component of the product ciphertext, which consists of a <span class="math notranslate nohighlight">\(R_Q\)</span>-element, which gets multiplied by <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> during decryption.
-Hence this <span class="math notranslate nohighlight">\(R_Q\)</span>-element should correspond to the term linear in <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> in <a class="reference internal" href="#equation-b-0b-1">(4)</a>.
+Hence, this <span class="math notranslate nohighlight">\(R_Q\)</span>-element should correspond to the term linear in <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> in <a class="reference internal" href="#equation-b-0b-1">(4)</a>.
 For defining the first component we consider the cross-combination of <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_i\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[
-a_0b_1 + a_1b_0 = -2a_1a_0\mathrm{sk} + (a_0e_1+a_1e_0) + (a_0M_1+a_1M_0) (Q/T)
-\]</div>
+\[a_0b_1 + a_1b_0 = -2a_1a_0\mathrm{sk} + (a_0e_1+a_1e_0) + (a_0M_1+a_1M_0) (Q/T)\]</div>
 <p>Notice that multiplying the left-hand side by <span class="math notranslate nohighlight">\(\mathrm{sk}\)</span> (occurs during decryption) yields similar, yet not entirely identical summands compared to the second line in <a class="reference internal" href="#equation-b-0b-1">(4)</a> (bar the scaling by <span class="math notranslate nohighlight">\(T/Q\)</span>).</p>
 <p>All questions raised from <a class="reference internal" href="#equation-b-0b-1">(4)</a> now being answered in theory, we will introduce the common notation of <span class="math notranslate nohighlight">\(\Delta := Q/T\)</span> before describing the actual algorithm:
 As a first step, we want to merge the following three ciphertexts into two:</p>
@@ -2445,7 +2418,7 @@ Multiplied 1*1 correctly? True
 </section>
 <section id="error-analysis">
 <h3>Error analysis<a class="headerlink" href="#error-analysis" title="Permalink to this headline">#</a></h3>
-<p>To derive a worst-case bound for the error after one multiplication, we will follow the approach in <span id="id35">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, Section 4.</p>
+<p>To derive a worst-case bound for the error after one multiplication, we will follow the approach in <span id="id36">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>, Section 4.</p>
 <p>Firstly, we will introduce an useful notation for <span class="math notranslate nohighlight">\(\mathrm{ct}_i := (a_i,b_i)\)</span>, that is interpreting <span class="math notranslate nohighlight">\(\mathrm{ct}_i\)</span> as a polynomial as <span class="math notranslate nohighlight">\(\mathrm{ct}_i(x) := a_i x + b_i\)</span>.
 Using that, we have (in <span class="math notranslate nohighlight">\(R\)</span>):</p>
 <div class="math notranslate nohighlight" id="equation-multiplication-approximation">
@@ -2473,7 +2446,7 @@ Now as a calculation shows, the left-hand side in <a class="reference internal" 
 &amp;+ Q(M_0f_1+M_1f_0+f_M) + QTf_0f_1.
 \end{split}\end{split}\]</div>
 <p>Notice that the second line ultimately vanishes modulo <span class="math notranslate nohighlight">\(Q\)</span> and in the first line only <span class="math notranslate nohighlight">\(\Delta^{-1}[e_0e_1]_\Delta\)</span> (with norm <span class="math notranslate nohighlight">\(\le 1\)</span>) has rational coefficients.</p>
-<p>We may now summarize the error analysis in a theorem, which is similar to Lemma 2 in <span id="id36">[<a class="reference internal" href="#id67" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>.</p>
+<p>We may now summarize the error analysis in a theorem, which is similar to Lemma 2 in <span id="id37">[<a class="reference internal" href="#id70" title="Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. https://eprint.iacr.org/2012/144. URL: https://eprint.iacr.org/2012/144.">Fan and Vercauteren, 2012</a>]</span>.</p>
 <div class="proof theorem admonition" id="error-after-BFV-multiplication">
 <p class="admonition-title"><span class="caption-number">Theorem 6 </span> (Error after BFV multiplication)</p>
 <section class="theorem-content" id="proof-content">
@@ -2525,13 +2498,13 @@ Maximum C was 2
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="preparations-for-bootstrapping">
-<span id="id37"></span><h1>Preparations for bootstrapping<a class="headerlink" href="#preparations-for-bootstrapping" title="Permalink to this headline">#</a></h1>
+<span id="id38"></span><h1>Preparations for bootstrapping<a class="headerlink" href="#preparations-for-bootstrapping" title="Permalink to this headline">#</a></h1>
 <section id="rlwe-ciphertexts">
 <h2>RLWE ciphertexts<a class="headerlink" href="#rlwe-ciphertexts" title="Permalink to this headline">#</a></h2>
-<section id="id38">
-<h3>Motivation<a class="headerlink" href="#id38" title="Permalink to this headline">#</a></h3>
+<section id="id39">
+<h3>Motivation<a class="headerlink" href="#id39" title="Permalink to this headline">#</a></h3>
 <p>Bootstrapping, apart from some minor precomputations, happens entirely in ciphertext spaces like <span class="math notranslate nohighlight">\(R_Q\)</span>.
-Hence, as the presented bootstrapping procedure from <span id="id39">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span> is technically applicable to any RLWE-based scheme (CKKS, BFV, BGV, etc.), it is helpful to simplify the notion of a ciphertext, such that it becomes independent of various encoding techniques, e.g. BFV.</p>
+Hence, as the presented bootstrapping procedure from <span id="id40">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span> is technically applicable to any RLWE-based scheme (CKKS, BFV, BGV, etc.), it is helpful to simplify the notion of a ciphertext, such that it becomes independent of various encoding techniques, e.g. BFV.</p>
 <p>We universally speak of a RLWE-ciphertext, similiar to <a class="reference internal" href="#RLWE-distribution">Definition 2</a>, of a message <span class="math notranslate nohighlight">\(m\)</span> encrypted under the secret key <span class="math notranslate nohighlight">\(s\)</span> using the ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span> and denote it as:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2558,10 +2531,10 @@ By the latter, we mean an error with the same size and quality as an error comin
 Interestingly, bootstrapping can be deconstructed into the core procedure <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> and the surrounding adaption to the BFV scheme.
 Informally speaking, <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> only consists of the operation of scaling a <span class="math notranslate nohighlight">\(\mathrm{RLWE}(m)\)</span> to <span class="math notranslate nohighlight">\(\mathrm{RLWE}(\Delta \cdot m)\)</span> for a large <span class="math notranslate nohighlight">\(\Delta\)</span> (different delta from BFV-multiplication).
 Since just computing <span class="math notranslate nohighlight">\(\mathrm{RLWE}(m) \cdot \Delta\)</span> would also scale the intrinsic error <span class="math notranslate nohighlight">\(e\)</span> by <span class="math notranslate nohighlight">\(\Delta\)</span>, which itself would imply an impossible decryption, the development of techniques to limit error growth during multiplication with ciphertexts is unavoidable.
-In this chapter, which is based upon <span id="id40">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>, Section 2, we will explain some of these techniques and analyse the resulting effect on the error growth.</p>
+In this chapter, which is based on <span id="id41">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>, Section 2, we will explain some of these techniques and analyse the resulting effect on the error growth.</p>
 </section>
 <section id="operations-on-rlwe-ciphertexts">
-<h3>Operations on RLWE ciphertexts<a class="headerlink" href="#operations-on-rlwe-ciphertexts" title="Permalink to this headline">#</a></h3>
+<span id="id42"></span><h3>Operations on RLWE ciphertexts<a class="headerlink" href="#operations-on-rlwe-ciphertexts" title="Permalink to this headline">#</a></h3>
 <p>To start, we have to define two auxiliary functions, which allow us to effectively deal with RLWE ciphertexts.
 The most basic operation is again addition.
 It can be done in the same direct way as we have realized BFV addition, namely by adding the components.
@@ -2595,8 +2568,10 @@ For a general polynomial <span class="math notranslate nohighlight">\(p\)</span>
 <p>Following these observations, we will later outsource a polynomial multiplication to many individual monomial multiplications and in particular, our next objective will be the reduction of <span class="math notranslate nohighlight">\(\norm{p}\)</span> to smaller values by base-decomposing polynomials/ciphertexts.</p>
 </section>
 </section>
-<section id="id41">
-<h2>RLWE’ ciphertexts<a class="headerlink" href="#id41" title="Permalink to this headline">#</a></h2>
+<section id="id43">
+<h2>RLWE’ ciphertexts<a class="headerlink" href="#id43" title="Permalink to this headline">#</a></h2>
+<section id="id44">
+<h3>Motivation<a class="headerlink" href="#id44" title="Permalink to this headline">#</a></h3>
 <p>Essentially, a RLWE’ ciphertext is a blow-up of a RLWE ciphertext used to better handle error growth during <span class="math notranslate nohighlight">\(\texttt{rlwe-multiply-with-poly}\)</span>.
 Constructing a RLWE’ ciphertext will be done by RLWE-encrypting the corresponding message scalar multiplied by powers of a certain base <span class="math notranslate nohighlight">\(B &gt; 1\)</span>.</p>
 <p>To specify the latter, we are scalar multiplying our message with a so-called gadget vector <span class="math notranslate nohighlight">\(g := (1,B,B^2,\dots,B^l)\)</span>, where <span class="math notranslate nohighlight">\(l \in \mathbb N\)</span> is maximal in terms of <span class="math notranslate nohighlight">\(B^l &lt; \log_B(Q)\)</span>.
@@ -2621,8 +2596,9 @@ The RLWE’ encryption of a message <span class="math notranslate nohighlight">\
 Because our scheme uses a power of two as <span class="math notranslate nohighlight">\(Q\)</span>, it stands to reason for simplicity to use a power of two as <span class="math notranslate nohighlight">\(B\)</span> as well.
 As <span class="math notranslate nohighlight">\(B\)</span> will be a changeable bootstrapping parameter, it has a non-negligible impact on the running time, too.
 As we will analyse in the next section, for a larger <span class="math notranslate nohighlight">\(B\)</span> there is a fine trade-off between the larger error it induces during RLWE’ operations and the faster running times respectively less memory it requires at the same time.</p>
-<section id="id42">
-<h3>Operations on RLWE’ ciphertexts<a class="headerlink" href="#id42" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id45">
+<h3>Operations on RLWE’ ciphertexts<a class="headerlink" href="#id45" title="Permalink to this headline">#</a></h3>
 <p>If one once again considers the error problem concerning the <span class="math notranslate nohighlight">\(\texttt{rlwe-multiply-with-poly}\)</span> algorithm, we may now solve this issue by using our decomposed information hiding inside a RLWE’ ciphertext.
 Recall that multiplying with a large polynomial <span class="math notranslate nohighlight">\(r\)</span> results in too large an error for correct decryption.
 Utilizing the above property that <span class="math notranslate nohighlight">\(\norm{r_i} \le B/2\)</span>, we can improve the size of the error after a multiplication by splitting up the multiplication process among the <span class="math notranslate nohighlight">\(r_i\)</span>’s.</p>
@@ -2630,7 +2606,7 @@ Utilizing the above property that <span class="math notranslate nohighlight">\(\
 <div class="math notranslate nohighlight">
 \[\texttt{rlwe-x-scalar-multiply}: r \odot \mathrm{RLWE'}_{Q,s}(m) := \sum_{i=0}^l r_i \cdot \mathrm{RLWE}_{Q,s}(B^i \cdot m)\]</div>
 <p>The above uses the homomorphic procedures for RLWE ciphertexts, i.e. <span class="math notranslate nohighlight">\(\texttt{rlwe-add}\)</span> and <span class="math notranslate nohighlight">\(\texttt{rlwe-multiply-with-poly}\)</span>, to compute the right-hand side.
-Hence we have:</p>
+Hence, we have:</p>
 <div class="math notranslate nohighlight">
 \[\sum_{i=0}^l r_i \cdot \mathrm{RLWE}_{Q,s}(B^i \cdot m) = \mathrm{RLWE}_{Q,s} \left( \sum_{i=0}^l r_i \cdot B^i \cdot m \right) = \mathrm{RLWE}_{Q,s}(r\cdot m)\]</div>
 <p>So in total, <span class="math notranslate nohighlight">\(\texttt{rlwe-x-scalar-multiply}\)</span> enables us to compute <span class="math notranslate nohighlight">\(\texttt{rlwe-multiply-with-poly}(\mathrm{RLWE}(m), r)\)</span> with a smaller error, whose size we will analyse after stating the algorithm.</p>
@@ -2666,7 +2642,7 @@ Since we will later investigate techniques to scale down an error more efficient
 </section>
 <section id="rgsw-ciphertexts">
 <h2>RGSW ciphertexts<a class="headerlink" href="#rgsw-ciphertexts" title="Permalink to this headline">#</a></h2>
-<p>The notion of a RGSW (name and idea originate from <span id="id43">[<a class="reference internal" href="#id70" title="Craig Gentry, Amit Sahai, and Brent Waters. Homomorphic encryption from learning with errors: conceptually-simpler, asymptotically-faster, attribute-based. Cryptology ePrint Archive, Paper 2013/340, 2013. https://eprint.iacr.org/2013/340. URL: https://eprint.iacr.org/2013/340.">Gentry <em>et al.</em>, 2013</a>]</span>) ciphertext adds another layer of complexity.
+<p>The notion of a RGSW (name and idea originate from <span id="id46">[<a class="reference internal" href="#id73" title="Craig Gentry, Amit Sahai, and Brent Waters. Homomorphic encryption from learning with errors: conceptually-simpler, asymptotically-faster, attribute-based. Cryptology ePrint Archive, Paper 2013/340, 2013. https://eprint.iacr.org/2013/340. URL: https://eprint.iacr.org/2013/340.">Gentry <em>et al.</em>, 2013</a>]</span>) ciphertext adds another layer of complexity.
 Namely, it consists of RLWE’ encryptions of both <span class="math notranslate nohighlight">\(s \cdot m\)</span> and <span class="math notranslate nohighlight">\(m\)</span>, where <span class="math notranslate nohighlight">\(s\)</span> is the secret key.
 The scaling with <span class="math notranslate nohighlight">\(s\)</span> is necessary, if we extend the idea behind <span class="math notranslate nohighlight">\(\texttt{rlwe-x-scalar-multiply}\)</span> to a multiplication with a RLWE ciphertext (and not just a ring element).
 This will enable us to define something like <span class="math notranslate nohighlight">\(\mathrm{RLWE}(m_1) \circledast \mathrm{RGSW}(m_2) \approx \mathrm{RLWE}(m_1m_2)\)</span>, because if <span class="math notranslate nohighlight">\(\mathrm{RLWE}(m_1) = (a,b)\)</span>, then <span class="math notranslate nohighlight">\(as+b = e_1 + m_1\)</span> can be computed without knowledge of <span class="math notranslate nohighlight">\(m_1\)</span> by implicitly transferring the multiplication with <span class="math notranslate nohighlight">\(s\)</span> to <span class="math notranslate nohighlight">\(\mathrm{RGSW}(m_2)\)</span>.</p>
@@ -2770,9 +2746,6 @@ Since we add two RLWE ciphertexts at the end, the claim follows.</p>
 </div>
 <p>Notice that <span class="math notranslate nohighlight">\(\norm{e_1m_2} \le N \norm{e_1}\norm{m_2}\)</span> in the worst case, since <span class="math notranslate nohighlight">\(m_2\)</span> could be arbitrary.
 However, we will only use monomials as <span class="math notranslate nohighlight">\(m_2\)</span> in our algorithm, such that <span class="math notranslate nohighlight">\(\norm{e_1m_2} = \norm{e_1}\)</span> holds.</p>
-</section>
-<section id="the-extended-star-multiplication">
-<h3>The extended star multiplication<a class="headerlink" href="#the-extended-star-multiplication" title="Permalink to this headline">#</a></h3>
 <p>We can extend the star multiplication from RLWE to RLWE’ ciphertexts by again applying it component-wise.
 Using the same notation out of comfort, the map is:</p>
 <div class="math notranslate nohighlight">
@@ -2787,14 +2760,14 @@ Using the same notation out of comfort, the map is:</p>
 </div>
 </div>
 </div>
-<p>Technically, the <span class="math notranslate nohighlight">\(\texttt{star-x-multiplication}\)</span> can now be extended even to a multiplication of two RGSW ciphertexts, as suggested in Section 2 of <span id="id44">[<a class="reference internal" href="#id71" title="Daniele Micciancio and Yuriy Polyakov. Bootstrapping in fhew-like cryptosystems. Cryptology ePrint Archive, Paper 2020/086, 2020. https://eprint.iacr.org/2020/086. URL: https://eprint.iacr.org/2020/086.">Micciancio and Polyakov, 2020</a>]</span>.
+<p>Technically, the <span class="math notranslate nohighlight">\(\texttt{star-x-multiplication}\)</span> can now be extended even to a multiplication of two RGSW ciphertexts, as suggested in Section 2 of <span id="id47">[<a class="reference internal" href="#id74" title="Daniele Micciancio and Yuriy Polyakov. Bootstrapping in fhew-like cryptosystems. Cryptology ePrint Archive, Paper 2020/086, 2020. https://eprint.iacr.org/2020/086. URL: https://eprint.iacr.org/2020/086.">Micciancio and Polyakov, 2020</a>]</span>.
 Although we will not use it, if one needs a RGSW encryption of the result of <span class="math notranslate nohighlight">\(\circledast\)</span>, the <span class="math notranslate nohighlight">\(\diamondsuit\)</span> operation may be useful:</p>
 <div class="math notranslate nohighlight">
 \[\diamondsuit: \RGSW \times \RGSW \longrightarrow \RGSW, \qquad ((c_1,c_2),C) \longmapsto (c_1 \circledast C, c_2 \circledast C).\]</div>
 </section>
 </section>
 <section id="automorphisms-of-r">
-<span id="id45"></span><h2>Automorphisms of <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#automorphisms-of-r" title="Permalink to this headline">#</a></h2>
+<span id="id48"></span><h2>Automorphisms of <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#automorphisms-of-r" title="Permalink to this headline">#</a></h2>
 <p>Before getting to bootstrapping, we need two more auxiliary operations.
 The first one is an automorphism evaluation on elements of <span class="math notranslate nohighlight">\(R\)</span> and thus on RLWE ciphertexts, too.
 It is a well-known fact that there are exactly <span class="math notranslate nohighlight">\(N\)</span> automorphisms of <span class="math notranslate nohighlight">\(R\)</span>, namely <span class="math notranslate nohighlight">\(\psi_i\)</span> for each coprime <span class="math notranslate nohighlight">\(i \perp 2N\)</span> (recall that <span class="math notranslate nohighlight">\(N\)</span> is a power to two), and they can be denoted by:</p>
@@ -2882,10 +2855,10 @@ We highlight the pre-computational part by storing <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = 3x^3 + 3x^2 + 2x + 1
-Message after eval-auto: x --&gt; x^3: 2x^3 + x^2 + 3x + 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = x^3 + 2x^2 + 3
+Message after eval-auto: x --&gt; x^3: 2x^2 + x + 3
 Note that x^(2^2) = -1 and coefficients are mod 2^2.
-Error size after key switching: 30
+Error size after key switching: 36
 Factor from error bound: (B/2) * log_B(Q) * sqrt(N) = 53.333333333333336
 </pre></div>
 </div>
@@ -2897,7 +2870,7 @@ We observe that the error after key switching is usually much smaller than the b
 </section>
 </section>
 <section id="rescaling">
-<span id="id46"></span><h2>Rescaling<a class="headerlink" href="#rescaling" title="Permalink to this headline">#</a></h2>
+<span id="id49"></span><h2>Rescaling<a class="headerlink" href="#rescaling" title="Permalink to this headline">#</a></h2>
 <p>The last key step, which has already been implicitly employed during the multiplication of BFV ciphertexts, is the rescaling procedure.
 Recall how we introduced the auxiliary modulus <span class="math notranslate nohighlight">\(P\)</span> within the relinearization key (see e.g. <a class="reference internal" href="#relinearization-error">Lemma 5</a>).
 To sum it up, its main purpose was scaling down a big error to a small one.
@@ -2927,7 +2900,7 @@ As in the proof of <a class="reference internal" href="#relinearization-error">L
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="bootstrapping">
-<span id="id47"></span><h1>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">#</a></h1>
+<span id="id50"></span><h1>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">#</a></h1>
 <section id="the-texttt-scaled-mod-procedure">
 <h2>The <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> procedure<a class="headerlink" href="#the-texttt-scaled-mod-procedure" title="Permalink to this headline">#</a></h2>
 <p>The main task during bootstrapping is scaling up a message inside a RLWE ciphertext by a large factor <span class="math notranslate nohighlight">\(\Delta\)</span>.
@@ -2937,7 +2910,7 @@ How this procedure (<span class="math notranslate nohighlight">\(\texttt{scaled-
 Once this has been achieved, the rest of our bootstrapping procedure consists of fitting the BFV encryption scheme towards the <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> procedure, i.e. how to obtain the ciphertext of <span class="math notranslate nohighlight">\(u\)</span> from a BFV ciphertext and vice versa afterwards.
 The name “scaled modulus raising” comes from scaling up by <span class="math notranslate nohighlight">\(\Delta\)</span> and from using a significantly larger modulus <span class="math notranslate nohighlight">\(Q\)</span> during the process to handle error growth.
 At this point, we leave questions, e.g. why we initially assume an errorless encryption etc., for later.</p>
-<p><span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> itself, which Section 3 of <span id="id48">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span> covers, includes three steps:</p>
+<p><span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> itself, which Section 3 of <span id="id51">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span> covers, includes three steps:</p>
 <ol class="simple">
 <li><p>The extraction of LWE ciphertexts, where we essentially split up the problem in <span class="math notranslate nohighlight">\(N\)</span> single-dimensional (LWE) versions.</p></li>
 <li><p>Blind rotation, where the main transformation towards <span class="math notranslate nohighlight">\(\Delta \cdot u\)</span> is realized.
@@ -2954,8 +2927,8 @@ Apart from that, it has a very similar representation:</p>
 <p>where <span class="math notranslate nohighlight">\(\vec a, \vec s \in \Z_Q^N\)</span> and <span class="math notranslate nohighlight">\(e, m \in \Z_Q\)</span>.
 Again, if <span class="math notranslate nohighlight">\(e = 0\)</span>, then we will write <span class="math notranslate nohighlight">\(\mathrm{LWE}^0\)</span>.</p>
 <p>Naturally, the LWE ciphertext security has been thoroughly analysed, as the concept was already existent prior to RLWE.
-An extensive survey on this topic can be found in Section 4.2 of <span id="id49">[<a class="reference internal" href="#id62" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.
-Moreover, since RLWE is based upon LWE, if we generate LWE ciphertexts from RLWE ciphertexts, all the security measures (as described in <a class="reference internal" href="#security"><span class="std std-ref">Security</span></a>) apply as well.
+An extensive survey on this topic can be found in Section 4.2 of <span id="id52">[<a class="reference internal" href="#id65" title="Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. https://eprint.iacr.org/2015/939. URL: https://eprint.iacr.org/2015/939.">Peikert, 2015</a>]</span>.
+Moreover, since RLWE is based on LWE, if we generate LWE ciphertexts from RLWE ciphertexts, all the security measures (as described in <a class="reference internal" href="#security"><span class="std std-ref">Security</span></a>) apply as well.
 To preserve these, we write <span class="math notranslate nohighlight">\(\vec s := (s_0,\dots,s_{N-1})\)</span> as the coefficient vector of <span class="math notranslate nohighlight">\(s\)</span> and since the RLWE distributions for <span class="math notranslate nohighlight">\(a,s\)</span> and <span class="math notranslate nohighlight">\(e\)</span> are employed coefficient-wise, their properties still hold up in the context of the related LWE security.</p>
 <p>The goal of the extraction essentially is properly representing the calculation of the linear combinations of the coefficients during a polynomial multiplication in <span class="math notranslate nohighlight">\(R\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -2994,7 +2967,7 @@ On the other hand, we will also need this liberty, because we have no knowledge 
 <p>We define:</p>
 <div class="math notranslate nohighlight">
 \[f := \sum_{j=-c}^c -\Delta\cdot j \cdot x^j \in R, \qquad \text{ where } \abs u \le c &lt; N/2.\]</div>
-<p>We will provide the details of <span class="math notranslate nohighlight">\(c\)</span> later on.</p>
+<p>We will provide the details of <span class="math notranslate nohighlight">\(c\)</span> later on (see <a class="reference internal" href="#equation-norm-u">(10)</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">initialize_rotation_function</span><span class="p">(</span><span class="n">key_size</span><span class="p">,</span> <span class="n">Delta</span><span class="p">,</span> <span class="n">c_boundary</span><span class="p">,</span> <span class="n">ciphertext_modulus</span><span class="p">):</span>
@@ -3212,8 +3185,8 @@ Further details on this issue will be provided after we have stated the algorith
 </section>
 <section id="analysis-of-texttt-scaled-mod">
 <h2>Analysis of <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span><a class="headerlink" href="#analysis-of-texttt-scaled-mod" title="Permalink to this headline">#</a></h2>
-<section id="id50">
-<h3>Error analysis<a class="headerlink" href="#id50" title="Permalink to this headline">#</a></h3>
+<section id="id53">
+<h3>Error analysis<a class="headerlink" href="#id53" title="Permalink to this headline">#</a></h3>
 <p>The above code still raises some yet unanswered questions, concerning the <span class="math notranslate nohighlight">\(\texttt{rescale}\)</span> procedure at the end and the different moduli used.
 Rescaling solves two issues at once:</p>
 <ul class="simple">
@@ -3263,7 +3236,7 @@ The error bound from the first part of merging inside <span class="math notransl
 <section id="computational-complexity">
 <h3>Computational complexity<a class="headerlink" href="#computational-complexity" title="Permalink to this headline">#</a></h3>
 <p>At this point, we can already provide the runtime analysis of the entire <span class="math notranslate nohighlight">\(\texttt{bootstrapping}\)</span> procedure since <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> and especially the blind rotation is the dominant part of it.
-Following the approach in <span id="id51">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>, Section 6.1., we describe a high-level complexity analysis by employing the common <span class="math notranslate nohighlight">\(\mathcal O\)</span> notation as well as founding the analysis on the universal operation of multiplying elements of <span class="math notranslate nohighlight">\(R_Q\)</span>.</p>
+Following the approach in <span id="id54">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>, Section 6.1., we describe a high-level complexity analysis by employing the common <span class="math notranslate nohighlight">\(\mathcal O\)</span> notation as well as founding the analysis on the universal operation of multiplying elements of <span class="math notranslate nohighlight">\(R_Q\)</span>.</p>
 <div class="proof theorem admonition" id="complexity-of-scaled-mod">
 <p class="admonition-title"><span class="caption-number">Theorem 8 </span> (Complexity of <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span>)</p>
 <section class="theorem-content" id="proof-content">
@@ -3292,7 +3265,7 @@ Estimating <span class="math notranslate nohighlight">\(n \le N\)</span> and thu
 <h2>Adapting <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> to BFV encoding<a class="headerlink" href="#adapting-texttt-scaled-mod-to-bfv-encoding" title="Permalink to this headline">#</a></h2>
 <p>Finally, we want to clarify, how the upscaling of a message (<span class="math notranslate nohighlight">\(u\)</span> to <span class="math notranslate nohighlight">\(\Delta \cdot u\)</span> during <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span>) allows us to regain a small error for a BFV ciphertext in particular.
 We also provide the missing details, e.g. how to select <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\(\texttt{scaled-mod}\)</span> or why we could assume an errorless encryption at the start of it, along the way.
-This section bases upon Section 4.3.1. in <span id="id52">[<a class="reference internal" href="#id69" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>.</p>
+This section bases on Section 4.3.1. in <span id="id55">[<a class="reference internal" href="#id72" title="Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. https://eprint.iacr.org/2021/691. URL: https://eprint.iacr.org/2021/691.">Kim <em>et al.</em>, 2021</a>]</span>.</p>
 <section id="removing-the-big-error">
 <h3>Removing the big error<a class="headerlink" href="#removing-the-big-error" title="Permalink to this headline">#</a></h3>
 <p>The issue of replacing a big error can be best described by treating RLWE ciphertexts in <span class="math notranslate nohighlight">\(R\)</span> (i.e. without a modulus).
@@ -3375,13 +3348,13 @@ For large <span class="math notranslate nohighlight">\(N\)</span> this only happ
 </section>
 </section>
 <section id="parameters-for-bootstrapping">
-<span id="id53"></span><h2>Parameters for bootstrapping<a class="headerlink" href="#parameters-for-bootstrapping" title="Permalink to this headline">#</a></h2>
+<span id="id56"></span><h2>Parameters for bootstrapping<a class="headerlink" href="#parameters-for-bootstrapping" title="Permalink to this headline">#</a></h2>
 <p>Choosing the optimal parameters <span class="math notranslate nohighlight">\(\{N, T, Q, p, B\}\)</span> is very important since we already have shown that they can heavily influence the computation time.</p>
 <section id="message-length-n">
 <h3>Message length <span class="math notranslate nohighlight">\(N\)</span><a class="headerlink" href="#message-length-n" title="Permalink to this headline">#</a></h3>
 <p>The main security parameter <span class="math notranslate nohighlight">\(N\)</span> defines the number of coefficients of a polynomial.
 Clearly, a small <span class="math notranslate nohighlight">\(N\)</span> as selected in our example Python demonstration cannot possibly satisfy any modern security measures.
-In the Homomorphic Encryption Security Standard (see <span id="id54">[<a class="reference internal" href="#id65" title="Martin Albrecht, Melissa Chase, Hao Chen, Jintai Ding, Shafi Goldwasser, Sergey Gorbunov, Shai Halevi, Jeffrey Hoffstein, Kim Laine, Kristin Lauter, Satya Lokam, Daniele Micciancio, Dustin Moody, Travis Morrison, Amit Sahai, and Vinod Vaikuntanathan. Homomorphic encryption security standard. Technical Report, HomomorphicEncryption.org, Toronto, Canada, November 2018.">Albrecht <em>et al.</em>, 2018</a>]</span>) a security analysis for <span class="math notranslate nohighlight">\(N\)</span> ranging in <span class="math notranslate nohighlight">\(2^{10},\dots,2^{15}\)</span> is provided.</p>
+In the Homomorphic Encryption Security Standard (see <span id="id57">[<a class="reference internal" href="#id68" title="Martin Albrecht, Melissa Chase, Hao Chen, Jintai Ding, Shafi Goldwasser, Sergey Gorbunov, Shai Halevi, Jeffrey Hoffstein, Kim Laine, Kristin Lauter, Satya Lokam, Daniele Micciancio, Dustin Moody, Travis Morrison, Amit Sahai, and Vinod Vaikuntanathan. Homomorphic encryption security standard. Technical Report, HomomorphicEncryption.org, Toronto, Canada, November 2018.">Albrecht <em>et al.</em>, 2018</a>]</span>) a security analysis for <span class="math notranslate nohighlight">\(N\)</span> ranging in <span class="math notranslate nohighlight">\(2^{10},\dots,2^{15}\)</span> is provided.</p>
 <p>Note that multiplying polynomials of degree <span class="math notranslate nohighlight">\(N-1\)</span>, which the Karatsuba algorithm performs in roughly <span class="math notranslate nohighlight">\(N^{\log_2(3)}\)</span> integer multiplications, is the basic operation of our scheme.
 Moreover, <span class="math notranslate nohighlight">\(N\)</span> has an even greater impact on the runtime, because, inter alia, we perform <span class="math notranslate nohighlight">\(N\)</span> <span class="math notranslate nohighlight">\(\texttt{blind-rotation}\)</span>s.
 In total, a larger <span class="math notranslate nohighlight">\(N\)</span> yields a significantly longer running time:
@@ -3397,7 +3370,7 @@ Additionally, <span class="math notranslate nohighlight">\(T\)</span> also scale
 For demonstration purposes and simplicity we set <span class="math notranslate nohighlight">\(T = 2\)</span>.</p>
 </section>
 <section id="ciphertext-modulus-q">
-<span id="id55"></span><h3>Ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span><a class="headerlink" href="#ciphertext-modulus-q" title="Permalink to this headline">#</a></h3>
+<span id="id58"></span><h3>Ciphertext modulus <span class="math notranslate nohighlight">\(Q\)</span><a class="headerlink" href="#ciphertext-modulus-q" title="Permalink to this headline">#</a></h3>
 <p>By combining <a class="reference internal" href="#correct-BFV-decryption">Lemma 4</a> and <a class="reference internal" href="#error-after-BFV-multiplication">Theorem 6</a>, we observe that the BFV scheme can evaluate circuits of multiplicative depth <span class="math notranslate nohighlight">\(k\)</span> if (roughly):</p>
 <div class="math notranslate nohighlight">
 \[(2TN)^k &lt; \frac{Q}{2N} \iff k &lt; \frac{\log_2(Q)-\log_2(2T)}{\log_2(2TN)}.\]</div>
@@ -3418,22 +3391,22 @@ Furthermore, a multiplication in <span class="math notranslate nohighlight">\(R_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.063411
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.062105
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.065280
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.064913
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.078943
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.071357
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.102636
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.097126
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.179852
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.170363
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.466436
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.458062
 </pre></div>
 </div>
 </div>
@@ -3532,15 +3505,15 @@ For that instance, we print the error after bootstrapping, which should ideally 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding an error of size: 2^94 within the ciphertext modulus: 2^100...
-...to the encryption of the message: x^14 + x^11 + x^7 + x^6 + x^2 + x + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
-Time taken for the precomputation: 0:00:00.028010
+...to the encryption of the message: x^14 + x^11 + x^10 + x^9 + x^8 + x^7 + x^5 + x^4 + x + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
+Time taken for the precomputation: 0:00:00.028522
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.741090
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.701098
 Bootstrapping parameters: Modulus = 2^223, B = 2^100, N = 2^4
-Decryption of refreshed ciphertext after bootstrapping: x^14 + x^11 + x^7 + x^6 + x^2 + x + 1
+Decryption of refreshed ciphertext after bootstrapping: x^14 + x^11 + x^10 + x^9 + x^8 + x^7 + x^5 + x^4 + x + 1
 Still correct? True
-Error size after bootstrapping: 1
+Error size after bootstrapping: 3
 </pre></div>
 </div>
 </div>
@@ -3575,10 +3548,10 @@ Error size after bootstrapping: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008050216669999983 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008454296670000049 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.0077115658399999985 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007871210420000026 seconds.
 </pre></div>
 </div>
 </div>
@@ -3596,16 +3569,16 @@ Error size after bootstrapping: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.008078833333333554 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.00782790266666448 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.05882129166666653 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.05894908333333385 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.66926475 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6794407083333335 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.893876625000001 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.823034832999994 seconds.
 </pre></div>
 </div>
 </div>
@@ -3623,16 +3596,16 @@ Error size after bootstrapping: 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007676601670000025 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007738957090000014 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007793034999999975 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.008062718329999967 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.010189870000000099 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.014582528320000279 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.047415053320000025 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.04424136999999973 seconds.
 </pre></div>
 </div>
 </div>
@@ -3643,7 +3616,7 @@ Error size after bootstrapping: 1
 <h2>Application: Homomorphic Comparisons<a class="headerlink" href="#application-homomorphic-comparisons" title="Permalink to this headline">#</a></h2>
 <p>As the last section, we want to present a simple application, which points out, how more complex homomorphic operations, building on additions and multiplications, can be realized.
 Since it is crucial for any advanced computer program to handle if-statements, we state a basic algorithm, which checks if <span class="math notranslate nohighlight">\(a \ge b\)</span> in ciphertext space and gives the answer in an encrypted binary form.
-This method is due to Section 4.B in <span id="id56">[<a class="reference internal" href="#id76" title="Harika Narumanchi, Dishant Goyal, Nitesh Emmadi, and Praveen Gauravaram. Performance analysis of sorting of fhe data: integer-wise comparison vs bit-wise comparison. In 2017 IEEE 31st International Conference on Advanced Information Networking and Applications (AINA), volume, 902-908. 2017. doi:10.1109/AINA.2017.85.">Narumanchi <em>et al.</em>, 2017</a>]</span>.</p>
+This method is due to Section 4.B in <span id="id59">[<a class="reference internal" href="#id79" title="Harika Narumanchi, Dishant Goyal, Nitesh Emmadi, and Praveen Gauravaram. Performance analysis of sorting of fhe data: integer-wise comparison vs bit-wise comparison. In 2017 IEEE 31st International Conference on Advanced Information Networking and Applications (AINA), volume, 902-908. 2017. doi:10.1109/AINA.2017.85.">Narumanchi <em>et al.</em>, 2017</a>]</span>.</p>
 <p>More precisely, given two (BFV) ciphertexts <span class="math notranslate nohighlight">\(C_a\)</span> and <span class="math notranslate nohighlight">\(C_a\)</span> including the hidden messages <span class="math notranslate nohighlight">\(a, b \in \Z\)</span>, the algorithm outputs a ciphertext <span class="math notranslate nohighlight">\(C_0\)</span> containing the message <span class="math notranslate nohighlight">\(0\)</span> (i.e. true), if <span class="math notranslate nohighlight">\(a \ge b\)</span>, and otherwise <span class="math notranslate nohighlight">\(C_1\)</span> (i.e. false).</p>
 <p>The idea is to compare the difference <span class="math notranslate nohighlight">\(a-b\)</span> with zero since this works for arbitrary <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.
 Therefore we select a prime <span class="math notranslate nohighlight">\(p\)</span>, such that <span class="math notranslate nohighlight">\(p/2 \ge \abs{a} + \abs{b}\)</span>, because then <span class="math notranslate nohighlight">\(a-b \in (-p/2,p/2]\)</span>.
@@ -3689,66 +3662,66 @@ Thus we have <span class="math notranslate nohighlight">\(l(y) = 3y^4+3y^3-y\)</
 <li><p>For large <span class="math notranslate nohighlight">\(p\)</span>, the above procedure is quite inefficient, since evaluating <span class="math notranslate nohighlight">\(\mathcal O(p)\)</span> multiplications usually involves many intermediary bootstrapping procedures because of the error growth (see <a class="reference internal" href="#error-after-BFV-multiplication">Theorem 6</a>) and because we have put only the constant coefficient of a message polynomial to use.</p></li>
 <li><p>Homomorphic comparison could be utilized to formulate a homomorphic division algorithm.
 The naïve division algorithm solely consists of comparisons and subtractions, repeated until the quotient is <span class="math notranslate nohighlight">\(0\)</span> (checked by comparison).
-However, there are more sophisticated approaches, see e.g. <span id="id57">[<a class="reference internal" href="#id75" title="Hiroki Okada, Carlos Cid, Seira Hidano, and Shinsaku Kiyomoto. Linear depth integer-wise homomorphic division. In Olivier Blazy and Chan Yeob Yeun, editors, Information Security Theory and Practice, 91–106. Cham, 2019. Springer International Publishing.">Okada <em>et al.</em>, 2019</a>]</span>.</p></li>
+However, there are more sophisticated approaches, see e.g. <span id="id60">[<a class="reference internal" href="#id78" title="Hiroki Okada, Carlos Cid, Seira Hidano, and Shinsaku Kiyomoto. Linear depth integer-wise homomorphic division. In Olivier Blazy and Chan Yeob Yeun, editors, Information Security Theory and Practice, 91–106. Cham, 2019. Springer International Publishing.">Okada <em>et al.</em>, 2019</a>]</span>.</p></li>
 </ul>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="bibliography">
 <h1>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">#</a></h1>
-<div class="docutils container" id="id58">
+<div class="docutils container" id="id61">
 <dl class="citation">
-<dt class="label" id="id65"><span class="brackets">ACC+18</span><span class="fn-backref">(<a href="#id27">1</a>,<a href="#id54">2</a>)</span></dt>
+<dt class="label" id="id68"><span class="brackets">ACC+18</span><span class="fn-backref">(<a href="#id27">1</a>,<a href="#id57">2</a>)</span></dt>
 <dd><p>Martin Albrecht, Melissa Chase, Hao Chen, Jintai Ding, Shafi Goldwasser, Sergey Gorbunov, Shai Halevi, Jeffrey Hoffstein, Kim Laine, Kristin Lauter, Satya Lokam, Daniele Micciancio, Dustin Moody, Travis Morrison, Amit Sahai, and Vinod Vaikuntanathan. Homomorphic encryption security standard. Technical Report, HomomorphicEncryption.org, Toronto, Canada, November 2018.</p>
 </dd>
-<dt class="label" id="id60"><span class="brackets"><a class="fn-backref" href="#id14">An21</a></span></dt>
+<dt class="label" id="id63"><span class="brackets"><a class="fn-backref" href="#id14">An21</a></span></dt>
 <dd><p>J. An. Sample variance of rounded variables. 2021. URL: <a class="reference external" href="https://arxiv.org/abs/2102.08483">https://arxiv.org/abs/2102.08483</a>, <a class="reference external" href="https://doi.org/10.48550/ARXIV.2102.08483">doi:10.48550/ARXIV.2102.08483</a>.</p>
 </dd>
-<dt class="label" id="id73"><span class="brackets"><a class="fn-backref" href="#id8">BRT20</a></span></dt>
+<dt class="label" id="id76"><span class="brackets"><a class="fn-backref" href="#id8">BRT20</a></span></dt>
 <dd><p>Mădălina Bolboceanu, Miruna Roșca, and Radu Țițiu. Homomorphic encryption: a toy implementation in python. <a class="reference external" href="https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/">https://bit-ml.github.io/blog/post/homomorphic-encryption-toy-implementation-in-python/</a>, 2020.</p>
 </dd>
-<dt class="label" id="id66"><span class="brackets"><a class="fn-backref" href="#id10">CKKS17</a></span></dt>
+<dt class="label" id="id69"><span class="brackets"><a class="fn-backref" href="#id10">CKKS17</a></span></dt>
 <dd><p>Jung Hee Cheon, Andrey Kim, Miran Kim, and Yongsoo Song. Homomorphic encryption for arithmetic of approximate numbers. In Tsuyoshi Takagi and Thomas Peyrin, editors, <em>Advances in Cryptology – ASIACRYPT 2017</em>, 409–437. Cham, 2017. Springer International Publishing.</p>
 </dd>
-<dt class="label" id="id72"><span class="brackets">Era20</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
+<dt class="label" id="id75"><span class="brackets">Era20</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>)</span></dt>
 <dd><p>Saroja Erabelli. A python library for fully homomorphic encryption. <a class="reference external" href="https://github.com/sarojaerabelli/py-fhe">https://github.com/sarojaerabelli/py-fhe</a>, 2020.</p>
 </dd>
-<dt class="label" id="id67"><span class="brackets">FV12</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id29">2</a>,<a href="#id31">3</a>,<a href="#id32">4</a>,<a href="#id33">5</a>,<a href="#id34">6</a>,<a href="#id35">7</a>,<a href="#id36">8</a>)</span></dt>
+<dt class="label" id="id70"><span class="brackets">FV12</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id29">2</a>,<a href="#id31">3</a>,<a href="#id32">4</a>,<a href="#id34">5</a>,<a href="#id35">6</a>,<a href="#id36">7</a>,<a href="#id37">8</a>)</span></dt>
 <dd><p>Junfeng Fan and Frederik Vercauteren. Somewhat practical fully homomorphic encryption. Cryptology ePrint Archive, Paper 2012/144, 2012. <a class="reference external" href="https://eprint.iacr.org/2012/144">https://eprint.iacr.org/2012/144</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2012/144">https://eprint.iacr.org/2012/144</a>.</p>
 </dd>
-<dt class="label" id="id74"><span class="brackets"><a class="fn-backref" href="#id2">Gen09</a></span></dt>
+<dt class="label" id="id77"><span class="brackets"><a class="fn-backref" href="#id2">Gen09</a></span></dt>
 <dd><p>Craig Gentry. <em>A fully homomorphic encryption scheme</em>. PhD thesis, Stanford University, 2009. <a class="reference external" href="crypto.stanford.edu/craig">crypto.stanford.edu/craig</a>.</p>
 </dd>
-<dt class="label" id="id70"><span class="brackets"><a class="fn-backref" href="#id43">GSW13</a></span></dt>
+<dt class="label" id="id73"><span class="brackets"><a class="fn-backref" href="#id46">GSW13</a></span></dt>
 <dd><p>Craig Gentry, Amit Sahai, and Brent Waters. Homomorphic encryption from learning with errors: conceptually-simpler, asymptotically-faster, attribute-based. Cryptology ePrint Archive, Paper 2013/340, 2013. <a class="reference external" href="https://eprint.iacr.org/2013/340">https://eprint.iacr.org/2013/340</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2013/340">https://eprint.iacr.org/2013/340</a>.</p>
 </dd>
-<dt class="label" id="id61"><span class="brackets"><a class="fn-backref" href="#id15">HPS18</a></span></dt>
+<dt class="label" id="id64"><span class="brackets"><a class="fn-backref" href="#id15">HPS18</a></span></dt>
 <dd><p>Shai Halevi, Yuriy Polyakov, and Victor Shoup. An improved rns variant of the bfv homomorphic encryption scheme. Cryptology ePrint Archive, Paper 2018/117, 2018. <a class="reference external" href="https://eprint.iacr.org/2018/117">https://eprint.iacr.org/2018/117</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2018/117">https://eprint.iacr.org/2018/117</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-030-12612-4_5">doi:10.1007/978-3-030-12612-4_5</a>.</p>
 </dd>
-<dt class="label" id="id69"><span class="brackets">KDE+21</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id39">2</a>,<a href="#id40">3</a>,<a href="#id48">4</a>,<a href="#id51">5</a>,<a href="#id52">6</a>)</span></dt>
+<dt class="label" id="id72"><span class="brackets">KDE+21</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id40">2</a>,<a href="#id41">3</a>,<a href="#id51">4</a>,<a href="#id54">5</a>,<a href="#id55">6</a>)</span></dt>
 <dd><p>Andrey Kim, Maxim Deryabin, Jieun Eom, Rakyong Choi, Yongwoo Lee, Whan Ghang, and Donghoon Yoo. General bootstrapping approach for rlwe-based homomorphic encryption. Cryptology ePrint Archive, Paper 2021/691, 2021. <a class="reference external" href="https://eprint.iacr.org/2021/691">https://eprint.iacr.org/2021/691</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2021/691">https://eprint.iacr.org/2021/691</a>.</p>
 </dd>
-<dt class="label" id="id63"><span class="brackets"><a class="fn-backref" href="#id24">LStehle12</a></span></dt>
+<dt class="label" id="id66"><span class="brackets"><a class="fn-backref" href="#id24">LStehle12</a></span></dt>
 <dd><p>Adeline Langlois and Damien Stehlé. Hardness of decision (r)lwe for any modulus. <em>IACR Cryptol. ePrint Arch.</em>, 2012:91, 2012.</p>
 </dd>
-<dt class="label" id="id64"><span class="brackets"><a class="fn-backref" href="#id26">LMK+22</a></span></dt>
+<dt class="label" id="id67"><span class="brackets"><a class="fn-backref" href="#id26">LMK+22</a></span></dt>
 <dd><p>Yongwoo Lee, Daniele Micciancio, Andrey Kim, Rakyong Choi, Maxim Deryabin, Jieun Eom, and Donghoon Yoo. Efficient fhew bootstrapping with small evaluation keys, and applications to threshold homomorphic encryption. Cryptology ePrint Archive, Paper 2022/198, 2022. <a class="reference external" href="https://eprint.iacr.org/2022/198">https://eprint.iacr.org/2022/198</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2022/198">https://eprint.iacr.org/2022/198</a>.</p>
 </dd>
-<dt class="label" id="id68"><span class="brackets"><a class="fn-backref" href="#id30">LPR13</a></span></dt>
+<dt class="label" id="id71"><span class="brackets"><a class="fn-backref" href="#id30">LPR13</a></span></dt>
 <dd><p>Vadim Lyubashevsky, Chris Peikert, and Oded Regev. A toolkit for ring-lwe cryptography. Cryptology ePrint Archive, Paper 2013/293, 2013. <a class="reference external" href="https://eprint.iacr.org/2013/293">https://eprint.iacr.org/2013/293</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2013/293">https://eprint.iacr.org/2013/293</a>.</p>
 </dd>
-<dt class="label" id="id71"><span class="brackets"><a class="fn-backref" href="#id44">MP20</a></span></dt>
+<dt class="label" id="id74"><span class="brackets"><a class="fn-backref" href="#id47">MP20</a></span></dt>
 <dd><p>Daniele Micciancio and Yuriy Polyakov. Bootstrapping in fhew-like cryptosystems. Cryptology ePrint Archive, Paper 2020/086, 2020. <a class="reference external" href="https://eprint.iacr.org/2020/086">https://eprint.iacr.org/2020/086</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2020/086">https://eprint.iacr.org/2020/086</a>.</p>
 </dd>
-<dt class="label" id="id76"><span class="brackets"><a class="fn-backref" href="#id56">NGEG17</a></span></dt>
+<dt class="label" id="id79"><span class="brackets"><a class="fn-backref" href="#id59">NGEG17</a></span></dt>
 <dd><p>Harika Narumanchi, Dishant Goyal, Nitesh Emmadi, and Praveen Gauravaram. Performance analysis of sorting of fhe data: integer-wise comparison vs bit-wise comparison. In <em>2017 IEEE 31st International Conference on Advanced Information Networking and Applications (AINA)</em>, volume, 902–908. 2017. <a class="reference external" href="https://doi.org/10.1109/AINA.2017.85">doi:10.1109/AINA.2017.85</a>.</p>
 </dd>
-<dt class="label" id="id75"><span class="brackets"><a class="fn-backref" href="#id57">OCHK19</a></span></dt>
+<dt class="label" id="id78"><span class="brackets"><a class="fn-backref" href="#id60">OCHK19</a></span></dt>
 <dd><p>Hiroki Okada, Carlos Cid, Seira Hidano, and Shinsaku Kiyomoto. Linear depth integer-wise homomorphic division. In Olivier Blazy and Chan Yeob Yeun, editors, <em>Information Security Theory and Practice</em>, 91–106. Cham, 2019. Springer International Publishing.</p>
 </dd>
-<dt class="label" id="id62"><span class="brackets">Pei15</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id17">2</a>,<a href="#id18">3</a>,<a href="#id19">4</a>,<a href="#id21">5</a>,<a href="#id22">6</a>,<a href="#id23">7</a>,<a href="#id25">8</a>,<a href="#id49">9</a>)</span></dt>
+<dt class="label" id="id65"><span class="brackets">Pei15</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id17">2</a>,<a href="#id18">3</a>,<a href="#id19">4</a>,<a href="#id21">5</a>,<a href="#id22">6</a>,<a href="#id23">7</a>,<a href="#id25">8</a>,<a href="#id52">9</a>)</span></dt>
 <dd><p>Chris Peikert. A decade of lattice cryptography. Cryptology ePrint Archive, Paper 2015/939, 2015. <a class="reference external" href="https://eprint.iacr.org/2015/939">https://eprint.iacr.org/2015/939</a>. URL: <a class="reference external" href="https://eprint.iacr.org/2015/939">https://eprint.iacr.org/2015/939</a>.</p>
 </dd>
-<dt class="label" id="id59"><span class="brackets"><a class="fn-backref" href="#id13">Tri84</a></span></dt>
+<dt class="label" id="id62"><span class="brackets"><a class="fn-backref" href="#id13">Tri84</a></span></dt>
 <dd><p>A. R. Tricker. Effects of rounding on the moments of a probability distribution. <em>Journal of the Royal Statistical Society. Series D (The Statistician)</em>, 33(4):381–390, 1984. URL: <a class="reference external" href="http://www.jstor.org/stable/2987741">http://www.jstor.org/stable/2987741</a> (visited on 2022-09-21).</p>
 </dd>
 </dl>
