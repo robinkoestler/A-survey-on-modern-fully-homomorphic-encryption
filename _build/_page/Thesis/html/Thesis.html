@@ -1438,7 +1438,7 @@ The variable <span class="math notranslate nohighlight">\(\texttt{speed}\)</span
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">erf</span>
 <span class="n">Poly</span> <span class="o">=</span> <span class="n">polynomial_arithmetic</span><span class="o">.</span><span class="n">Polynomial</span> <span class="c1"># the class of handling polynomial arithmetic in R.</span>
-<span class="n">speed</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># precision factor for computations: Scales the running time.</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="mi">300</span> <span class="c1"># precision factor for computations: Scales the running time.</span>
 </pre></div>
 </div>
 </div>
@@ -1670,7 +1670,7 @@ If we choose to omit it, <span class="math notranslate nohighlight">\(\sigma\)</
 Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity, <span class="math notranslate nohighlight">\(m=3\)</span> for adding three <span class="math notranslate nohighlight">\(R\)</span>-elements, <span class="math notranslate nohighlight">\(\sigma = 1\)</span> to have a rounding effect and <span class="math notranslate nohighlight">\(k=3\)</span> for not having to do too many iterations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5000</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50000</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span>
 <span class="c1"># below: without &quot;+1/12&quot; the approximation sometimes exceeds the ratio</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">erf</span><span class="p">((</span><span class="n">k</span><span class="o">*</span><span class="n">sigma</span><span class="p">)</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">12</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
@@ -1683,7 +1683,7 @@ Taking <span class="math notranslate nohighlight">\(N=1\)</span> for simplicity,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4994 out of 5000 y&#39;s satisfying the bound (= ratio of 0.9988)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14970123 out of 15000000 y&#39;s satisfying the bound (= ratio of 0.9980082)
 Probability approximation given in theorem = 0.9960522481430966
 </pre></div>
 </div>
@@ -1752,7 +1752,7 @@ For example:</p>
 <p>A demonstration of the value in <a class="reference internal" href="#multiplication-bound-uniform-ternary">Theorem 4</a> in practice (notice that for <span class="math notranslate nohighlight">\(C=2\)</span> the bound gets exceeded with probability around <span class="math notranslate nohighlight">\(0.002\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">speed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">counter</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5000</span><span class="o">*</span><span class="n">speed</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">generate_uniform_distribution</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="n">Q</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">Q</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">generate_ternary_distribution</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1"># rho = 1/3</span>
@@ -1765,8 +1765,10 @@ For example:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 out of 1000 satisfied bound (ratio 1.0)
-Probability in theorem 0.9981059300560312
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1497335 out of 1500000 satisfied bound (ratio 0.9982233333333334)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability in theorem 0.9981059300560312
 </pre></div>
 </div>
 </div>
@@ -1817,7 +1819,7 @@ To not get caught up in precision errors regarding <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4885 out of 5000 satisfied bound (ratio 0.977)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1461071 out of 1500000 satisfied bound (ratio 0.9740473333333334)
 Probability in theorem 0.9838201795058529
 </pre></div>
 </div>
@@ -2008,9 +2010,9 @@ Plaintext modulus T = 4
 Ciphertext modulus Q = 1048576
 Standard deviation STD = 1
 
-Message: M = 2x^3
-Encryption components are 722435x^3 + 96694x^2 + 204932x + 818462 
-and 632532x^3 + 613528x^2 + 556254x + 625737
+Message: M = 2
+Encryption components are 513557x^3 + 688979x^2 + 414554x + 413110 
+and 789428x^3 + 568522x^2 + 468069x + 838396
 </pre></div>
 </div>
 </div>
@@ -2038,7 +2040,7 @@ In total, we may estimate the error after BFV encryption as:</p>
 <p>In practice, <span class="math notranslate nohighlight">\(C\)</span> is indeed much smaller as the following computation points out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">max_norm</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">max_norm</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5000</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_gaussian_distribution</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">generate_ternary_distribution</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
@@ -2048,7 +2050,7 @@ In total, we may estimate the error after BFV encryption as:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1000 iterations was 6.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum C after 1500000 iterations was 8.25
 </pre></div>
 </div>
 </div>
@@ -2086,9 +2088,9 @@ At last, we reduce the result by <span class="math notranslate nohighlight">\(T\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2x^3
-Message 2x^3 decrypted correctly? True
-Error size inside ciphertext: 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decryption of Message = 2
+Message 2 decrypted correctly? True
+Error size inside ciphertext: 8
 </pre></div>
 </div>
 </div>
@@ -2213,12 +2215,12 @@ Remark: The computationally determined value of <span class="math notranslate no
 However, <span class="math notranslate nohighlight">\(C \approx 8\)</span> yields a close estimate:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many_additions</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">how_many_additions</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -2230,10 +2232,10 @@ However, <span class="math notranslate nohighlight">\(C \approx 8\)</span> yield
 Because we generally work with powers of two for <span class="math notranslate nohighlight">\(N, T\)</span>, and <span class="math notranslate nohighlight">\(Q\)</span>, we will observe the behaviour of <span class="math notranslate nohighlight">\(\texttt{how-many-additions}\)</span> under doubling each of the parameters and present everything on an exponential/logarithmic scale.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">,</span> <span class="n">doublings</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">4</span>
-<span class="n">doubling_N</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">,</span> <span class="n">doublings</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="o">*</span><span class="n">speed</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">doubling_N</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
 <span class="n">doubling_T</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
-<span class="n">doubling_Q</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
+<span class="n">doubling_Q</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">Q</span><span class="p">,</span> <span class="n">STD</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
 <span class="n">doubling_STD</span> <span class="o">=</span> <span class="p">[</span><span class="n">how_many_additions</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">STD</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">doublings</span><span class="p">)]</span>
 </pre></div>
 </div>
@@ -2488,8 +2490,8 @@ Together with <span class="math notranslate nohighlight">\(e_{\text{rel}}\)</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 10000 iterations: ratio of correct bound 1.0
-Maximum C was 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Out of 3000000 iterations: ratio of correct bound 0.9994333333333333
+Maximum C was 4.125
 </pre></div>
 </div>
 </div>
@@ -2855,10 +2857,10 @@ We highlight the pre-computational part by storing <span class="math notranslate
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = x^3 + 2x^2 + 3
-Message after eval-auto: x --&gt; x^3: 2x^2 + x + 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Message = 3x^3 + 3x^2 + 2
+Message after eval-auto: x --&gt; x^3: x^2 + 3x + 2
 Note that x^(2^2) = -1 and coefficients are mod 2^2.
-Error size after key switching: 36
+Error size after key switching: 29
 Factor from error bound: (B/2) * log_B(Q) * sqrt(N) = 53.333333333333336
 </pre></div>
 </div>
@@ -3391,22 +3393,22 @@ Furthermore, a multiplication in <span class="math notranslate nohighlight">\(R_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.062105
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^50 and N = 2^10 in 0:00:00.058494
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.064913
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^100 and N = 2^10 in 0:00:00.061406
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.071357
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^200 and N = 2^10 in 0:00:00.068063
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.097126
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^400 and N = 2^10 in 0:00:00.095322
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.170363
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^800 and N = 2^10 in 0:00:00.162784
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.458062
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplying in R_Q with Q = 2^1600 and N = 2^10 in 0:00:00.448529
 </pre></div>
 </div>
 </div>
@@ -3505,15 +3507,15 @@ For that instance, we print the error after bootstrapping, which should ideally 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding an error of size: 2^94 within the ciphertext modulus: 2^100...
-...to the encryption of the message: x^14 + x^11 + x^10 + x^9 + x^8 + x^7 + x^5 + x^4 + x + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
-Time taken for the precomputation: 0:00:00.028522
+...to the encryption of the message: x^13 + x^10 + x^6 + x^5 + x^2 + 1 and refreshing the obtained noisy ciphertext by bootstrapping...
+Time taken for the precomputation: 0:00:00.027686
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.701098
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time taken for bootstrapping: 0:00:00.695605
 Bootstrapping parameters: Modulus = 2^223, B = 2^100, N = 2^4
-Decryption of refreshed ciphertext after bootstrapping: x^14 + x^11 + x^10 + x^9 + x^8 + x^7 + x^5 + x^4 + x + 1
+Decryption of refreshed ciphertext after bootstrapping: x^13 + x^10 + x^6 + x^5 + x^2 + 1
 Still correct? True
-Error size after bootstrapping: 3
+Error size after bootstrapping: 2
 </pre></div>
 </div>
 </div>
@@ -3548,10 +3550,10 @@ Error size after bootstrapping: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.008454296670000049 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^100 and taking 0.00863269890833332 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007871210420000026 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^100, B = 2^200 and taking 0.007766021747233329 seconds.
 </pre></div>
 </div>
 </div>
@@ -3569,16 +3571,16 @@ Error size after bootstrapping: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.00782790266666448 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.00783238286999929 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.05894908333333385 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^3, Q = 2^50, B = 2^50 and taking 0.05894394296333202 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6794407083333335 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^4, Q = 2^50, B = 2^50 and taking 0.6713467681477777 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.823034832999994 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^5, Q = 2^50, B = 2^50 and taking 7.841353864859993 seconds.
 </pre></div>
 </div>
 </div>
@@ -3590,22 +3592,22 @@ Error size after bootstrapping: 3
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
 <span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
-<span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">500</span><span class="p">,</span> <span class="mi">25</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
-<span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">25</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
+<span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
+<span class="n">runtime</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">speed</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007738957090000014 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^25, B = 2^25 and taking 0.007873121000000052 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.008062718329999967 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^50, B = 2^50 and taking 0.007954122523600017 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.014582528320000279 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^500, B = 2^500 and taking 0.017697365968066637 seconds.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.04424136999999973 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running with N = 2^2, Q = 2^1000, B = 2^1000 and taking 0.0235289563958333 seconds.
 </pre></div>
 </div>
 </div>

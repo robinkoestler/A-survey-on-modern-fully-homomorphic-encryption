@@ -103,7 +103,7 @@ from timeit import default_timer as timer
 from datetime import timedelta
 from math import log, floor, ceil, sqrt, gcd, exp, pi, erf
 Poly = polynomial_arithmetic.Polynomial # the class of handling polynomial arithmetic in R.
-speed = 1 # precision factor for computations: Scales the running time.
+speed = 300 # precision factor for computations: Scales the running time.
 
 
 # (ring-learning-with-errors)=
@@ -341,7 +341,7 @@ print(f"With sigma = {sigma}, the bound of 1/12 is approximately 1/{1/(sum(var_v
 # In[4]:
 
 
-m, sigma, iterations, k, counter = 3, 1, 5000*speed, 3, 0
+m, sigma, iterations, k, counter = 3, 1, 50000*speed, 3, 0
 # below: without "+1/12" the approximation sometimes exceeds the ratio
 p = erf((k*sigma) / sqrt(2 * (sigma**2+1/12)))
 for _ in range(iterations):
@@ -431,7 +431,7 @@ print(f"Probability approximation given in theorem = {1-1*(1-p)}")
 # In[5]:
 
 
-Q, N, C, counter, iterations = 2**10, 2**6, 2, 0, 1000*speed
+Q, N, C, counter, iterations = 2**10, 2**6, 2, 0, 5000*speed
 for i in range(iterations):
     y = generate_uniform_distribution(N, -Q/2, Q/2)
     z = generate_ternary_distribution(N) # rho = 1/3
@@ -712,7 +712,7 @@ print("Encryption components are", encryption[0], "\nand", encryption[1])
 # In[10]:
 
 
-N, iterations, max_norm = 2**4, 1000*speed, 0
+N, iterations, max_norm = 2**4, 5000*speed, 0
 for i in range(iterations):
     a = [generate_gaussian_distribution(N, 0, 1) for _ in range(4)]
     s = generate_ternary_distribution(N)
@@ -883,7 +883,7 @@ def how_many_additions(key_size, plaintext_modulus, ciphertext_modulus, standard
 # In[16]:
 
 
-how_many_additions(16, 2, 2**8, 1, 500*speed)
+how_many_additions(16, 2, 2**8, 1, 1000*speed)
 
 
 # (parameter-impact)=
@@ -894,10 +894,10 @@ how_many_additions(16, 2, 2**8, 1, 500*speed)
 # In[17]:
 
 
-N, T, Q, STD, runs, doublings = 2**2, 2, 2**9, 1, 5*speed, 4
-doubling_N = [how_many_additions((2**i)*N, T, Q, STD, runs) for i in range(doublings)]
+N, T, Q, STD, runs, doublings = 2**2, 2, 2**10, 1, 5*speed, 5
+doubling_N = [how_many_additions((2**i)*N, T, Q, STD, speed) for i in range(doublings)]
 doubling_T = [how_many_additions(N, (2**i)*T, Q, STD, runs) for i in range(doublings)]
-doubling_Q = [how_many_additions(N, T, (2**i)*Q, STD, runs) for i in range(doublings)]
+doubling_Q = [how_many_additions(N, T, (2**i)*Q, STD, speed) for i in range(doublings)]
 doubling_STD = [how_many_additions(N, T, Q, (2**i)*STD, runs) for i in range(doublings)]
 
 
@@ -2342,8 +2342,8 @@ runtime(2**5, 2, 2**50, 2**50, 1*speed)
 
 runtime(2**2, 2, 2**25, 2**25, 100*speed)
 runtime(2**2, 2, 2**50, 2**50, 100*speed)
-runtime(2**2, 2, 2**500, 2**500, 25*speed)
-runtime(2**2, 2, 2**1000, 2**1000, 25*speed)
+runtime(2**2, 2, 2**500, 2**500, 100*speed)
+runtime(2**2, 2, 2**1000, 2**1000, 100*speed)
 
 
 # ## Application: Homomorphic Comparisons
