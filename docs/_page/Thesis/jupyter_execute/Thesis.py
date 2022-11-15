@@ -103,7 +103,7 @@ from timeit import default_timer as timer
 from datetime import timedelta
 from math import log, floor, ceil, sqrt, gcd, exp, pi, erf
 Poly = polynomial_arithmetic.Polynomial # the class of handling polynomial arithmetic in R.
-speed = 100 # precision factor for computations: Scales the running time.
+speed = 300 # precision factor for computations: Scales the running time.
 
 
 # (ring-learning-with-errors)=
